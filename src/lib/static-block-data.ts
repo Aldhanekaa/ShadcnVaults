@@ -4,6 +4,11 @@ import { HeroBlock3 } from "@/blocks/hero/hero-3";
 import { HeroBlock4 } from "@/blocks/hero/hero-4";
 import { HeroBlock5 } from "@/blocks/hero/hero-5";
 
+import { FooterBlock1 } from "@/blocks/footer/footer-1";
+import { FooterBlock2 } from "@/blocks/footer/footer-2";
+import { FooterBlock2 as FooterBlock3 } from "@/blocks/footer/footer-3";
+import { FooterBlock2 as FooterBlock4 } from "@/blocks/footer/footer-4";
+
 import Bills_1 from "@/blocks/bills/bills-1";
 import Bills_2 from "@/blocks/bills/bills-2";
 import Bills_3 from "@/blocks/bills/bills-3";
@@ -295,6 +300,43 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
       "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750375319/marketplace-6_prijzi.mov",
     component: Marketplace_6,
   },
+
+  "footer-1": {
+    id: "footer-1",
+    name: "Simple Footer",
+    description:
+      "Clean and minimal footer with social links and copyright information.",
+    photo:
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750374500/Screenshot_2025-06-20_at_05.51.12_dknzbz.png",
+    component: FooterBlock1,
+  },
+  "footer-2": {
+    id: "footer-2",
+    name: "Multi-Column Footer",
+    description:
+      "Comprehensive footer with brand section and organized link columns.",
+    photo:
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750374500/Screenshot_2025-06-20_at_05.51.12_dknzbz.png",
+    component: FooterBlock2,
+  },
+  "footer-3": {
+    id: "footer-3",
+    name: "Branded Footer",
+    description:
+      "Professional footer with brand identity and structured navigation links.",
+    photo:
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750374500/Screenshot_2025-06-20_at_05.51.12_dknzbz.png",
+    component: FooterBlock3,
+  },
+  "footer-4": {
+    id: "footer-4",
+    name: "Enterprise Footer",
+    description:
+      "Full-featured footer with comprehensive links and social media integration.",
+    photo:
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750374500/Screenshot_2025-06-20_at_05.51.12_dknzbz.png",
+    component: FooterBlock4,
+  },
 };
 
 // Static block categories
@@ -331,6 +373,21 @@ export const staticBlockCategories: BlockCategory[] = [
       staticBlocksWithComponents["marketplace-4"],
       staticBlocksWithComponents["marketplace-5"],
       staticBlocksWithComponents["marketplace-6"],
+    ],
+  },
+
+  {
+    id: "footer",
+    title: "Footer",
+    description:
+      "Website footer components with navigation, social links, and branding",
+    image:
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750375678/Screenshot_2025-06-20_at_06.27.51_kdn5m6.png",
+    blocks: [
+      staticBlocksWithComponents["footer-1"],
+      staticBlocksWithComponents["footer-2"],
+      staticBlocksWithComponents["footer-3"],
+      staticBlocksWithComponents["footer-4"],
     ],
   },
 
