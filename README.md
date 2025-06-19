@@ -77,4 +77,4 @@ The following UI blocks are planned for future addition:
 - **Stats Overview**: Summary cards for key metrics or analytics.
 - **Kanban Board**: Drag-and-drop task management board.
 
-Have an idea for a new block? [Open an issue or PR!](#contributing)
+Have an idea for a new block? [Open an issue or PR!](#contributing).
