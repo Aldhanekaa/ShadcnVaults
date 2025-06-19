@@ -7,6 +7,12 @@ import Bills_3 from "@/blocks/bills/bills-3";
 import Bills_4 from "@/blocks/bills/bills-4";
 import Bills_5 from "@/blocks/bills/bills-5";
 import Bills_6 from "@/blocks/bills/bills-6";
+import Bills_7 from "@/blocks/bills/bills-7";
+import Bills_8 from "@/blocks/bills/bills-8";
+import Bills_9 from "@/blocks/bills/bills-9";
+import Bills_10 from "@/blocks/bills/bills-10";
+import Bills_11 from "@/blocks/bills/bills-11";
+import Bills_12 from "@/blocks/bills/bills-12";
 
 export interface BlockMetadata {
   id: string;
@@ -99,6 +105,60 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     video:
       "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750357608/Screen_Recording_2025-06-20_at_01.24.05_ijuxn0.mov",
     component: Bills_6,
+  },
+  "bills-7": {
+    id: "bills-7",
+    name: "B2B SaaS Billing Dashboard",
+    description:
+      "Advanced B2B dashboard for managing plans, add-ons, payment methods, and billing history.",
+    video:
+      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750361070/Bills-7_apqaqb.mov",
+    component: Bills_7,
+  },
+  "bills-8": {
+    id: "bills-8",
+    name: "Enterprise Billing & Plans Portal",
+    description:
+      "Enterprise dashboard for plan management, add-ons, and billing with navigation and analytics.",
+    video:
+      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750361070/Bills-8_yvxewc.mov",
+    component: Bills_8,
+  },
+  "bills-9": {
+    id: "bills-9",
+    name: "Animated Subscription Billing",
+    description:
+      "Modern dashboard with animated add-on selection, plan management, and detailed billing.",
+    video:
+      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750361381/Bills-9_twiefj.mov",
+    component: Bills_9,
+  },
+  "bills-10": {
+    id: "bills-10",
+    name: "Team Subscription & Add-ons",
+    description:
+      "Dashboard for team-based SaaS plans, add-ons, and billing with tabbed navigation.",
+    video:
+      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750361607/Bills-10_xbwi1r.mov",
+    component: Bills_10,
+  },
+  "bills-11": {
+    id: "bills-11",
+    name: "Feature-Rich Billing Dashboard",
+    description:
+      "Feature-rich dashboard for plan selection, add-on toggling, and invoice management.",
+    video:
+      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750361606/Bills-11_ldpqv9.mov",
+    component: Bills_11,
+  },
+  "bills-12": {
+    id: "bills-12",
+    name: "Ultimate SaaS Billing Suite",
+    description:
+      "Comprehensive SaaS billing suite with navigation, plan management, add-ons, and usage tracking.",
+    video:
+      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750361604/Bills-12_weu8bx.mov",
+    component: Bills_12,
   },
 };
 
