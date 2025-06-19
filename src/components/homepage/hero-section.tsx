@@ -14,13 +14,19 @@ import {
   ExternalLink,
   Star,
 } from "lucide-react";
-import { type BlockCategory } from "@/lib/block-utils";
+import { BlockCategory } from "@/lib/static-block-data";
 
 interface HeroSectionProps {
   blockCategories: BlockCategory[];
+  onSectionChange: (section: string) => void;
+  onOpenChange: (open: boolean) => void;
 }
 
-export function HeroSection({ blockCategories }: HeroSectionProps) {
+export function HeroSection({
+  onSectionChange,
+  onOpenChange,
+  blockCategories,
+}: HeroSectionProps) {
   // Filter out overview section and get only categories with blocks
   const displayCategories = blockCategories.filter(
     (category) =>
@@ -34,13 +40,13 @@ export function HeroSection({ blockCategories }: HeroSectionProps) {
       {/* Hero Banner */}
       <div className="text-center space-y-6 py-16">
         <div className="flex justify-center mb-6">
-          <Badge variant="outline" className="px-4 py-2 text-sm">
+          {/* <Badge variant="outline" className="px-4 py-2 text-sm">
             <Star className="h-4 w-4 mr-2" />
             631 Extra ShadCN Blocks
-          </Badge>
+          </Badge> */}
         </div>
         <h1 className="text-5xl font-bold tracking-tight sm:text-7xl bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
-          631 Extra Shadcn Blocks
+          Shadcn Vaults
         </h1>
         <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
           Build stunning landing and marketing pages in minutes. Copy and paste
@@ -89,53 +95,34 @@ export function HeroSection({ blockCategories }: HeroSectionProps) {
             return (
               <Card
                 key={category.id}
-                className="group hover:shadow-xl transition-all duration-300 cursor-pointer border-2 hover:border-primary/20 overflow-hidden"
+                onClick={() => {
+                  onSectionChange(category.id);
+                  onOpenChange(false);
+                }}
+                className="group hover:shadow-xl transition-all duration-300 cursor-pointer border-2 hover:border-primary/20 overflow-hidden py-0"
               >
                 <CardContent className="p-0">
                   {/* Category Header */}
-                  <div className="p-4 border-b bg-muted/30">
+                  <div className="p-4 bg-muted/30">
                     <div className="flex items-center justify-between">
                       <h3 className="font-semibold text-lg">
                         {category.title}
                       </h3>
                       <Badge variant="secondary" className="text-xs">
-                        {category.count}
+                        {category.blocks?.length}
                       </Badge>
                     </div>
                   </div>
 
-                  {/* Preview Image */}
-                  <div className="aspect-[4/3] relative overflow-hidden bg-gradient-to-br from-muted/50 to-muted">
-                    {firstBlock?.video ? (
-                      <video
-                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                        muted
-                        loop
-                        playsInline
-                        poster={firstBlock.photo}
-                      >
-                        <source src={firstBlock.video} type="video/mp4" />
-                      </video>
-                    ) : (
-                      <img
-                        src={previewMedia}
-                        alt={`${category.title} preview`}
-                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                      />
-                    )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-
-                    {/* Hover Overlay */}
-                    <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                      <Button
-                        variant="secondary"
-                        size="sm"
-                        className="gap-2 bg-white/90 hover:bg-white text-black"
-                      >
-                        <Blocks className="h-4 w-4" />
-                        View Blocks
-                      </Button>
-                    </div>
+                  <div
+                    data-slot="card-footer"
+                    className="flex items-center px-6 [.border-t]:pt-6 justify-end rounded-md pr-0 pb-0 shadow-xs"
+                  >
+                    <img
+                      className="h-40 w-full rounded-tl-md rounded-br-md border-t border-l object-cover object-top-left"
+                      src="https://deifkwefumgah.cloudfront.net/shadcnblocks/screenshots/group/hero.jpg"
+                      alt="placeholder"
+                    ></img>
                   </div>
                 </CardContent>
               </Card>

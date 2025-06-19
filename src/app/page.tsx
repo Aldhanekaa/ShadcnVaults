@@ -20,17 +20,23 @@ export default function Home() {
         <Sidebar
           sections={blockCategories}
           activeSection={activeSection}
-          onSectionChange={setActiveSection}
           open={sidebarOpen}
+          onSectionChange={setActiveSection}
           onOpenChange={setSidebarOpen}
         />
 
         <main className="flex-1 lg:ml-64">
           <div className="p-6 max-w-7xl mx-auto">
             {activeSection === "overview" ? (
-              <HeroSection blockCategories={blockCategories} />
+              <HeroSection
+                onSectionChange={setActiveSection}
+                onOpenChange={setSidebarOpen}
+                blockCategories={blockCategories}
+              />
             ) : (
               <BlocksSection
+                onSectionChange={setActiveSection}
+                onOpenChange={setSidebarOpen}
                 section={blockCategories.find((s) => s.id === activeSection)!}
               />
             )}

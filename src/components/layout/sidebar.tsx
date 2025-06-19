@@ -108,9 +108,9 @@ export function Sidebar({
               >
                 <Icon className="h-4 w-4 flex-shrink-0" />
                 <span className="flex-1 text-left">{section.title}</span>
-                {section.count && (
+                {section.blocks && (
                   <Badge variant="outline" className="text-xs px-2 py-0.5">
-                    {section.count}
+                    {section.blocks.length}
                   </Badge>
                 )}
               </Button>
