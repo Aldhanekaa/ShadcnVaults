@@ -3,15 +3,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Star } from "lucide-react";
 
-export const metadata = {
-  name: "Hero with Image",
-  description: "Hero section with stunning background image",
-  link: "#",
-  photo:
-    "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800",
-  id: "hero-2",
-};
-
 export function HeroBlock2() {
   return (
     <section className="relative w-full py-20 md:py-32 overflow-hidden">

@@ -3,15 +3,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
 
-export const metadata = {
-  name: "Simple Hero",
-  description: "Clean hero with title and CTA button",
-  link: "#",
-  video:
-    "https://res.cloudinary.com/read-cv/video/upload/t_v_b/v1/1/profileItems/W2azTw5BVbMXfj7F53G92hMVIn32/newProfileItem/d898be8a-7037-4c71-af0c-8997239b050d.mp4?_a=DATAdtAAZAA0",
-  id: "hero-1",
-};
-
 export function HeroBlock1() {
   return (
     <section className="w-full py-20 md:py-32 bg-gradient-to-b from-background to-muted/20">
