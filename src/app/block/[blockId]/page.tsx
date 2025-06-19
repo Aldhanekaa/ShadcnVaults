@@ -7,6 +7,7 @@ import { staticBlocksWithComponents } from "@/lib/static-block-data";
 import { BlockDetailsClient } from "@/components/block-details-client";
 import { promises as fs } from "fs";
 import path from "path";
+import { ResponsivePreview } from "@/components/responsive-preview";
 
 interface BlockPageProps {
   params: Promise<{
@@ -243,23 +244,12 @@ export default async function BlockPage({ params }: BlockPageProps) {
           <div className="space-y-4">
             <div className="flex items-center justify-between">
               <h2 className="text-xl font-semibold">Preview</h2>
-              <div className="flex items-center gap-2">
-                <Button variant="outline" size="sm">
-                  Desktop
-                </Button>
-                <Button variant="ghost" size="sm">
-                  Tablet
-                </Button>
-                <Button variant="ghost" size="sm">
-                  Mobile
-                </Button>
-              </div>
             </div>
 
-            {/* Block Component Render */}
-            <div className="border rounded-lg overflow-hidden bg-background">
+            {/* Responsive Preview Component */}
+            <ResponsivePreview>
               <BlockComponent />
-            </div>
+            </ResponsivePreview>
           </div>
 
           {/* Code Section */}
