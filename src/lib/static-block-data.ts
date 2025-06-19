@@ -189,6 +189,12 @@ export const staticBlockCategories: BlockCategory[] = [
       staticBlocksWithComponents["bills-4"],
       staticBlocksWithComponents["bills-5"],
       staticBlocksWithComponents["bills-6"],
+      staticBlocksWithComponents["bills-7"],
+      staticBlocksWithComponents["bills-8"],
+      staticBlocksWithComponents["bills-9"],
+      staticBlocksWithComponents["bills-10"],
+      staticBlocksWithComponents["bills-11"],
+      staticBlocksWithComponents["bills-12"],
     ],
   },
 ];
