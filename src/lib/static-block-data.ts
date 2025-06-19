@@ -1,5 +1,8 @@
 import { HeroBlock1 } from "@/blocks/hero/hero-1";
 import { HeroBlock2 } from "@/blocks/hero/hero-2";
+import { HeroBlock3 } from "@/blocks/hero/hero-3";
+import { HeroBlock4 } from "@/blocks/hero/hero-4";
+import { HeroBlock5 } from "@/blocks/hero/hero-5";
 
 import Bills_1 from "@/blocks/bills/bills-1";
 import Bills_2 from "@/blocks/bills/bills-2";
@@ -52,8 +55,8 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     id: "hero-1",
     name: "Simple Hero",
     description: "Clean hero with title and CTA button",
-    video:
-      "https://res.cloudinary.com/read-cv/video/upload/t_v_b/v1/1/profileItems/W2azTw5BVbMXfj7F53G92hMVIn32/newProfileItem/d898be8a-7037-4c71-af0c-8997239b050d.mp4?_a=DATAdtAAZAA0",
+    photo:
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750376434/Screenshot_2025-06-20_at_06.39.54_se7opv.png",
     component: HeroBlock1,
   },
   "hero-2": {
@@ -61,8 +64,35 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     name: "Hero with Image",
     description: "Hero section with stunning background image",
     photo:
-      "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750376437/Screenshot_2025-06-20_at_06.40.30_qaiqfz.png",
     component: HeroBlock2,
+  },
+  "hero-3": {
+    id: "hero-3",
+    name: "Gradient Hero with Stats",
+    description:
+      "Modern hero section with gradient background, performance stats, and dual CTAs",
+    video:
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750376473/Screenshot_2025-06-20_at_06.40.51_c52yar.png",
+    component: HeroBlock3,
+  },
+  "hero-4": {
+    id: "hero-4",
+    name: "Collaboration Hero",
+    description:
+      "Two-column hero with team collaboration features and image with status indicator",
+    photo:
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750376478/Screenshot_2025-06-20_at_06.41.08_ts6hwk.png",
+    component: HeroBlock4,
+  },
+  "hero-5": {
+    id: "hero-5",
+    name: "Feature Showcase Hero",
+    description:
+      "Hero section with feature cards highlighting collaboration, speed, and security",
+    photo:
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750376551/Screenshot_2025-06-20_at_06.42.24_rl5jwg.png",
+    component: HeroBlock5,
   },
 
   "bills-1": {
@@ -281,6 +311,9 @@ export const staticBlockCategories: BlockCategory[] = [
     blocks: [
       staticBlocksWithComponents["hero-1"],
       staticBlocksWithComponents["hero-2"],
+      staticBlocksWithComponents["hero-3"],
+      staticBlocksWithComponents["hero-4"],
+      staticBlocksWithComponents["hero-5"],
     ],
   },
 

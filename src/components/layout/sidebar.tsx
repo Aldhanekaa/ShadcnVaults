@@ -19,6 +19,9 @@ import {
   Grid3X3,
   BookOpen,
   X,
+  ShoppingBagIcon,
+  ScrollTextIcon,
+  BugPlayIcon,
 } from "lucide-react";
 
 interface SidebarProps {
@@ -39,6 +42,10 @@ const sectionIcons = {
   overview: Home,
   hero: Star,
   feature: Blocks,
+
+  marketplace: ShoppingBagIcon,
+  bills: ScrollTextIcon,
+  api_test: BugPlayIcon,
   footer: FileText,
   content: FileText,
   testimonial: MessageSquare,
