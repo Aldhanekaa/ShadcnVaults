@@ -58,8 +58,8 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     id: "bills-2",
     name: "Hero with Image",
     description: "Hero section with stunning background image",
-    photo:
-      "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800",
+    video:
+      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750357404/Screen_Recording_2025-06-20_at_01.22.07_vrsmi1.mov",
     component: Bills_2,
   },
   "bills-3": {
@@ -90,8 +90,8 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     id: "bills-6",
     name: "Hero with Image",
     description: "Hero section with stunning background image",
-    photo:
-      "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800",
+    video:
+      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750357608/Screen_Recording_2025-06-20_at_01.24.05_ijuxn0.mov",
     component: Bills_6,
   },
 };
