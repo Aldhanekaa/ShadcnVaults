@@ -83,7 +83,7 @@ export function HeroSection({
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {displayCategories.map((category) => {
             // Get the first block's preview image/video for the category
             const firstBlock = category.blocks?.[0];
@@ -103,7 +103,7 @@ export function HeroSection({
               >
                 <CardContent className="p-0">
                   {/* Category Header */}
-                  <div className="p-4 bg-muted/30">
+                  <div className="p-4">
                     <div className="flex items-center justify-between">
                       <h3 className="font-semibold text-lg">
                         {category.title}
@@ -116,11 +116,15 @@ export function HeroSection({
 
                   <div
                     data-slot="card-footer"
-                    className="flex items-center px-6 [.border-t]:pt-6 justify-end rounded-md pr-0 pb-0 shadow-xs"
+                    className="flex items-center pl-4 [.border-t]:pt-6 justify-end rounded-md pr-0 pb-0 shadow-xs"
                   >
                     <img
-                      className="h-40 w-full rounded-tl-md rounded-br-md border-t border-l object-cover object-top-left"
-                      src="https://deifkwefumgah.cloudfront.net/shadcnblocks/screenshots/group/hero.jpg"
+                      className="h-52 w-full rounded-tl-md rounded-br-md border-t border-l object-cover object-top-left"
+                      src={
+                        category.image
+                          ? category.image
+                          : `https://deifkwefumgah.cloudfront.net/shadcnblocks/screenshots/group/hero.jpg`
+                      }
                       alt="placeholder"
                     ></img>
                   </div>

@@ -14,6 +14,11 @@ import Bills_10 from "@/blocks/bills/bills-10";
 import Bills_11 from "@/blocks/bills/bills-11";
 import Bills_12 from "@/blocks/bills/bills-12";
 
+import API_Test_1 from "@/blocks/api_test/api_test-1";
+import API_Test_2 from "@/blocks/api_test/api_test-2";
+import API_Test_3 from "@/blocks/api_test/api_test-3";
+import API_Test_4 from "@/blocks/api_test/api_test-4";
+
 export interface BlockMetadata {
   id: string;
   name: string;
@@ -30,6 +35,7 @@ export interface BlockCategory {
   id: string;
   title: string;
   description: string;
+  image?: string;
   blocks?: BlockMetadata[];
 }
 
@@ -160,6 +166,43 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
       "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750361604/Bills-12_weu8bx.mov",
     component: Bills_12,
   },
+
+  "api_test-1": {
+    id: "api_test-1",
+    name: "Minecraft RCON Dashboard",
+    description:
+      "Advanced RCON dashboard for Minecraft server management with command history and validation.",
+    photo:
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750374500/Screenshot_2025-06-20_at_05.51.36_xm4rfs.png",
+    component: API_Test_1,
+  },
+  "api_test-2": {
+    id: "api_test-2",
+    name: "Animated RCON Admin Panel",
+    description:
+      "RCON admin panel with animated text effects and command execution interface.",
+    video:
+      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750374583/Screen_Recording_2025-06-20_at_05.49.45_fry3rp.mov",
+    component: API_Test_2,
+  },
+  "api_test-3": {
+    id: "api_test-3",
+    name: "Simple RCON Dashboard",
+    description:
+      "Clean and simple RCON dashboard for Minecraft server command execution.",
+    photo:
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750374499/Screenshot_2025-06-20_at_05.50.50_s6irwx.png",
+    component: API_Test_3,
+  },
+  "api_test-4": {
+    id: "api_test-4",
+    name: "Enhanced RCON Dashboard",
+    description:
+      "Feature-rich RCON dashboard with glow effects, connection status, and command history.",
+    photo:
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750374500/Screenshot_2025-06-20_at_05.51.12_dknzbz.png",
+    component: API_Test_4,
+  },
 };
 
 // Static block categories
@@ -182,6 +225,8 @@ export const staticBlockCategories: BlockCategory[] = [
     id: "bills",
     title: "Dashboard Bills",
     description: "Dashboard to show bills",
+    image:
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750374794/Screenshot_2025-06-20_at_06.13.06_bq6ua0.png",
     blocks: [
       staticBlocksWithComponents["bills-1"],
       staticBlocksWithComponents["bills-2"],
@@ -195,6 +240,21 @@ export const staticBlockCategories: BlockCategory[] = [
       staticBlocksWithComponents["bills-10"],
       staticBlocksWithComponents["bills-11"],
       staticBlocksWithComponents["bills-12"],
+    ],
+  },
+
+  {
+    id: "api_test",
+    title: "RCON Dashboards",
+    description:
+      "Minecraft RCON (Remote Console) dashboards for server management and command execution",
+    image:
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750374719/Screenshot_2025-06-20_at_06.11.53_fszjlf.png",
+    blocks: [
+      staticBlocksWithComponents["api_test-1"],
+      staticBlocksWithComponents["api_test-2"],
+      staticBlocksWithComponents["api_test-3"],
+      staticBlocksWithComponents["api_test-4"],
     ],
   },
 ];
