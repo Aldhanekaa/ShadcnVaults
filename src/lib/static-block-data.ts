@@ -19,6 +19,13 @@ import API_Test_2 from "@/blocks/api_test/api_test-2";
 import API_Test_3 from "@/blocks/api_test/api_test-3";
 import API_Test_4 from "@/blocks/api_test/api_test-4";
 
+import Marketplace_1 from "@/blocks/marketplace/marketplace-1";
+import Marketplace_2 from "@/blocks/marketplace/marketplace-2";
+import Marketplace_3 from "@/blocks/marketplace/marketplace-3";
+import Marketplace_4 from "@/blocks/marketplace/marketplace-4";
+import Marketplace_5 from "@/blocks/marketplace/marketplace-5";
+import Marketplace_6 from "@/blocks/marketplace/marketplace-6";
+
 export interface BlockMetadata {
   id: string;
   name: string;
@@ -203,6 +210,61 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
       "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750374500/Screenshot_2025-06-20_at_05.51.12_dknzbz.png",
     component: API_Test_4,
   },
+
+  "marketplace-1": {
+    id: "marketplace-1",
+    name: "Add-Ons Marketplace",
+    description:
+      "Interactive marketplace for SaaS add-ons with cart functionality and category filtering.",
+    video:
+      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750375616/marketplace-1_mcgjtc.mov",
+    component: Marketplace_1,
+  },
+  "marketplace-2": {
+    id: "marketplace-2",
+    name: "Premium Add-Ons Store",
+    description:
+      "Feature-rich add-ons marketplace with categorized products and shopping cart.",
+    video:
+      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750375326/marketplace-2_jycelc.mov",
+    component: Marketplace_2,
+  },
+  "marketplace-3": {
+    id: "marketplace-3",
+    name: "Add-Ons Selection Hub",
+    description:
+      "Comprehensive add-ons marketplace with quantity controls and total cost calculation.",
+    video:
+      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750375323/marketplace-3_eltydm.mov",
+    component: Marketplace_3,
+  },
+  "marketplace-4": {
+    id: "marketplace-4",
+    name: "Simple Add-Ons Store",
+    description:
+      "Clean add-ons marketplace with checkbox selection and quantity management.",
+    video:
+      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750375317/marketplace-4_kkmlxk.mov",
+    component: Marketplace_4,
+  },
+  "marketplace-5": {
+    id: "marketplace-5",
+    name: "Advanced Add-Ons Marketplace",
+    description:
+      "Sophisticated add-ons marketplace with detailed cards, features list, and order summary.",
+    video:
+      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750375331/marketplace-5_mosjlq.mov",
+    component: Marketplace_5,
+  },
+  "marketplace-6": {
+    id: "marketplace-6",
+    name: "Animated Add-Ons Store",
+    description:
+      "Modern add-ons marketplace with animations, color-coded categories, and cart summary.",
+    video:
+      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750375319/marketplace-6_prijzi.mov",
+    component: Marketplace_6,
+  },
 };
 
 // Static block categories
@@ -221,6 +283,24 @@ export const staticBlockCategories: BlockCategory[] = [
       staticBlocksWithComponents["hero-2"],
     ],
   },
+
+  {
+    id: "marketplace",
+    title: "Marketplace",
+    description:
+      "Marketplaces blocks UI for SaaS platforms with shopping carts and product management",
+    image:
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750375678/Screenshot_2025-06-20_at_06.27.51_kdn5m6.png",
+    blocks: [
+      staticBlocksWithComponents["marketplace-1"],
+      staticBlocksWithComponents["marketplace-2"],
+      staticBlocksWithComponents["marketplace-3"],
+      staticBlocksWithComponents["marketplace-4"],
+      staticBlocksWithComponents["marketplace-5"],
+      staticBlocksWithComponents["marketplace-6"],
+    ],
+  },
+
   {
     id: "bills",
     title: "Dashboard Bills",
