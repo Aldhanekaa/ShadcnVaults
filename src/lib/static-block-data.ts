@@ -48,48 +48,54 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
 
   "bills-1": {
     id: "bills-1",
-    name: "Hero with Image",
-    description: "Hero section with stunning background image",
+    name: "SaaS Billing Dashboard",
+    description:
+      "Customer admin dashboard for managing SaaS plans, add-ons, and current bills.",
     video:
       "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750356826/Screen_Recording_2025-06-20_at_01.12.21_twbie4.mov",
     component: Bills_1,
   },
   "bills-2": {
     id: "bills-2",
-    name: "Hero with Image",
-    description: "Hero section with stunning background image",
+    name: "Team Billing & Add-ons",
+    description:
+      "Dashboard for team-based SaaS billing, plan selection, and add-on management.",
     video:
       "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750357404/Screen_Recording_2025-06-20_at_01.22.07_vrsmi1.mov",
     component: Bills_2,
   },
   "bills-3": {
     id: "bills-3",
-    name: "Hero with Image",
-    description: "Hero section with stunning background image",
-    photo:
-      "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800",
+    name: "Business Subscription Billing",
+    description:
+      "Subscription dashboard for business plans, add-ons, and invoice breakdown.",
+    video:
+      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750357402/Screen_Recording_2025-06-20_at_01.22.39_v9srva.mov",
     component: Bills_3,
   },
   "bills-4": {
     id: "bills-4",
-    name: "Hero with Image",
-    description: "Hero section with stunning background image",
-    photo:
-      "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800",
+    name: "Project Billing & Add-ons",
+    description:
+      "Billing dashboard for project-based plans, add-ons, and payment status.",
+    video:
+      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750357609/Screen_Recording_2025-06-20_at_01.23.17_lxwxre.mov",
     component: Bills_4,
   },
   "bills-5": {
     id: "bills-5",
-    name: "Hero with Image",
-    description: "Hero section with stunning background image",
-    photo:
-      "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800",
+    name: "Multi-Plan Billing Portal",
+    description:
+      "Portal for managing multiple plans, add-ons, and billing cycles.",
+    video:
+      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750357610/Screen_Recording_2025-06-20_at_01.23.43_wlsdcb.mov",
     component: Bills_5,
   },
   "bills-6": {
     id: "bills-6",
-    name: "Hero with Image",
-    description: "Hero section with stunning background image",
+    name: "Modern SaaS Billing Overview",
+    description:
+      "Modern dashboard for SaaS billing, plan management, and add-on tracking.",
     video:
       "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750357608/Screen_Recording_2025-06-20_at_01.24.05_ijuxn0.mov",
     component: Bills_6,

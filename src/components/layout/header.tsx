@@ -4,6 +4,7 @@ import { Menu, Blocks, Github, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Badge } from "@/components/ui/badge";
+import Link from "next/link";
 
 interface HeaderProps {
   onMenuClick: () => void;
@@ -47,20 +48,17 @@ export function Header({ onMenuClick }: HeaderProps) {
         </div>
 
         <div className="flex items-center gap-1 sm:gap-2 flex-shrink-0">
-          <Button variant="ghost" size="sm" className="gap-2 hidden md:flex">
-            <Star className="h-4 w-4" />
-            <span className="hidden lg:inline">Star on GitHub</span>
-            <span className="lg:hidden">Star</span>
-          </Button>
-          <Button variant="ghost" size="icon" asChild>
-            <a
-              href="https://github.com/shadcn/ui"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Github className="h-4 w-4" />
-            </a>
-          </Button>
+          <Link
+            href="https://github.com/Aldhanekaa/ShadcnVaults"
+            target="_blank"
+          >
+            <Button variant="ghost" size="sm" className="gap-2 hidden md:flex">
+              <Star className="h-4 w-4" />
+              <span className="hidden lg:inline">Star on GitHub</span>
+              <span className="lg:hidden">Star</span>
+            </Button>
+          </Link>
+
           <ThemeToggle />
         </div>
       </div>
