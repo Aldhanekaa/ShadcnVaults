@@ -5,8 +5,34 @@ import {
   BlockWithComponent,
 } from "./static-block-data";
 
-export async function getBlockCategories(): Promise<BlockCategory[]> {
-  return staticBlockCategories;
+export function getBlockCategories(): BlockCategory[] {
+  return staticBlockCategories.map((data) =>
+    Object.assign({}, data, {
+      blocks: data.blocks?.map((block) => ({
+        ...block,
+        component: undefined,
+      })),
+    })
+  );
+}
+
+export async function getBlockCategory(
+  category: string
+): Promise<BlockCategory | undefined> {
+  const categoryFound = staticBlockCategories.filter(
+    (data) => data.id == category
+  );
+
+  let categoryData: BlockCategory | undefined = undefined;
+
+  if (categoryFound.length != 0) {
+    categoryData = categoryFound[0];
+    categoryData.blocks = categoryData.blocks?.map((data) =>
+      Object.assign({}, data, { component: undefined })
+    );
+  }
+
+  return categoryData;
 }
 
 export async function getBlockById(

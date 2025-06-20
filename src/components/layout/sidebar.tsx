@@ -24,6 +24,7 @@ import {
   BugPlayIcon,
 } from "lucide-react";
 import { staticBlockQuantities } from "@/lib/static-block-data";
+import Link from "next/link";
 
 interface SidebarProps {
   sections: Array<{
@@ -102,26 +103,23 @@ export function Sidebar({
             const isActive = activeSection === section.id;
 
             return (
-              <Button
-                key={section.id}
-                variant={isActive ? "secondary" : "ghost"}
-                className={cn(
-                  "w-full justify-start gap-3 h-12 cursor-pointer",
-                  isActive && "bg-secondary font-medium shadow-sm"
-                )}
-                onClick={() => {
-                  onSectionChange(section.id);
-                  onOpenChange(false);
-                }}
-              >
-                <Icon className="h-4 w-4 flex-shrink-0" />
-                <span className="flex-1 text-left">{section.title}</span>
-                {section.blocks && (
-                  <Badge variant="outline" className="text-xs px-2 py-0.5">
-                    {section.blocks.length}
-                  </Badge>
-                )}
-              </Button>
+              <Link key={section.id} href={`/blocks/${section.id}`}>
+                <Button
+                  variant={isActive ? "secondary" : "ghost"}
+                  className={cn(
+                    "w-full justify-start gap-3 h-12 cursor-pointer",
+                    isActive && "bg-secondary font-medium shadow-sm"
+                  )}
+                >
+                  <Icon className="h-4 w-4 flex-shrink-0" />
+                  <span className="flex-1 text-left">{section.title}</span>
+                  {section.blocks && (
+                    <Badge variant="outline" className="text-xs px-2 py-0.5">
+                      {section.blocks.length}
+                    </Badge>
+                  )}
+                </Button>
+              </Link>
             );
           })}
         </div>

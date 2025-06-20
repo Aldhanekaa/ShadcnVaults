@@ -25,15 +25,9 @@ interface BlocksSectionProps {
     description: string;
     blocks?: Block[];
   };
-  onSectionChange: (section: string) => void;
-  onOpenChange: (open: boolean) => void;
 }
 
-export function BlocksSection({
-  section,
-  onSectionChange,
-  onOpenChange,
-}: BlocksSectionProps) {
+export function BlocksSection({ section }: BlocksSectionProps) {
   const [hoveredBlock, setHoveredBlock] = useState<string | null>(null);
 
   return (

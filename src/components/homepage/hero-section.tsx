@@ -1,5 +1,3 @@
-"use client";
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -14,28 +12,14 @@ import {
   ExternalLink,
   Star,
 } from "lucide-react";
-import { BlockCategory } from "@/lib/static-block-data";
 import Link from "next/link";
+import { BlockCategory } from "@/lib/static-block-data";
 
-interface HeroSectionProps {
-  blockCategories: BlockCategory[];
-  onSectionChange: (section: string) => void;
-  onOpenChange: (open: boolean) => void;
-}
-
-export function HeroSection({
-  onSectionChange,
-  onOpenChange,
-  blockCategories,
-}: HeroSectionProps) {
-  // Filter out overview section and get only categories with blocks
-  const displayCategories = blockCategories.filter(
-    (category) =>
-      category.id !== "overview" &&
-      category.blocks &&
-      category.blocks.length > 0
-  );
-
+export async function HeroSection({
+  displayCategories,
+}: {
+  displayCategories: BlockCategory[];
+}) {
   return (
     <div className="space-y-16">
       {/* Hero Banner */}
@@ -94,14 +78,8 @@ export function HeroSection({
               "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=600";
 
             return (
-              <Link key={category.id} href="#">
-                <Card
-                  onClick={() => {
-                    onSectionChange(category.id);
-                    onOpenChange(false);
-                  }}
-                  className="group hover:shadow-xl transition-all duration-300 cursor-pointer border-2 hover:border-primary/20 overflow-hidden py-0"
-                >
+              <Link key={category.id} href={`/blocks/${category.id}`}>
+                <Card className="group hover:shadow-xl transition-all duration-300 cursor-pointer border-2 hover:border-primary/20 overflow-hidden py-0">
                   <CardContent className="p-0">
                     {/* Category Header */}
                     <div className="p-4">
