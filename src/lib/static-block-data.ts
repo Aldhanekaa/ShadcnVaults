@@ -52,6 +52,15 @@ import Monitoring_2 from "@/blocks/monitoring/monitoring-2";
 import Monitoring_3 from "@/blocks/monitoring/monitoring-3";
 import Monitoring_4 from "@/blocks/monitoring/monitoring-4";
 import Monitoring_5 from "@/blocks/monitoring/monitoring-5";
+import Monitoring_6 from "@/blocks/monitoring/monitoring-6";
+import Monitoring_7 from "@/blocks/monitoring/monitoring-7";
+import Monitoring_8 from "@/blocks/monitoring/monitoring-8";
+import Monitoring_9 from "@/blocks/monitoring/monitoring-9";
+import Monitoring_10 from "@/blocks/monitoring/monitoring-10";
+import Monitoring_11 from "@/blocks/monitoring/monitoring-11";
+import Monitoring_12 from "@/blocks/monitoring/monitoring-12";
+import Monitoring_13 from "@/blocks/monitoring/monitoring-13";
+import Monitoring_14 from "@/blocks/monitoring/monitoring-14";
 
 import Banking_1 from "@/blocks/banking/banking-1";
 import Banking_2 from "@/blocks/banking/banking-2";
@@ -472,6 +481,87 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
       "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750385000/Screenshot_2025-06-20_at_09.03.15_wf4vsd.png",
     component: Monitoring_5,
   },
+  "monitoring-6": {
+    id: "monitoring-6",
+    name: "VPS Management Dashboard",
+    description:
+      "Comprehensive VPS management dashboard for creating, monitoring, and managing VPS parents, shared, and dedicated instances with real-time status and activity logs.",
+    video:
+      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750385857/monitoring-6_f0ghyk.mov",
+    component: Monitoring_6,
+  },
+  "monitoring-7": {
+    id: "monitoring-7",
+    name: "Animated VPS Admin Panel",
+    description:
+      "Feature-rich VPS admin panel with animated transitions, resource usage indicators, and advanced controls for shared and dedicated VPS instances.",
+    video:
+      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750385842/monitoring-7_nysapt.mov",
+    component: Monitoring_7,
+  },
+  "monitoring-8": {
+    id: "monitoring-8",
+    name: "Modern VPS Admin Console",
+    description:
+      "Modern VPS admin console with sidebar navigation, responsive layout, and advanced filtering for managing VPS parents, shared, and dedicated servers.",
+    video:
+      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750385849/monitoring-8_h35dd1.mov",
+    component: Monitoring_8,
+  },
+  "monitoring-9": {
+    id: "monitoring-9",
+    name: "VPS Resource Analytics Dashboard",
+    description:
+      "Advanced VPS analytics dashboard with expandable resource usage charts, customer details, and real-time monitoring for all VPS types.",
+    video:
+      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750385846/monitoring-9_oos7p6.mov",
+    component: Monitoring_9,
+  },
+  "monitoring-10": {
+    id: "monitoring-10",
+    name: "VPS Management & Monitoring Dashboard",
+    description:
+      "Comprehensive dashboard for managing and monitoring VPS instances, including resource usage, customer details, and real-time status with detailed dialogs.",
+    video:
+      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750387509/monitoring-10_yltbrm.mov",
+    component: Monitoring_10,
+  },
+  "monitoring-11": {
+    id: "monitoring-11",
+    name: "Advanced VPS Admin Panel",
+    description:
+      "Feature-rich VPS admin panel with customer management, resource tracking, status controls, and advanced table features for shared and dedicated VPS.",
+    video:
+      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750387524/monitoring-11_dlyp4s.mov",
+    component: Monitoring_11,
+  },
+  "monitoring-12": {
+    id: "monitoring-12",
+    name: "VPS Instance CRUD Dashboard",
+    description:
+      "Modern dashboard for creating, editing, and deleting VPS instances with customer assignment, resource allocation, and confirmation dialogs.",
+    photo:
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750387508/monitoring-12_uz94it.png",
+    component: Monitoring_12,
+  },
+  "monitoring-13": {
+    id: "monitoring-13",
+    name: "VPS Instance Management UI",
+    description:
+      "Interactive UI for managing VPS instances, including add/edit dialogs, resource and customer details, and advanced filtering and search.",
+    video:
+      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750387511/monitoring-13_wb3rwy.mov",
+    component: Monitoring_13,
+  },
+  "monitoring-14": {
+    id: "monitoring-14",
+    name: "Animated VPS Management Suite",
+    description:
+      "Animated and modern VPS management suite with advanced stats, customer analytics, revenue tracking, and editable VPS instance table.",
+    video:
+      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750387512/monitoring-14_z1ma05.mov",
+    component: Monitoring_14,
+  },
 
   "banking-1": {
     id: "banking-1",
@@ -618,7 +708,7 @@ export const staticBlockCategories: BlockCategory[] = [
     description:
       "Complete authentication system components including login, signup, password reset, and two-factor authentication",
     image:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750375678/Screenshot_2025-06-20_at_06.27.51_kdn5m6.png",
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750387918/Screenshot_2025-06-20_at_09.51.53_swnunx.png",
     blocks: [
       staticBlocksWithComponents["auth-1"],
       staticBlocksWithComponents["auth-2"],
@@ -643,6 +733,15 @@ export const staticBlockCategories: BlockCategory[] = [
       staticBlocksWithComponents["monitoring-3"],
       staticBlocksWithComponents["monitoring-4"],
       staticBlocksWithComponents["monitoring-5"],
+      staticBlocksWithComponents["monitoring-6"],
+      staticBlocksWithComponents["monitoring-7"],
+      staticBlocksWithComponents["monitoring-8"],
+      staticBlocksWithComponents["monitoring-9"],
+      staticBlocksWithComponents["monitoring-10"],
+      staticBlocksWithComponents["monitoring-11"],
+      staticBlocksWithComponents["monitoring-12"],
+      staticBlocksWithComponents["monitoring-13"],
+      staticBlocksWithComponents["monitoring-14"],
     ],
   },
 
