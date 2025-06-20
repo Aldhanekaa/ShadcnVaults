@@ -19,18 +19,18 @@ export default function ProjectVideo({ src }: { src: string }) {
         duration: 0.3,
       }}
     >
-      <MorphingDialogTrigger>
+      <MorphingDialogTrigger className="overflow-hidden rounded-2xl bg-white p-0 border-1 border-zinc-200/50 border-inset  dark:border-zinc-200">
         <video
           src={src}
           autoPlay
           loop
           muted
           playsInline
-          className="aspect-video w-full cursor-zoom-in rounded-xl"
+          className="aspect-video w-full h-full cursor-zoom-in rounded-2xl "
         />
       </MorphingDialogTrigger>
       <MorphingDialogContainer className=" z-30">
-        <MorphingDialogContent className="z-30 py-6 px-2  relative aspect-video rounded-2xl bg-zinc-50 ring-1 ring-zinc-200/50 ring-inset dark:bg-zinc-950 dark:ring-zinc-800/50">
+        <MorphingDialogContent className="z-30 py-6 px-2  relative aspect-video rounded-2xl bg-zinc-50 ring-1 ring-zinc-200/50 ring-inset dark:bg-white dark:ring-zinc-800/50">
           <div className="w-full h-full box-border">
             <video
               src={src}
@@ -38,7 +38,7 @@ export default function ProjectVideo({ src }: { src: string }) {
               loop
               muted
               playsInline
-              className="aspect-video h-[70vh] md:h-[55vh] -mt-5  w-full rounded-xl"
+              className="aspect-video h-[70vh] md:h-[55vh] -mt-5  w-full rounded-2xl"
             />
           </div>
         </MorphingDialogContent>

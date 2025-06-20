@@ -314,14 +314,26 @@ const Tabs = React.forwardRef<
       data-value={currentValue}
       {...props}
     >
-      {React.Children.map(props.children, (child) =>
-        React.isValidElement(child)
-          ? React.cloneElement(child, {
-              value: currentValue,
-              onValueChange: handleValueChange,
-            } as any)
-          : child
-      )}
+      {React.Children.map(props.children, (child) => {
+        if (!React.isValidElement(child)) return child;
+        // Only pass value/onValueChange/currentValue to TabsTrigger and TabsContent
+        const displayName = (child.type as any).displayName;
+        if (displayName === "TabsTrigger") {
+          return React.cloneElement(child as React.ReactElement<any>, {
+            value: (child.props as any).value,
+            onValueChange: handleValueChange,
+            currentValue: currentValue,
+          });
+        }
+        if (displayName === "TabsContent") {
+          return React.cloneElement(child as React.ReactElement<any>, {
+            value: (child.props as any).value,
+            currentValue: currentValue,
+          });
+        }
+        // For TabsList and others, just return as is
+        return child;
+      })}
     </div>
   );
 });

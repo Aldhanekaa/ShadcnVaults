@@ -15,6 +15,7 @@ import {
   Star,
 } from "lucide-react";
 import { BlockCategory } from "@/lib/static-block-data";
+import Link from "next/link";
 
 interface HeroSectionProps {
   blockCategories: BlockCategory[];
@@ -93,43 +94,44 @@ export function HeroSection({
               "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=600";
 
             return (
-              <Card
-                key={category.id}
-                onClick={() => {
-                  onSectionChange(category.id);
-                  onOpenChange(false);
-                }}
-                className="group hover:shadow-xl transition-all duration-300 cursor-pointer border-2 hover:border-primary/20 overflow-hidden py-0"
-              >
-                <CardContent className="p-0">
-                  {/* Category Header */}
-                  <div className="p-4">
-                    <div className="flex items-center justify-between">
-                      <h3 className="font-semibold text-lg">
-                        {category.title}
-                      </h3>
-                      <Badge variant="secondary" className="text-xs">
-                        {category.blocks?.length}
-                      </Badge>
+              <Link key={category.id} href="#">
+                <Card
+                  onClick={() => {
+                    onSectionChange(category.id);
+                    onOpenChange(false);
+                  }}
+                  className="group hover:shadow-xl transition-all duration-300 cursor-pointer border-2 hover:border-primary/20 overflow-hidden py-0"
+                >
+                  <CardContent className="p-0">
+                    {/* Category Header */}
+                    <div className="p-4">
+                      <div className="flex items-center justify-between">
+                        <h3 className="font-semibold text-lg">
+                          {category.title}
+                        </h3>
+                        <Badge variant="secondary" className="text-xs">
+                          {category.blocks?.length}
+                        </Badge>
+                      </div>
                     </div>
-                  </div>
 
-                  <div
-                    data-slot="card-footer"
-                    className="flex items-center pl-4 [.border-t]:pt-6 justify-end rounded-md pr-0 pb-0 shadow-xs"
-                  >
-                    <img
-                      className="h-52 w-full rounded-tl-md rounded-br-md border-t border-l object-cover object-top-left"
-                      src={
-                        category.image
-                          ? category.image
-                          : `https://deifkwefumgah.cloudfront.net/shadcnblocks/screenshots/group/hero.jpg`
-                      }
-                      alt="placeholder"
-                    ></img>
-                  </div>
-                </CardContent>
-              </Card>
+                    <div
+                      data-slot="card-footer"
+                      className="flex items-center pl-4 [.border-t]:pt-6 justify-end rounded-md pr-0 pb-0 shadow-xs"
+                    >
+                      <img
+                        className="h-52 w-full rounded-tl-md rounded-br-md border-t border-l object-cover object-top-left"
+                        src={
+                          category.image
+                            ? category.image
+                            : `https://deifkwefumgah.cloudfront.net/shadcnblocks/screenshots/group/hero.jpg`
+                        }
+                        alt="placeholder"
+                      ></img>
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
             );
           })}
         </div>

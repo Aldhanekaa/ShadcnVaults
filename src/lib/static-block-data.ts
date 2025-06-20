@@ -47,11 +47,11 @@ import Marketplace_4 from "@/blocks/marketplace/marketplace-4";
 import Marketplace_5 from "@/blocks/marketplace/marketplace-5";
 import Marketplace_6 from "@/blocks/marketplace/marketplace-6";
 
-import CMS_1 from "@/blocks/cms/cms-1";
-import CMS_2 from "@/blocks/cms/cms-2";
-import CMS_3 from "@/blocks/cms/cms-3";
-import CMS_4 from "@/blocks/cms/cms-4";
-import CMS_5 from "@/blocks/cms/cms-5";
+import Monitoring_1 from "@/blocks/monitoring/monitoring-1";
+import Monitoring_2 from "@/blocks/monitoring/monitoring-2";
+import Monitoring_3 from "@/blocks/monitoring/monitoring-3";
+import Monitoring_4 from "@/blocks/monitoring/monitoring-4";
+import Monitoring_5 from "@/blocks/monitoring/monitoring-5";
 
 import Banking_1 from "@/blocks/banking/banking-1";
 import Banking_2 from "@/blocks/banking/banking-2";
@@ -427,50 +427,50 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     component: LoginBlock7,
   },
 
-  "cms-1": {
-    id: "cms-1",
+  "monitoring-1": {
+    id: "monitoring-1",
     name: "Database Backup Dashboard",
     description:
       "Comprehensive database backup management dashboard with filtering, sorting, and bulk operations.",
     photo:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750374500/Screenshot_2025-06-20_at_05.51.12_dknzbz.png",
-    component: CMS_1,
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750384424/Screenshot_2025-06-20_at_08.53.24_rur46r.png",
+    component: Monitoring_1,
   },
-  "cms-2": {
-    id: "cms-2",
+  "monitoring-2": {
+    id: "monitoring-2",
     name: "Backup Manager with Logs",
     description:
       "Database backup manager with detailed logs, status tracking, and real-time monitoring capabilities.",
     video:
-      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750374583/Screen_Recording_2025-06-20_at_05.49.45_fry3rp.mov",
-    component: CMS_2,
+      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750384535/Screen_Recording_2025-06-20_at_08.54.52_c2glfq.mov",
+    component: Monitoring_2,
   },
-  "cms-3": {
-    id: "cms-3",
+  "monitoring-3": {
+    id: "monitoring-3",
     name: "Advanced Backup Dashboard",
     description:
       "Advanced backup dashboard with tabbed interface, detailed metrics, and comprehensive backup management.",
-    photo:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750374499/Screenshot_2025-06-20_at_05.50.50_s6irwx.png",
-    component: CMS_3,
+    video:
+      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750384719/Screen_Recording_2025-06-20_at_08.58.07_unoz7i.mov",
+    component: Monitoring_3,
   },
-  "cms-4": {
-    id: "cms-4",
+  "monitoring-4": {
+    id: "monitoring-4",
     name: "Backup Monitoring Dashboard",
     description:
       "Real-time backup monitoring dashboard with status indicators, compression ratios, and retention management.",
-    photo:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750374500/Screenshot_2025-06-20_at_05.51.12_dknzbz.png",
-    component: CMS_4,
+    video:
+      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750384972/Screen_Recording_2025-06-20_at_09.02.30_jdhs0x.mov",
+    component: Monitoring_4,
   },
-  "cms-5": {
-    id: "cms-5",
+  "monitoring-5": {
+    id: "monitoring-5",
     name: "Enterprise Backup Manager",
     description:
       "Enterprise-grade backup management system with advanced table features, filtering, and detailed backup analytics.",
-    video:
-      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750374583/Screen_Recording_2025-06-20_at_05.49.45_fry3rp.mov",
-    component: CMS_5,
+    photo:
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750385000/Screenshot_2025-06-20_at_09.03.15_wf4vsd.png",
+    component: Monitoring_5,
   },
 
   "banking-1": {
@@ -478,8 +478,8 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     name: "Money Transfer Dashboard",
     description:
       "Comprehensive money transfer dashboard with transaction monitoring, status tracking, and fee breakdown.",
-    photo:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750374500/Screenshot_2025-06-20_at_05.51.12_dknzbz.png",
+    video:
+      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750385512/banking-1_ccjfa6.mov",
     component: Banking_1,
   },
   "banking-2": {
@@ -488,7 +488,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "Feature-rich transaction table with advanced filtering, sorting, and detailed money transfer analytics.",
     video:
-      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750374583/Screen_Recording_2025-06-20_at_05.49.45_fry3rp.mov",
+      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750385513/banking-2_dg3p7i.mov",
     component: Banking_2,
   },
   "banking-3": {
@@ -497,7 +497,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "Modern animated transaction list with smooth transitions, status indicators, and detailed fee breakdown.",
     photo:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750374499/Screenshot_2025-06-20_at_05.50.50_s6irwx.png",
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750385806/banking-3_i6ir8t.png",
     component: Banking_3,
   },
   "banking-4": {
@@ -505,8 +505,8 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     name: "Enhanced Transaction Dashboard",
     description:
       "Advanced transaction dashboard with status badges, revenue tracking, and comprehensive money transfer management.",
-    photo:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750374500/Screenshot_2025-06-20_at_05.51.12_dknzbz.png",
+    video:
+      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750385808/banking-4_l5pshm.mov",
     component: Banking_4,
   },
   "banking-5": {
@@ -514,12 +514,15 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     name: "Modern Transaction Table",
     description:
       "Modern transaction table with TanStack Table integration, column visibility controls, and advanced filtering.",
-    video:
-      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750374583/Screen_Recording_2025-06-20_at_05.49.45_fry3rp.mov",
+    photo:
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750385806/banking-5_ztbfsg.png",
     component: Banking_5,
   },
 };
 
+export const staticBlockQuantities = Object.keys(
+  staticBlocksWithComponents
+).length;
 // Static block categories
 export const staticBlockCategories: BlockCategory[] = [
   {
@@ -628,24 +631,24 @@ export const staticBlockCategories: BlockCategory[] = [
   },
 
   {
-    id: "cms",
-    title: "CMS Dashboard",
+    id: "monitoring",
+    title: "System Monitoring",
     description:
-      "Content Management System dashboards for managing database backups, monitoring systems, and administrative tasks",
+      "System monitoring and backup management dashboards for tracking database backups, system health, and administrative tasks",
     image:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750375678/Screenshot_2025-06-20_at_06.27.51_kdn5m6.png",
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750385071/Screenshot_2025-06-20_at_09.04.26_yaxixk.png",
     blocks: [
-      staticBlocksWithComponents["cms-1"],
-      staticBlocksWithComponents["cms-2"],
-      staticBlocksWithComponents["cms-3"],
-      staticBlocksWithComponents["cms-4"],
-      staticBlocksWithComponents["cms-5"],
+      staticBlocksWithComponents["monitoring-1"],
+      staticBlocksWithComponents["monitoring-2"],
+      staticBlocksWithComponents["monitoring-3"],
+      staticBlocksWithComponents["monitoring-4"],
+      staticBlocksWithComponents["monitoring-5"],
     ],
   },
 
   {
     id: "banking",
-    title: "Money Transfer Management",
+    title: "Banking ",
     description:
       "Comprehensive money transfer transaction management dashboards with payment tracking, fee breakdown, and status monitoring",
     image:

@@ -23,6 +23,7 @@ import {
   ScrollTextIcon,
   BugPlayIcon,
 } from "lucide-react";
+import { staticBlockQuantities } from "@/lib/static-block-data";
 
 interface SidebarProps {
   sections: Array<{
@@ -70,7 +71,7 @@ export function Sidebar({
   }: {
     showCloseButton?: boolean;
   }) => (
-    <div className="flex h-full flex-col">
+    <div className="flex w-full h-full flex-col">
       <div className="p-6 border-b">
         <div className="flex items-center justify-between">
           <div>
@@ -93,8 +94,8 @@ export function Sidebar({
         </div>
       </div>
 
-      <ScrollArea className="flex-1 px-3">
-        <div className="space-y-1 py-4">
+      <div className="relative flex-1 px-3">
+        <div className="space-y-1 py-4 relative">
           {sections.map((section) => {
             const Icon =
               sectionIcons[section.id as keyof typeof sectionIcons] || Blocks;
@@ -105,7 +106,7 @@ export function Sidebar({
                 key={section.id}
                 variant={isActive ? "secondary" : "ghost"}
                 className={cn(
-                  "w-full justify-start gap-3 h-12",
+                  "w-full justify-start gap-3 h-12 cursor-pointer",
                   isActive && "bg-secondary font-medium shadow-sm"
                 )}
                 onClick={() => {
@@ -124,12 +125,14 @@ export function Sidebar({
             );
           })}
         </div>
-      </ScrollArea>
+      </div>
 
       <div className="p-4 border-t">
         <div className="text-center space-y-2">
           <p className="text-sm font-medium">Total Blocks</p>
-          <p className="text-2xl font-bold text-primary">631</p>
+          <p className="text-2xl font-bold text-primary">
+            {staticBlockQuantities}
+          </p>
           <p className="text-xs text-muted-foreground">
             Ready to use components
           </p>
@@ -142,7 +145,7 @@ export function Sidebar({
     <>
       {/* Desktop Sidebar */}
       <aside className="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-64 lg:flex-col">
-        <div className="flex grow flex-col gap-y-5 overflow-y-auto border-r bg-background pt-16">
+        <div className="relative w-full flex grow flex-col gap-y-5 overflow-y-auto border-r bg-background mt-16">
           <SidebarContent />
         </div>
       </aside>

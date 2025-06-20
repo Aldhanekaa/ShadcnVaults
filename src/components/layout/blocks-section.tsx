@@ -58,11 +58,11 @@ export function BlocksSection({
         {section.blocks?.map((block, id) => (
           <div key={`${block.id}-${id}`} className="space-y-2 b">
             {block.video ? (
-              <div className="relative rounded-2xl cursor-pointer bg-zinc-50/40 p-1 ring-1 ring-zinc-200/50 ring-inset dark:bg-zinc-950/40 dark:ring-zinc-800/50">
+              <div className="relative cursor-pointer">
                 <ProjectVideo src={block.video} />
               </div>
             ) : block.photo ? (
-              <div className="relative aspect-video border overflow-hidden rounded-2xl bg-zinc-50/40 p-1 ring-1 ring-zinc-200/50 ring-inset dark:bg-zinc-950/40 dark:ring-zinc-800/50">
+              <div className="relative aspect-video border overflow-hidden rounded-2xl bg-zinc-50/40 p-1 ring-1 ring-zinc-200/50 ring-inset dark:bg-zinc-950/40 dark:ring-zinc-200">
                 <div className="absolute inset-0">
                   <div className="relative w-full h-full rounded-lg shadow-base overflow-hidden">
                     <div className="absolute inset-0">
