@@ -166,6 +166,7 @@ export default async function BlockPage({ params }: BlockPageProps) {
 
   for (const category of categories) {
     if (category.blocks) {
+      // console.log("category.blocks", category.blocks);
       const block = category.blocks.find(
         (b) => b.id === resolvedParams.blockId
       );

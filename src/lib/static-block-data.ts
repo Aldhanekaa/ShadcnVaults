@@ -14,6 +14,14 @@ import { FeatureBlock2 } from "@/blocks/feature/feature-2";
 import { FeatureBlock3 } from "@/blocks/feature/feature-3";
 import { FeatureBlock4 } from "@/blocks/feature/feature-4";
 
+import { LoginBlock1 } from "@/blocks/auth/auth-1";
+import { LoginBlock2 } from "@/blocks/auth/auth-2";
+import { LoginBlock3 } from "@/blocks/auth/auth-3";
+import { LoginBlock4 } from "@/blocks/auth/auth-4";
+import { LoginBlock5 } from "@/blocks/auth/auth-5";
+import { LoginBlock6 } from "@/blocks/auth/auth-6";
+import { LoginBlock7 } from "@/blocks/auth/auth-7";
+
 import Bills_1 from "@/blocks/bills/bills-1";
 import Bills_2 from "@/blocks/bills/bills-2";
 import Bills_3 from "@/blocks/bills/bills-3";
@@ -349,7 +357,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "3-column feature grid layout with icons and descriptions for showcasing product capabilities.",
     photo:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750374500/Screenshot_2025-06-20_at_05.51.12_dknzbz.png",
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750379379/Screenshot_2025-06-20_at_07.29.18_hqdocm.png",
     component: FeatureBlock1,
   },
   "feature-2": {
@@ -358,7 +366,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "Two-column layout with feature list and visual mockup for comprehensive product presentation.",
     photo:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750374500/Screenshot_2025-06-20_at_05.51.12_dknzbz.png",
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750379277/Screenshot_2025-06-20_at_07.27.35_isz7ui.png",
     component: FeatureBlock2,
   },
   "feature-3": {
@@ -367,7 +375,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "Interactive feature cards with badges, icons, and call-to-action buttons for enhanced engagement.",
     photo:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750374500/Screenshot_2025-06-20_at_05.51.12_dknzbz.png",
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750379388/Screenshot_2025-06-20_at_07.29.42_fwp15m.png",
     component: FeatureBlock3,
   },
   "feature-4": {
@@ -376,8 +384,72 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "Tabbed feature showcase with images, detailed descriptions, and interactive navigation.",
     photo:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750374500/Screenshot_2025-06-20_at_05.51.12_dknzbz.png",
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750379443/Screenshot_2025-06-20_at_07.30.33_vraxkd.png",
     component: FeatureBlock4,
+  },
+
+  "auth-1": {
+    id: "auth-1",
+    name: "Simple Login",
+    description:
+      "Clean and minimal login form with email, password, and remember me functionality.",
+    photo:
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750374500/Screenshot_2025-06-20_at_05.51.12_dknzbz.png",
+    component: LoginBlock1,
+  },
+  "auth-2": {
+    id: "auth-2",
+    name: "Social Login",
+    description:
+      "Login form with social authentication options (Google, GitHub) and email/password fallback.",
+    video:
+      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750374583/Screen_Recording_2025-06-20_at_05.49.45_fry3rp.mov",
+    component: LoginBlock2,
+  },
+  "auth-3": {
+    id: "auth-3",
+    name: "Split Screen Login",
+    description:
+      "Modern split-screen login layout with branding section and comprehensive form.",
+    photo:
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750374499/Screenshot_2025-06-20_at_05.50.50_s6irwx.png",
+    component: LoginBlock3,
+  },
+  "auth-4": {
+    id: "auth-4",
+    name: "Signup Form",
+    description:
+      "Comprehensive user registration form with social signup, validation, and terms acceptance.",
+    photo:
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750374500/Screenshot_2025-06-20_at_05.51.12_dknzbz.png",
+    component: LoginBlock4,
+  },
+  "auth-5": {
+    id: "auth-5",
+    name: "Forgot Password",
+    description:
+      "Password reset form with email verification and confirmation screen.",
+    video:
+      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750374583/Screen_Recording_2025-06-20_at_05.49.45_fry3rp.mov",
+    component: LoginBlock5,
+  },
+  "auth-6": {
+    id: "auth-6",
+    name: "Reset Password",
+    description:
+      "Password reset form with strength indicator and real-time validation requirements.",
+    video:
+      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750374583/Screen_Recording_2025-06-20_at_05.49.45_fry3rp.mov",
+    component: LoginBlock6,
+  },
+  "auth-7": {
+    id: "auth-7",
+    name: "Two-Factor Login",
+    description:
+      "Login form with two-factor authentication and 6-digit code verification.",
+    video:
+      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750374583/Screen_Recording_2025-06-20_at_05.49.45_fry3rp.mov",
+    component: LoginBlock7,
   },
 };
 
@@ -439,13 +511,12 @@ export const staticBlockCategories: BlockCategory[] = [
     description:
       "Feature showcase components for highlighting product capabilities and benefits",
     image:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750375678/Screenshot_2025-06-20_at_06.27.51_kdn5m6.png",
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750379277/Screenshot_2025-06-20_at_07.27.35_isz7ui.png",
     blocks: [
       staticBlocksWithComponents["feature-1"],
       staticBlocksWithComponents["feature-2"],
       staticBlocksWithComponents["feature-3"],
       staticBlocksWithComponents["feature-4"],
-      staticBlocksWithComponents["feature-5"],
     ],
   },
 
@@ -483,6 +554,24 @@ export const staticBlockCategories: BlockCategory[] = [
       staticBlocksWithComponents["api_test-2"],
       staticBlocksWithComponents["api_test-3"],
       staticBlocksWithComponents["api_test-4"],
+    ],
+  },
+
+  {
+    id: "auth",
+    title: "Auth",
+    description:
+      "Complete authentication system components including login, signup, password reset, and two-factor authentication",
+    image:
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750375678/Screenshot_2025-06-20_at_06.27.51_kdn5m6.png",
+    blocks: [
+      staticBlocksWithComponents["auth-1"],
+      staticBlocksWithComponents["auth-2"],
+      staticBlocksWithComponents["auth-3"],
+      staticBlocksWithComponents["auth-4"],
+      staticBlocksWithComponents["auth-5"],
+      staticBlocksWithComponents["auth-6"],
+      staticBlocksWithComponents["auth-7"],
     ],
   },
 ];
