@@ -1,5 +1,3 @@
-import HomePageContent from "@/components/homepage";
-
 import { getBlockCategories } from "@/lib/block-utils";
 
 import { HeroSection } from "@/components/homepage/hero-section";
