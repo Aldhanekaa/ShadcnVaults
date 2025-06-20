@@ -47,6 +47,18 @@ import Marketplace_4 from "@/blocks/marketplace/marketplace-4";
 import Marketplace_5 from "@/blocks/marketplace/marketplace-5";
 import Marketplace_6 from "@/blocks/marketplace/marketplace-6";
 
+import CMS_1 from "@/blocks/cms/cms-1";
+import CMS_2 from "@/blocks/cms/cms-2";
+import CMS_3 from "@/blocks/cms/cms-3";
+import CMS_4 from "@/blocks/cms/cms-4";
+import CMS_5 from "@/blocks/cms/cms-5";
+
+import Banking_1 from "@/blocks/banking/banking-1";
+import Banking_2 from "@/blocks/banking/banking-2";
+import Banking_3 from "@/blocks/banking/banking-3";
+import Banking_4 from "@/blocks/banking/banking-4";
+import Banking_5 from "@/blocks/banking/banking-5";
+
 export interface BlockMetadata {
   id: string;
   name: string;
@@ -314,43 +326,6 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     component: Marketplace_6,
   },
 
-  "footer-1": {
-    id: "footer-1",
-    name: "Simple Footer",
-    description:
-      "Clean and minimal footer with social links and copyright information.",
-    photo:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750374500/Screenshot_2025-06-20_at_05.51.12_dknzbz.png",
-    component: FooterBlock1,
-  },
-  "footer-2": {
-    id: "footer-2",
-    name: "Multi-Column Footer",
-    description:
-      "Comprehensive footer with brand section and organized link columns.",
-    photo:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750374500/Screenshot_2025-06-20_at_05.51.12_dknzbz.png",
-    component: FooterBlock2,
-  },
-  "footer-3": {
-    id: "footer-3",
-    name: "Branded Footer",
-    description:
-      "Professional footer with brand identity and structured navigation links.",
-    photo:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750374500/Screenshot_2025-06-20_at_05.51.12_dknzbz.png",
-    component: FooterBlock3,
-  },
-  "footer-4": {
-    id: "footer-4",
-    name: "Enterprise Footer",
-    description:
-      "Full-featured footer with comprehensive links and social media integration.",
-    photo:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750374500/Screenshot_2025-06-20_at_05.51.12_dknzbz.png",
-    component: FooterBlock4,
-  },
-
   "feature-1": {
     id: "feature-1",
     name: "Feature Grid",
@@ -451,6 +426,98 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
       "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750374583/Screen_Recording_2025-06-20_at_05.49.45_fry3rp.mov",
     component: LoginBlock7,
   },
+
+  "cms-1": {
+    id: "cms-1",
+    name: "Database Backup Dashboard",
+    description:
+      "Comprehensive database backup management dashboard with filtering, sorting, and bulk operations.",
+    photo:
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750374500/Screenshot_2025-06-20_at_05.51.12_dknzbz.png",
+    component: CMS_1,
+  },
+  "cms-2": {
+    id: "cms-2",
+    name: "Backup Manager with Logs",
+    description:
+      "Database backup manager with detailed logs, status tracking, and real-time monitoring capabilities.",
+    video:
+      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750374583/Screen_Recording_2025-06-20_at_05.49.45_fry3rp.mov",
+    component: CMS_2,
+  },
+  "cms-3": {
+    id: "cms-3",
+    name: "Advanced Backup Dashboard",
+    description:
+      "Advanced backup dashboard with tabbed interface, detailed metrics, and comprehensive backup management.",
+    photo:
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750374499/Screenshot_2025-06-20_at_05.50.50_s6irwx.png",
+    component: CMS_3,
+  },
+  "cms-4": {
+    id: "cms-4",
+    name: "Backup Monitoring Dashboard",
+    description:
+      "Real-time backup monitoring dashboard with status indicators, compression ratios, and retention management.",
+    photo:
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750374500/Screenshot_2025-06-20_at_05.51.12_dknzbz.png",
+    component: CMS_4,
+  },
+  "cms-5": {
+    id: "cms-5",
+    name: "Enterprise Backup Manager",
+    description:
+      "Enterprise-grade backup management system with advanced table features, filtering, and detailed backup analytics.",
+    video:
+      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750374583/Screen_Recording_2025-06-20_at_05.49.45_fry3rp.mov",
+    component: CMS_5,
+  },
+
+  "banking-1": {
+    id: "banking-1",
+    name: "Money Transfer Dashboard",
+    description:
+      "Comprehensive money transfer dashboard with transaction monitoring, status tracking, and fee breakdown.",
+    photo:
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750374500/Screenshot_2025-06-20_at_05.51.12_dknzbz.png",
+    component: Banking_1,
+  },
+  "banking-2": {
+    id: "banking-2",
+    name: "Advanced Transaction Table",
+    description:
+      "Feature-rich transaction table with advanced filtering, sorting, and detailed money transfer analytics.",
+    video:
+      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750374583/Screen_Recording_2025-06-20_at_05.49.45_fry3rp.mov",
+    component: Banking_2,
+  },
+  "banking-3": {
+    id: "banking-3",
+    name: "Animated Transaction List",
+    description:
+      "Modern animated transaction list with smooth transitions, status indicators, and detailed fee breakdown.",
+    photo:
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750374499/Screenshot_2025-06-20_at_05.50.50_s6irwx.png",
+    component: Banking_3,
+  },
+  "banking-4": {
+    id: "banking-4",
+    name: "Enhanced Transaction Dashboard",
+    description:
+      "Advanced transaction dashboard with status badges, revenue tracking, and comprehensive money transfer management.",
+    photo:
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750374500/Screenshot_2025-06-20_at_05.51.12_dknzbz.png",
+    component: Banking_4,
+  },
+  "banking-5": {
+    id: "banking-5",
+    name: "Modern Transaction Table",
+    description:
+      "Modern transaction table with TanStack Table integration, column visibility controls, and advanced filtering.",
+    video:
+      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750374583/Screen_Recording_2025-06-20_at_05.49.45_fry3rp.mov",
+    component: Banking_5,
+  },
 };
 
 // Static block categories
@@ -487,21 +554,6 @@ export const staticBlockCategories: BlockCategory[] = [
       staticBlocksWithComponents["marketplace-4"],
       staticBlocksWithComponents["marketplace-5"],
       staticBlocksWithComponents["marketplace-6"],
-    ],
-  },
-
-  {
-    id: "footer",
-    title: "Footer",
-    description:
-      "Website footer components with navigation, social links, and branding",
-    image:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750375678/Screenshot_2025-06-20_at_06.27.51_kdn5m6.png",
-    blocks: [
-      staticBlocksWithComponents["footer-1"],
-      staticBlocksWithComponents["footer-2"],
-      staticBlocksWithComponents["footer-3"],
-      staticBlocksWithComponents["footer-4"],
     ],
   },
 
@@ -572,6 +624,38 @@ export const staticBlockCategories: BlockCategory[] = [
       staticBlocksWithComponents["auth-5"],
       staticBlocksWithComponents["auth-6"],
       staticBlocksWithComponents["auth-7"],
+    ],
+  },
+
+  {
+    id: "cms",
+    title: "CMS Dashboard",
+    description:
+      "Content Management System dashboards for managing database backups, monitoring systems, and administrative tasks",
+    image:
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750375678/Screenshot_2025-06-20_at_06.27.51_kdn5m6.png",
+    blocks: [
+      staticBlocksWithComponents["cms-1"],
+      staticBlocksWithComponents["cms-2"],
+      staticBlocksWithComponents["cms-3"],
+      staticBlocksWithComponents["cms-4"],
+      staticBlocksWithComponents["cms-5"],
+    ],
+  },
+
+  {
+    id: "banking",
+    title: "Money Transfer Management",
+    description:
+      "Comprehensive money transfer transaction management dashboards with payment tracking, fee breakdown, and status monitoring",
+    image:
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750374500/Screenshot_2025-06-20_at_05.51.12_dknzbz.png",
+    blocks: [
+      staticBlocksWithComponents["banking-1"],
+      staticBlocksWithComponents["banking-2"],
+      staticBlocksWithComponents["banking-3"],
+      staticBlocksWithComponents["banking-4"],
+      staticBlocksWithComponents["banking-5"],
     ],
   },
 ];

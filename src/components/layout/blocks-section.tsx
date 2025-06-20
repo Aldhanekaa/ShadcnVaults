@@ -56,13 +56,13 @@ export function BlocksSection({
 
       <div className="grid w-full max-w-full grid-cols-1 gap-y-16 gap-x-6 sm:grid-cols-2">
         {section.blocks?.map((block, id) => (
-          <div key={`${block.id}-${id}`} className="space-y-2">
+          <div key={`${block.id}-${id}`} className="space-y-2 b">
             {block.video ? (
               <div className="relative rounded-2xl cursor-pointer bg-zinc-50/40 p-1 ring-1 ring-zinc-200/50 ring-inset dark:bg-zinc-950/40 dark:ring-zinc-800/50">
                 <ProjectVideo src={block.video} />
               </div>
             ) : block.photo ? (
-              <div className="relative aspect-video rounded-2xl bg-zinc-50/40 p-1 ring-1 ring-zinc-200/50 ring-inset dark:bg-zinc-950/40 dark:ring-zinc-800/50">
+              <div className="relative aspect-video border overflow-hidden rounded-2xl bg-zinc-50/40 p-1 ring-1 ring-zinc-200/50 ring-inset dark:bg-zinc-950/40 dark:ring-zinc-800/50">
                 <div className="absolute inset-0">
                   <div className="relative w-full h-full rounded-lg shadow-base overflow-hidden">
                     <div className="absolute inset-0">
