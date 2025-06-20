@@ -9,6 +9,11 @@ import { FooterBlock2 } from "@/blocks/footer/footer-2";
 import { FooterBlock2 as FooterBlock3 } from "@/blocks/footer/footer-3";
 import { FooterBlock2 as FooterBlock4 } from "@/blocks/footer/footer-4";
 
+import { FeatureBlock1 } from "@/blocks/feature/feature-1";
+import { FeatureBlock2 } from "@/blocks/feature/feature-2";
+import { FeatureBlock3 } from "@/blocks/feature/feature-3";
+import { FeatureBlock4 } from "@/blocks/feature/feature-4";
+
 import Bills_1 from "@/blocks/bills/bills-1";
 import Bills_2 from "@/blocks/bills/bills-2";
 import Bills_3 from "@/blocks/bills/bills-3";
@@ -337,6 +342,43 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
       "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750374500/Screenshot_2025-06-20_at_05.51.12_dknzbz.png",
     component: FooterBlock4,
   },
+
+  "feature-1": {
+    id: "feature-1",
+    name: "Feature Grid",
+    description:
+      "3-column feature grid layout with icons and descriptions for showcasing product capabilities.",
+    photo:
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750374500/Screenshot_2025-06-20_at_05.51.12_dknzbz.png",
+    component: FeatureBlock1,
+  },
+  "feature-2": {
+    id: "feature-2",
+    name: "Feature Showcase",
+    description:
+      "Two-column layout with feature list and visual mockup for comprehensive product presentation.",
+    photo:
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750374500/Screenshot_2025-06-20_at_05.51.12_dknzbz.png",
+    component: FeatureBlock2,
+  },
+  "feature-3": {
+    id: "feature-3",
+    name: "Feature Cards with Badges",
+    description:
+      "Interactive feature cards with badges, icons, and call-to-action buttons for enhanced engagement.",
+    photo:
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750374500/Screenshot_2025-06-20_at_05.51.12_dknzbz.png",
+    component: FeatureBlock3,
+  },
+  "feature-4": {
+    id: "feature-4",
+    name: "Interactive Feature Tabs",
+    description:
+      "Tabbed feature showcase with images, detailed descriptions, and interactive navigation.",
+    photo:
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750374500/Screenshot_2025-06-20_at_05.51.12_dknzbz.png",
+    component: FeatureBlock4,
+  },
 };
 
 // Static block categories
@@ -388,6 +430,22 @@ export const staticBlockCategories: BlockCategory[] = [
       staticBlocksWithComponents["footer-2"],
       staticBlocksWithComponents["footer-3"],
       staticBlocksWithComponents["footer-4"],
+    ],
+  },
+
+  {
+    id: "feature",
+    title: "Feature",
+    description:
+      "Feature showcase components for highlighting product capabilities and benefits",
+    image:
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750375678/Screenshot_2025-06-20_at_06.27.51_kdn5m6.png",
+    blocks: [
+      staticBlocksWithComponents["feature-1"],
+      staticBlocksWithComponents["feature-2"],
+      staticBlocksWithComponents["feature-3"],
+      staticBlocksWithComponents["feature-4"],
+      staticBlocksWithComponents["feature-5"],
     ],
   },
 
