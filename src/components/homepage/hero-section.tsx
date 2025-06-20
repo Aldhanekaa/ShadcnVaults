@@ -84,7 +84,7 @@ export function HeroSection({
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
           {displayCategories.map((category) => {
             // Get the first block's preview image/video for the category
             const firstBlock = category.blocks?.[0];
@@ -120,7 +120,7 @@ export function HeroSection({
                       className="flex items-center pl-4 [.border-t]:pt-6 justify-end rounded-md pr-0 pb-0 shadow-xs"
                     >
                       <img
-                        className="h-52 w-full rounded-tl-md rounded-br-md border-t border-l object-cover object-top-left"
+                        className="h-72 w-full rounded-tl-md rounded-br-md border-t border-l object-cover object-top-left"
                         src={
                           category.image
                             ? category.image

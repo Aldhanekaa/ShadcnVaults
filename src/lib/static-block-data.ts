@@ -544,6 +544,21 @@ export const staticBlockCategories: BlockCategory[] = [
   },
 
   {
+    id: "feature",
+    title: "Feature",
+    description:
+      "Feature showcase components for highlighting product capabilities and benefits",
+    image:
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750379277/Screenshot_2025-06-20_at_07.27.35_isz7ui.png",
+    blocks: [
+      staticBlocksWithComponents["feature-1"],
+      staticBlocksWithComponents["feature-2"],
+      staticBlocksWithComponents["feature-3"],
+      staticBlocksWithComponents["feature-4"],
+    ],
+  },
+
+  {
     id: "marketplace",
     title: "Marketplace",
     description:
@@ -557,21 +572,6 @@ export const staticBlockCategories: BlockCategory[] = [
       staticBlocksWithComponents["marketplace-4"],
       staticBlocksWithComponents["marketplace-5"],
       staticBlocksWithComponents["marketplace-6"],
-    ],
-  },
-
-  {
-    id: "feature",
-    title: "Feature",
-    description:
-      "Feature showcase components for highlighting product capabilities and benefits",
-    image:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750379277/Screenshot_2025-06-20_at_07.27.35_isz7ui.png",
-    blocks: [
-      staticBlocksWithComponents["feature-1"],
-      staticBlocksWithComponents["feature-2"],
-      staticBlocksWithComponents["feature-3"],
-      staticBlocksWithComponents["feature-4"],
     ],
   },
 
@@ -652,7 +652,7 @@ export const staticBlockCategories: BlockCategory[] = [
     description:
       "Comprehensive money transfer transaction management dashboards with payment tracking, fee breakdown, and status monitoring",
     image:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750374500/Screenshot_2025-06-20_at_05.51.12_dknzbz.png",
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750386367/Screenshot_2025-06-20_at_09.25.58_gg4hiu.png",
     blocks: [
       staticBlocksWithComponents["banking-1"],
       staticBlocksWithComponents["banking-2"],
