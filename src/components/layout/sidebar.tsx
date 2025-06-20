@@ -22,9 +22,13 @@ import {
   ShoppingBagIcon,
   ScrollTextIcon,
   BugPlayIcon,
+  LandmarkIcon,
+  MonitorDotIcon,
+  UserLockIcon,
 } from "lucide-react";
 import { staticBlockQuantities } from "@/lib/static-block-data";
 import Link from "next/link";
+import { useParams, usePathname } from "next/navigation";
 
 interface SidebarProps {
   sections: Array<{
@@ -58,6 +62,9 @@ const sectionIcons = {
   banner: Megaphone,
   bento: Grid3X3,
   blog: BookOpen,
+  banking: LandmarkIcon,
+  monitoring: MonitorDotIcon,
+  auth: UserLockIcon,
 };
 
 export function Sidebar({
@@ -67,6 +74,7 @@ export function Sidebar({
   open,
   onOpenChange,
 }: SidebarProps) {
+  const { blockCategory } = useParams();
   const SidebarContent = ({
     showCloseButton = false,
   }: {
@@ -97,13 +105,17 @@ export function Sidebar({
 
       <div className="relative flex-1 px-3">
         <div className="space-y-1 py-4 relative">
-          {sections.map((section) => {
+          {sections.map((section, id) => {
             const Icon =
               sectionIcons[section.id as keyof typeof sectionIcons] || Blocks;
-            const isActive = activeSection === section.id;
+            const isActive =
+              id == 0 && !blockCategory ? true : blockCategory === section.id;
 
             return (
-              <Link key={section.id} href={`/blocks/${section.id}`}>
+              <Link
+                key={section.id}
+                href={id == 0 ? "/" : `/blocks/${section.id}`}
+              >
                 <Button
                   variant={isActive ? "secondary" : "ghost"}
                   className={cn(
