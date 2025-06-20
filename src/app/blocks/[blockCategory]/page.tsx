@@ -20,8 +20,6 @@ export default async function BlockCategoryPage({
     redirect("/");
   }
 
-  //   console.log("categoryData", categoryData);
-
   return (
     <SidebarLayout blockCategories={blockCategories}>
       <BlocksSection section={categoryData} />
