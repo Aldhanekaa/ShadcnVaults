@@ -8,6 +8,7 @@ import { BlockDetailsClient } from "@/components/block-details-client";
 import { promises as fs } from "fs";
 import path from "path";
 import { ResponsivePreview } from "@/components/responsive-preview";
+import ProjectLicensePage from "@/components/license";
 
 interface BlockPageProps {
   params: Promise<{
@@ -329,6 +330,7 @@ export function ${blockWithComponent.name.replace(/\s+/g, "")}() {
           </div>
         </div>
       </main>
+      <ProjectLicensePage />
     </div>
   );
 }

@@ -6,6 +6,7 @@ import { Header } from "@/components/layout/header";
 import { BlocksSection } from "@/components/layout/blocks-section";
 import { HeroSection } from "@/components/homepage/hero-section";
 import { BlockCategory, staticBlockCategories } from "@/lib/static-block-data";
+import ProjectLicensePage from "../license";
 
 export default function HomePageContent() {
   const [activeSection, setActiveSection] = useState("overview");
@@ -40,6 +41,8 @@ export default function HomePageContent() {
                 section={blockCategories.find((s) => s.id === activeSection)!}
               />
             )}
+
+            <ProjectLicensePage />
           </div>
         </main>
       </div>

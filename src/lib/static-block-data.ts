@@ -378,7 +378,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "Clean and minimal login form with email, password, and remember me functionality.",
     photo:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750374500/Screenshot_2025-06-20_at_05.51.12_dknzbz.png",
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750388006/Screenshot_2025-06-20_at_09.53.09_ixdg7v.png",
     component: LoginBlock1,
   },
   "auth-2": {
@@ -386,8 +386,8 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     name: "Social Login",
     description:
       "Login form with social authentication options (Google, GitHub) and email/password fallback.",
-    video:
-      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750374583/Screen_Recording_2025-06-20_at_05.49.45_fry3rp.mov",
+    photo:
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750388020/Screenshot_2025-06-20_at_09.53.24_pammcv.png",
     component: LoginBlock2,
   },
   "auth-3": {
@@ -396,7 +396,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "Modern split-screen login layout with branding section and comprehensive form.",
     photo:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750374499/Screenshot_2025-06-20_at_05.50.50_s6irwx.png",
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750388062/Screenshot_2025-06-20_at_09.53.37_q4i1be.png",
     component: LoginBlock3,
   },
   "auth-4": {
@@ -405,7 +405,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "Comprehensive user registration form with social signup, validation, and terms acceptance.",
     photo:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750374500/Screenshot_2025-06-20_at_05.51.12_dknzbz.png",
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750388051/Screenshot_2025-06-20_at_09.53.48_jxv1fu.png",
     component: LoginBlock4,
   },
   "auth-5": {
@@ -413,8 +413,8 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     name: "Forgot Password",
     description:
       "Password reset form with email verification and confirmation screen.",
-    video:
-      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750374583/Screen_Recording_2025-06-20_at_05.49.45_fry3rp.mov",
+    photo:
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750388118/Screenshot_2025-06-20_at_09.54.06_apyei7.png",
     component: LoginBlock5,
   },
   "auth-6": {
@@ -422,8 +422,8 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     name: "Reset Password",
     description:
       "Password reset form with strength indicator and real-time validation requirements.",
-    video:
-      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750374583/Screen_Recording_2025-06-20_at_05.49.45_fry3rp.mov",
+    photo:
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750388121/Screenshot_2025-06-20_at_09.54.20_hxyvhi.png",
     component: LoginBlock6,
   },
   "auth-7": {
@@ -431,8 +431,8 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     name: "Two-Factor Login",
     description:
       "Login form with two-factor authentication and 6-digit code verification.",
-    video:
-      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750374583/Screen_Recording_2025-06-20_at_05.49.45_fry3rp.mov",
+    photo:
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750388076/Screenshot_2025-06-20_at_09.54.32_i6gfcf.png",
     component: LoginBlock7,
   },
 

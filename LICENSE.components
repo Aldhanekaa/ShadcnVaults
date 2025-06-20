@@ -1,8 +1,27 @@
-Creative Commons Attribution 4.0 International (CC BY 4.0)
+Shadcn Vaults (CC BY-NC 4.0 with Internal Use Exception)
 
-All user-submitted UI components stored in the `/components` directory
-are licensed under the Creative Commons Attribution 4.0 License.
-You are free to use, remix, share, and adapt the content as long
-as proper credit is given.
+All user-submitted components in the '/blocks' directory are licensed under the Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0),
+with the following clarification and exception:
 
-See: https://creativecommons.org/licenses/by/4.0/
+You are free to:
+- Share — copy and redistribute the material in any medium or format
+- Adapt — remix, transform, and build upon the material
+
+Under these conditions:
+- Attribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made.
+- NonCommercial — You may NOT use the material for commercial redistribution, resale, or monetization.
+
+🚫 You MAY NOT:
+- Sell or redistribute the components individually or as part of a product (e.g. a UI kit, template marketplace, SaaS component library)
+- Offer the components or derivative works in any paid tool, theme pack, or design system
+
+✅ You MAY:
+- Use the components in internal company tools, dashboards, or applications that are not sold as products
+- Remix or adapt components for private or enterprise projects
+- Use them in open-source non-commercial projects
+
+This license encourages sharing, learning, and internal innovation — but prohibits using these components as a basis for monetized products.
+
+Full license text: https://creativecommons.org/licenses/by-nc/4.0/
+
+By submitting a component, contributors agree to these terms.

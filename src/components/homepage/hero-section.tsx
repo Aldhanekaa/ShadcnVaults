@@ -190,10 +190,15 @@ export function HeroSection({
             faster than ever before.
           </p>
           <div className="flex items-center justify-center gap-4">
-            <Button size="lg" className="gap-2">
-              <Github className="h-5 w-5" />
-              View on GitHub
-            </Button>
+            <Link
+              href="https://github.com/Aldhanekaa/ShadcnVaults"
+              target="_blank"
+            >
+              <Button size="lg" className="gap-2">
+                <Github className="h-5 w-5" />
+                View on GitHub
+              </Button>
+            </Link>
             <Button variant="outline" size="lg">
               Get Started
             </Button>
