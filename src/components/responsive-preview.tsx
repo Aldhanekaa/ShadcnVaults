@@ -29,6 +29,7 @@ import {
   MorphingDialogContent,
   MorphingDialogTrigger,
 } from "./ui/morphing-dialog";
+import DotsBackground from "./dots-background";
 
 interface ResponsivePreviewProps {
   children: React.ReactNode;
@@ -353,49 +354,51 @@ export function ResponsivePreview({ blockId }: { blockId: string }) {
 
           {/* Preview Container */}
           <div className="relative">
-            <div className="flex justify-center">
-              <div
-                className={cn(
-                  "relative border rounded-lg overflow-hidden bg-background shadow-sm",
-                  activeSize === "custom" && "resize-x",
-                  isResizing && "select-none"
-                )}
-                style={getPreviewStyle()}
-              >
-                {/* Custom Resize Handle */}
-                {activeSize === "custom" && (
-                  <div
-                    className="absolute right-0 top-0 bottom-0 w-2 cursor-ew-resize bg-transparent hover:bg-primary/10 transition-colors z-10 flex items-center justify-center group"
-                    onMouseDown={handleMouseDown}
-                  >
-                    <div className="w-1 h-8 bg-border group-hover:bg-primary/30 rounded-full transition-colors" />
-                  </div>
-                )}
-
-                {/* Device Frame Indicators */}
-                {activeSize !== "desktop" && activeSize !== "custom" && (
-                  <div className="absolute top-2 left-2 z-10">
-                    <div className="bg-black/80 text-white px-2 py-1 rounded text-xs font-medium">
-                      {deviceSizes[activeSize].label}
-                      {activeSize === "tablet" && " (768px)"}
-                      {activeSize === "mobile" && " (375px)"}
+            <div className="relative flex justify-center">
+              <DotsBackground containerClassName=" h-full">
+                <div
+                  className={cn(
+                    "w-full relative border rounded-lg overflow-hidden bg-background shadow-sm",
+                    activeSize === "custom" && "resize-x",
+                    isResizing && "select-none"
+                  )}
+                  style={getPreviewStyle()}
+                >
+                  {/* Custom Resize Handle */}
+                  {activeSize === "custom" && (
+                    <div
+                      className="absolute right-0 top-0 bottom-0 w-2 cursor-ew-resize bg-transparent hover:bg-primary/10 transition-colors z-10 flex items-center justify-center group"
+                      onMouseDown={handleMouseDown}
+                    >
+                      <div className="w-1 h-8 bg-border group-hover:bg-primary/30 rounded-full transition-colors" />
                     </div>
+                  )}
+
+                  {/* Device Frame Indicators */}
+                  {activeSize !== "desktop" && activeSize !== "custom" && (
+                    <div className="absolute top-2 left-2 z-10">
+                      <div className="bg-black/80 text-white px-2 py-1 rounded text-xs font-medium">
+                        {deviceSizes[activeSize].label}
+                        {activeSize === "tablet" && " (768px)"}
+                        {activeSize === "mobile" && " (375px)"}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Transparent overlay during resize to prevent iframe interference */}
+                  {isResizing && (
+                    <div className="absolute inset-0 bg-transparent z-20" />
+                  )}
+
+                  {/* Block Content */}
+                  <div className="w-full">
+                    <iframe
+                      src={`${getBaseURL()}/view/${blockId}`}
+                      className="w-full h-[750px]"
+                    ></iframe>
                   </div>
-                )}
-
-                {/* Transparent overlay during resize to prevent iframe interference */}
-                {isResizing && (
-                  <div className="absolute inset-0 bg-transparent z-20" />
-                )}
-
-                {/* Block Content */}
-                <div className="w-full">
-                  <iframe
-                    src={`${getBaseURL()}/view/${blockId}`}
-                    className="w-full h-[750px]"
-                  ></iframe>
                 </div>
-              </div>
+              </DotsBackground>
             </div>
 
             {/* Width Indicator for Custom Mode */}

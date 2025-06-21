@@ -86,13 +86,10 @@ export function BlocksSection({ section }: BlocksSectionProps) {
 
             <Link href={`/block/${block.id}`} className="group cursor-pointer">
               <div className="px-1">
-                <Link
-                  className="font-base  relative inline-block font-[450] text-zinc-900 dark:text-zinc-50"
-                  href={`/block/${block.id}`}
-                >
+                <div className="font-base  relative inline-block font-[450] text-zinc-900 dark:text-zinc-50">
                   {block.name}
                   <span className="absolute bottom-0.5 left-0 block h-[1px] w-full max-w-0 bg-zinc-900 transition-all duration-200 group-hover:max-w-full dark:bg-zinc-50"></span>
-                </Link>
+                </div>
                 <p className="text-base text-zinc-600 dark:text-zinc-400">
                   {block.description}
                 </p>
