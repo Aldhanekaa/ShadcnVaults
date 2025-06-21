@@ -10,10 +10,25 @@ import {
 } from "react";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { Monitor, Tablet, Smartphone, Move, RotateCcw } from "lucide-react";
+import {
+  Monitor,
+  Tablet,
+  Smartphone,
+  Move,
+  RotateCcw,
+  ExpandIcon,
+  XIcon,
+} from "lucide-react";
 import { cn } from "@/lib/utils";
 import { createPortal } from "react-dom";
 import { getBaseURL } from "@/lib/getBaseURL";
+import {
+  MorphingDialog,
+  MorphingDialogClose,
+  MorphingDialogContainer,
+  MorphingDialogContent,
+  MorphingDialogTrigger,
+} from "./ui/morphing-dialog";
 
 interface ResponsivePreviewProps {
   children: React.ReactNode;
@@ -251,118 +266,158 @@ export function ResponsivePreview({ blockId }: { blockId: string }) {
 
   return (
     <ResponsiveContext.Provider value={contextValue}>
-      <div className="space-y-4">
-        {/* Device Size Controls */}
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            {Object.entries(deviceSizes).map(([size, config]) => {
-              const Icon = config.icon;
-              const isActive = activeSize === size;
+      <MorphingDialog
+        transition={{
+          type: "spring",
+          bounce: 0,
+          duration: 0.3,
+        }}
+      >
+        <div className="space-y-4">
+          {/* Device Size Controls */}
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              {Object.entries(deviceSizes).map(([size, config]) => {
+                const Icon = config.icon;
+                const isActive = activeSize === size;
 
-              return (
+                return (
+                  <Button
+                    key={size}
+                    variant={isActive ? "default" : "outline"}
+                    size="sm"
+                    onClick={() => setActiveSize(size as DeviceSize)}
+                    className={cn(
+                      "gap-2 transition-all",
+                      isActive && "shadow-sm"
+                    )}
+                  >
+                    <Icon className="h-4 w-4" />
+                    {config.label}
+                  </Button>
+                );
+              })}
+            </div>
+
+            <div className="flex items-center gap-2">
+              {activeSize === "custom" && (
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <span>Width: {customWidth}px</span>
+                </div>
+              )}
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={handleReset}
+                className="gap-2 cursor-pointer"
+              >
+                <RotateCcw className="h-4 w-4" />
+                Reset
+              </Button>
+
+              <MorphingDialogTrigger>
                 <Button
-                  key={size}
-                  variant={isActive ? "default" : "outline"}
+                  variant="outline"
                   size="sm"
-                  onClick={() => setActiveSize(size as DeviceSize)}
-                  className={cn(
-                    "gap-2 transition-all",
-                    isActive && "shadow-sm"
-                  )}
+                  className="cursor-pointer gap-2"
                 >
-                  <Icon className="h-4 w-4" />
-                  {config.label}
+                  Expand View
+                  <ExpandIcon className="h-4 w-4" />
                 </Button>
-              );
-            })}
+              </MorphingDialogTrigger>
+              <MorphingDialogContainer className=" z-30">
+                <MorphingDialogContent className="z-30 py-6 w-[90vw] h-[90vh]  relative aspect-video rounded-2xl bg-zinc-50 ring-1 ring-zinc-200/50 ring-inset dark:bg-white dark:ring-zinc-800/50">
+                  <iframe
+                    src={`${getBaseURL()}/view/${blockId}`}
+                    className="w-full h-full"
+                  ></iframe>
+                </MorphingDialogContent>
+                <MorphingDialogClose
+                  className="fixed top-6 right-6 h-fit w-fit rounded-full bg-white p-1"
+                  variants={{
+                    initial: { opacity: 0 },
+                    animate: {
+                      opacity: 1,
+                      transition: { delay: 0.3, duration: 0.1 },
+                    },
+                    exit: { opacity: 0, transition: { duration: 0 } },
+                  }}
+                >
+                  <XIcon className="h-5 w-5 text-zinc-500" />
+                </MorphingDialogClose>
+              </MorphingDialogContainer>
+            </div>
           </div>
 
-          <div className="flex items-center gap-2">
+          <Separator />
+
+          {/* Preview Container */}
+          <div className="relative">
+            <div className="flex justify-center">
+              <div
+                className={cn(
+                  "relative border rounded-lg overflow-hidden bg-background shadow-sm",
+                  activeSize === "custom" && "resize-x",
+                  isResizing && "select-none"
+                )}
+                style={getPreviewStyle()}
+              >
+                {/* Custom Resize Handle */}
+                {activeSize === "custom" && (
+                  <div
+                    className="absolute right-0 top-0 bottom-0 w-2 cursor-ew-resize bg-transparent hover:bg-primary/10 transition-colors z-10 flex items-center justify-center group"
+                    onMouseDown={handleMouseDown}
+                  >
+                    <div className="w-1 h-8 bg-border group-hover:bg-primary/30 rounded-full transition-colors" />
+                  </div>
+                )}
+
+                {/* Device Frame Indicators */}
+                {activeSize !== "desktop" && activeSize !== "custom" && (
+                  <div className="absolute top-2 left-2 z-10">
+                    <div className="bg-black/80 text-white px-2 py-1 rounded text-xs font-medium">
+                      {deviceSizes[activeSize].label}
+                      {activeSize === "tablet" && " (768px)"}
+                      {activeSize === "mobile" && " (375px)"}
+                    </div>
+                  </div>
+                )}
+
+                {/* Transparent overlay during resize to prevent iframe interference */}
+                {isResizing && (
+                  <div className="absolute inset-0 bg-transparent z-20" />
+                )}
+
+                {/* Block Content */}
+                <div className="w-full">
+                  <iframe
+                    src={`${getBaseURL()}/view/${blockId}`}
+                    className="w-full h-[750px]"
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+
+            {/* Width Indicator for Custom Mode */}
             {activeSize === "custom" && (
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <span>Width: {customWidth}px</span>
+              <div className="flex justify-center mt-2">
+                <div className="bg-muted px-3 py-1 rounded-full text-sm text-muted-foreground">
+                  Custom Width: {customWidth}px
+                </div>
               </div>
             )}
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={handleReset}
-              className="gap-2"
-            >
-              <RotateCcw className="h-4 w-4" />
-              Reset
-            </Button>
-          </div>
-        </div>
-
-        <Separator />
-
-        {/* Preview Container */}
-        <div className="relative">
-          <div className="flex justify-center">
-            <div
-              className={cn(
-                "relative border rounded-lg overflow-hidden bg-background shadow-sm",
-                activeSize === "custom" && "resize-x",
-                isResizing && "select-none"
-              )}
-              style={getPreviewStyle()}
-            >
-              {/* Custom Resize Handle */}
-              {activeSize === "custom" && (
-                <div
-                  className="absolute right-0 top-0 bottom-0 w-2 cursor-ew-resize bg-transparent hover:bg-primary/10 transition-colors z-10 flex items-center justify-center group"
-                  onMouseDown={handleMouseDown}
-                >
-                  <div className="w-1 h-8 bg-border group-hover:bg-primary/30 rounded-full transition-colors" />
-                </div>
-              )}
-
-              {/* Device Frame Indicators */}
-              {activeSize !== "desktop" && activeSize !== "custom" && (
-                <div className="absolute top-2 left-2 z-10">
-                  <div className="bg-black/80 text-white px-2 py-1 rounded text-xs font-medium">
-                    {deviceSizes[activeSize].label}
-                    {activeSize === "tablet" && " (768px)"}
-                    {activeSize === "mobile" && " (375px)"}
-                  </div>
-                </div>
-              )}
-
-              {/* Transparent overlay during resize to prevent iframe interference */}
-              {isResizing && (
-                <div className="absolute inset-0 bg-transparent z-20" />
-              )}
-
-              {/* Block Content */}
-              <div className="w-full">
-                <iframe
-                  src={`${getBaseURL()}/view/${blockId}`}
-                  className="w-full h-[750px]"
-                ></iframe>
-              </div>
-            </div>
           </div>
 
-          {/* Width Indicator for Custom Mode */}
-          {activeSize === "custom" && (
-            <div className="flex justify-center mt-2">
-              <div className="bg-muted px-3 py-1 rounded-full text-sm text-muted-foreground">
-                Custom Width: {customWidth}px
-              </div>
-            </div>
-          )}
+          {/* Device Size Info */}
+          <div className="text-center text-sm text-muted-foreground">
+            {activeSize === "desktop" && "Full width desktop view"}
+            {activeSize === "tablet" && "Tablet view (768px width)"}
+            {activeSize === "mobile" && "Mobile view (375px width)"}
+            {activeSize === "custom" &&
+              "Custom resizable width - drag the right edge or use the resize handle"}
+          </div>
         </div>
-
-        {/* Device Size Info */}
-        <div className="text-center text-sm text-muted-foreground">
-          {activeSize === "desktop" && "Full width desktop view"}
-          {activeSize === "tablet" && "Tablet view (768px width)"}
-          {activeSize === "mobile" && "Mobile view (375px width)"}
-          {activeSize === "custom" &&
-            "Custom resizable width - drag the right edge or use the resize handle"}
-        </div>
-      </div>
+      </MorphingDialog>
     </ResponsiveContext.Provider>
   );
 }
