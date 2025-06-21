@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useCallback } from "react";
 import { VideoIcon, XIcon } from "lucide-react";
 import {
   MorphingDialog,
@@ -14,17 +14,33 @@ import { Badge } from "./badge";
 export default function ProjectVideo({ src }: { src: string }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isHovered, setIsHovered] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
 
-  const handleMouseEnter = () => {
+  const handleMouseEnter = useCallback(() => {
     setIsHovered(true);
-    videoRef.current?.play();
-  };
+    if (videoRef.current && !isPlaying) {
+      const playPromise = videoRef.current.play();
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            setIsPlaying(true);
+          })
+          .catch((error) => {
+            // Handle play error silently
+            console.debug("Play interrupted:", error);
+          });
+      }
+    }
+  }, [isPlaying]);
 
-  const handleMouseLeave = () => {
+  const handleMouseLeave = useCallback(() => {
     setIsHovered(false);
-    videoRef.current?.pause();
-    videoRef.current!.currentTime = 0;
-  };
+    if (videoRef.current && isPlaying) {
+      videoRef.current.pause();
+      videoRef.current.currentTime = 0;
+      setIsPlaying(false);
+    }
+  }, [isPlaying]);
 
   return (
     <MorphingDialog
