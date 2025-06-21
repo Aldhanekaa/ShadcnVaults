@@ -207,6 +207,7 @@ export function ResponsivePreview({ blockId }: { blockId: string }) {
   const handleMouseDown = (e: React.MouseEvent) => {
     if (activeSize !== "custom") return;
 
+    e.preventDefault();
     setIsResizing(true);
     const startX = e.clientX;
     const startWidth = customWidth;
@@ -326,6 +327,11 @@ export function ResponsivePreview({ blockId }: { blockId: string }) {
                     {activeSize === "mobile" && " (375px)"}
                   </div>
                 </div>
+              )}
+
+              {/* Transparent overlay during resize to prevent iframe interference */}
+              {isResizing && (
+                <div className="absolute inset-0 bg-transparent z-20" />
               )}
 
               {/* Block Content */}
