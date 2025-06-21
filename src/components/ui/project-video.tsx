@@ -10,6 +10,7 @@ import {
   MorphingDialogClose,
 } from "@/components/ui/morphing-dialog";
 import { Badge } from "./badge";
+import { Tooltip, TooltipContent, TooltipTrigger } from "./tooltip";
 
 export default function ProjectVideo({ src }: { src: string }) {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -51,20 +52,27 @@ export default function ProjectVideo({ src }: { src: string }) {
       }}
     >
       <MorphingDialogTrigger className="overflow-hidden cursor-pointer relative rounded-2xl bg-white p-0 border-1 border-zinc-200/50 border-inset  dark:border-zinc-200">
-        <video
-          ref={videoRef}
-          src={src}
-          loop
-          muted
-          playsInline
-          className="aspect-video w-full h-full rounded-2xl "
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-        />
-        <Badge className="absolute top-3 left-3" variant="secondary">
-          <VideoIcon />
-          Video
-        </Badge>
+        <Tooltip>
+          <TooltipTrigger className="cursor-pointer">
+            <video
+              ref={videoRef}
+              src={src}
+              loop
+              muted
+              playsInline
+              className="aspect-video w-full h-full rounded-2xl "
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            />
+            <Badge className="absolute top-3 left-3" variant="secondary">
+              <VideoIcon />
+              Video
+            </Badge>
+          </TooltipTrigger>
+          <TooltipContent>
+            <p>Click to view video in bigger size</p>
+          </TooltipContent>
+        </Tooltip>
       </MorphingDialogTrigger>
       <MorphingDialogContainer className=" z-30">
         <MorphingDialogContent className="z-30 py-6 px-2  relative aspect-video rounded-2xl bg-zinc-50 ring-1 ring-zinc-200/50 ring-inset dark:bg-white dark:ring-zinc-800/50">
