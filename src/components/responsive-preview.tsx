@@ -13,6 +13,7 @@ import { Separator } from "@/components/ui/separator";
 import { Monitor, Tablet, Smartphone, Move, RotateCcw } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { createPortal } from "react-dom";
+import { getBaseURL } from "@/lib/getBaseURL";
 
 interface ResponsivePreviewProps {
   children: React.ReactNode;
@@ -330,7 +331,7 @@ export function ResponsivePreview({ blockId }: { blockId: string }) {
               {/* Block Content */}
               <div className="w-full">
                 <iframe
-                  src={`http://localhost:3000/view/${blockId}`}
+                  src={`${getBaseURL()}/view/${blockId}`}
                   className="w-full h-[750px]"
                 ></iframe>
               </div>
