@@ -6,8 +6,6 @@ import { HeroBlock5 } from "@/blocks/hero/hero-5";
 
 import { FooterBlock1 } from "@/blocks/footer/footer-1";
 import { FooterBlock2 } from "@/blocks/footer/footer-2";
-import { FooterBlock2 as FooterBlock3 } from "@/blocks/footer/footer-3";
-import { FooterBlock2 as FooterBlock4 } from "@/blocks/footer/footer-4";
 
 import { FeatureBlock1 } from "@/blocks/feature/feature-1";
 import { FeatureBlock2 } from "@/blocks/feature/feature-2";
@@ -132,6 +130,23 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     photo:
       "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750376551/Screenshot_2025-06-20_at_06.42.24_rl5jwg.png",
     component: HeroBlock5,
+  },
+
+  "footer-1": {
+    id: "footer-1",
+    name: "Footer One",
+    description: "whatever",
+    photo:
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750603089/Screenshot_2025-06-22_at_21.37.54_wulcc3.png",
+    component: FooterBlock1,
+  },
+  "footer-2": {
+    id: "footer-2",
+    name: "Footer Two",
+    description: "whatever",
+    photo:
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750603090/Screenshot_2025-06-22_at_21.38.05_nluo44.png",
+    component: FooterBlock2,
   },
 
   "bills-1": {
@@ -645,6 +660,21 @@ export const staticBlockCategories: BlockCategory[] = [
       staticBlocksWithComponents["feature-2"],
       staticBlocksWithComponents["feature-3"],
       staticBlocksWithComponents["feature-4"],
+    ],
+  },
+
+  {
+    id: "footer",
+    title: "Footer",
+    description:
+      "Feature showcase components for highlighting product capabilities and benefits",
+    image:
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750603090/Screenshot_2025-06-22_at_21.38.05_nluo44.png",
+    blocks: [
+      staticBlocksWithComponents["footer-1"],
+      staticBlocksWithComponents["footer-2"],
+      // staticBlocksWithComponents["footer-3"],
+      // staticBlocksWithComponents["footer-4"],
     ],
   },
 
