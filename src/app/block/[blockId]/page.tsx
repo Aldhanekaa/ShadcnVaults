@@ -31,7 +31,7 @@ async function getComponentSourceCode(blockId: string): Promise<string | null> {
   try {
     const fullPath = path.join(
       process.cwd(),
-      `src/blocks/${blockId.split("-")[0]}/${blockId}.tsx`
+      `src/vaults/blocks/${blockId.split("-")[0]}/${blockId}.tsx`
     );
     const sourceCode = await fs.readFile(fullPath, "utf8");
 
