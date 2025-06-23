@@ -1,10 +1,11 @@
 "use client";
 
-import { Menu, Blocks, Github, Star } from "lucide-react";
+import { Menu, Blocks, Github, Star, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 interface HeaderProps {
   onMenuClick: () => void;
@@ -45,6 +46,27 @@ export function Header({ onMenuClick }: HeaderProps) {
               </p>
             </div>
           </div>
+
+          <motion.button
+            transition={{ delay: 0.3 }}
+            // variant="outline"
+            className="cursor-pointer group inline-flex transition duration-300 h-9 w-fit rounded-lg border border-input bg-background px-3 py-2 text-sm text-foreground shadow-sm shadow-black/5 placeholder:text-muted-foreground/70 focus-visible:border-ring focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/20"
+          >
+            <span className="flex grow items-center">
+              <Search
+                className="-ms-1 me-3 text-muted-foreground/80"
+                size={16}
+                strokeWidth={2}
+                aria-hidden="true"
+              />
+              <span className="font-normal text-muted-foreground/70">
+                Search Blocks/Components
+              </span>
+            </span>
+            <kbd className="-me-1 ms-7 group-hover:ms-20 transition-all duration-300 inline-flex h-5 max-h-full items-center rounded border border-border bg-background px-1 font-[inherit] text-[0.625rem] font-medium text-muted-foreground/70">
+              ⌘K
+            </kbd>
+          </motion.button>
         </div>
 
         <div className="flex items-center gap-1 sm:gap-2 flex-shrink-0">

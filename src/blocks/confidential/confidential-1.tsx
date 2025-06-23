@@ -2,12 +2,8 @@
 
 import * as React from "react";
 import { useState } from "react";
-import { Slot } from "@radix-ui/react-slot";
-import { cva, type VariantProps } from "class-variance-authority";
-import { Lock, Shield, CreditCard, ShoppingCart } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
-import { clsx, type ClassValue } from "clsx";
-import { twMerge } from "tailwind-merge";
+import { Lock, Shield } from "lucide-react";
+import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { resolve } from "path";
 import { Button } from "@/components/ui/button";
