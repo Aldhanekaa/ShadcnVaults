@@ -66,6 +66,12 @@ import Banking_3 from "@/vaults/blocks/banking/banking-3";
 import Banking_4 from "@/vaults/blocks/banking/banking-4";
 import Banking_5 from "@/vaults/blocks/banking/banking-5";
 
+import Confidential_1 from "@/vaults/blocks/confidential/confidential-1";
+import Confidential_2 from "@/vaults/blocks/confidential/confidential-2";
+
+import Pricing_1 from "@/vaults/blocks/pricing/pricing-1";
+import Pricing_2 from "@/vaults/blocks/pricing/pricing-2";
+
 export interface BlockMetadata {
   id: string;
   name: string;
@@ -624,6 +630,44 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
       "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750385806/banking-5_ztbfsg.png",
     component: Banking_5,
   },
+
+  "confidential-1": {
+    id: "confidential-1",
+    name: "Money Transfer Dashboard",
+    description:
+      "Comprehensive money transfer dashboard with transaction monitoring, status tracking, and fee breakdown.",
+    video:
+      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750385512/banking-1_ccjfa6.mov",
+    component: Confidential_1,
+  },
+  "confidential-2": {
+    id: "confidential-2",
+    name: "Advanced Transaction Table",
+    description:
+      "Feature-rich transaction table with advanced filtering, sorting, and detailed money transfer analytics.",
+    video:
+      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750385513/banking-2_dg3p7i.mov",
+    component: Confidential_2,
+  },
+
+  "pricing-1": {
+    id: "pricing-1",
+    name: "Money Transfer Dashboard",
+    description:
+      "Comprehensive money transfer dashboard with transaction monitoring, status tracking, and fee breakdown.",
+    video:
+      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750385512/banking-1_ccjfa6.mov",
+    component: Pricing_1,
+  },
+  "pricing-2": {
+    id: "pricing-2",
+    name: "Advanced Transaction Table",
+    description:
+      "Feature-rich transaction table with advanced filtering, sorting, and detailed money transfer analytics.",
+    video:
+      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750385513/banking-2_dg3p7i.mov",
+    component: Pricing_2,
+  },
 };
 
 export const staticBlockQuantities = Object.keys(
@@ -853,6 +897,52 @@ export const staticBlockCategories: BlockCategory[] = [
       staticBlocksWithComponents["banking-3"],
       staticBlocksWithComponents["banking-4"],
       staticBlocksWithComponents["banking-5"],
+    ],
+  },
+
+  {
+    id: "pricing",
+    title: "Pricing ",
+    description:
+      "Comprehensive money transfer transaction management dashboards with payment tracking, fee breakdown, and status monitoring",
+    image:
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750386367/Screenshot_2025-06-20_at_09.25.58_gg4hiu.png",
+    keywords: [
+      "transaction",
+      "dashboard",
+      "money",
+      "transfer",
+      "analytics",
+      "table",
+      "revenue",
+      "status",
+    ],
+    blocks: [
+      staticBlocksWithComponents["pricing-1"],
+      staticBlocksWithComponents["pricing-2"],
+    ],
+  },
+
+  {
+    id: "confidential",
+    title: "Confidential Access ",
+    description:
+      "Comprehensive money transfer transaction management dashboards with payment tracking, fee breakdown, and status monitoring",
+    image:
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750386367/Screenshot_2025-06-20_at_09.25.58_gg4hiu.png",
+    keywords: [
+      "transaction",
+      "dashboard",
+      "money",
+      "transfer",
+      "analytics",
+      "table",
+      "revenue",
+      "status",
+    ],
+    blocks: [
+      staticBlocksWithComponents["confidential-1"],
+      staticBlocksWithComponents["confidential-2"],
     ],
   },
 ];

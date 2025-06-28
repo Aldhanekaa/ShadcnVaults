@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, X } from "lucide-react";
 
-export function PricingBlock1() {
+export default function PricingBlock1() {
   const features = [
     { name: "Custom Domain", basic: true, pro: true },
     { name: "SSL Certificate", basic: true, pro: true },

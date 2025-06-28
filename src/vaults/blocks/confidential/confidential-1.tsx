@@ -15,7 +15,7 @@ interface ConfidentialAccessProps {
   onRequestAccess?: () => void;
   className?: string;
 }
-export function Confidential_1({
+export default function Confidential_1({
   title = "Confidential Access Required",
   description = "This content is restricted and requires special authorization to view. Please contact your administrator or request access below.",
   icon = <Lock className="h-12 w-12 text-muted-foreground" />,
