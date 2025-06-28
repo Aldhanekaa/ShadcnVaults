@@ -11,6 +11,7 @@ import { ResponsivePreview } from "@/components/responsive-preview";
 import ProjectLicensePage from "@/components/license";
 import React from "react";
 import BlockComponentNotFound from "@/components/block-component-not-found";
+import { Header } from "@/components/layout/header";
 
 interface BlockPageProps {
   params: Promise<{
@@ -88,7 +89,9 @@ export default async function BlockPage({ params }: BlockPageProps) {
 
   return (
     <React.Fragment>
+      <Header />
       {/* Header */}
+
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="flex h-16 items-center justify-between px-4 sm:px-6 max-w-7xl mx-auto">
           <div className="flex items-center gap-4">

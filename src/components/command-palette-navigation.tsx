@@ -972,14 +972,16 @@ export default function CommandPalette({ open, setOpen }: CommandPaletteProps) {
                           }}
                         >
                           <div className="flex items-center gap-2.5">
-                            <div
-                              className={`flex h-5 w-5 items-center justify-center rounded border ${
-                                isSelected
-                                  ? "border-[#181818]/40 bg-[#181818]/20 dark:border-white/40 dark:bg-white/20"
-                                  : "border-[#181818]/20 bg-[#181818]/10 dark:border-[#ffffff]/20 dark:bg-[#ffffff]/10"
-                              }`}
-                            >
-                              {item.icon}
+                            <div>
+                              <div
+                                className={`flex h-5 w-5 items-center justify-center rounded border ${
+                                  isSelected
+                                    ? "border-[#181818]/40 bg-[#181818]/20 dark:border-white/40 dark:bg-white/20"
+                                    : "border-[#181818]/20 bg-[#181818]/10 dark:border-[#ffffff]/20 dark:bg-[#ffffff]/10"
+                                }`}
+                              >
+                                {item.icon}
+                              </div>
                             </div>
                             <div className="flex flex-col">
                               <span className="text-xs font-medium">

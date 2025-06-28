@@ -68,9 +68,13 @@ import Banking_5 from "@/vaults/blocks/banking/banking-5";
 
 import Confidential_1 from "@/vaults/blocks/confidential/confidential-1";
 import Confidential_2 from "@/vaults/blocks/confidential/confidential-2";
+import Confidential_3 from "@/vaults/blocks/confidential/confidential-3";
+import Confidential_4 from "@/vaults/blocks/confidential/confidential-4";
+import Confidential_5 from "@/vaults/blocks/confidential/confidential-5";
 
 import Pricing_1 from "@/vaults/blocks/pricing/pricing-1";
 import Pricing_2 from "@/vaults/blocks/pricing/pricing-2";
+import Pricing_3 from "@/vaults/blocks/pricing/pricing-3";
 
 export interface BlockMetadata {
   id: string;
@@ -633,40 +637,76 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
 
   "confidential-1": {
     id: "confidential-1",
-    name: "Money Transfer Dashboard",
+    name: "Animated Access Request",
     description:
-      "Comprehensive money transfer dashboard with transaction monitoring, status tracking, and fee breakdown.",
-    video:
-      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750385512/banking-1_ccjfa6.mov",
+      "Interactive access request form with loading states, secure authentication badge, and administrator contact",
+    photo:
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1751152361/Screenshot_2025-06-29_at_06.12.34_wzax9a.png",
     component: Confidential_1,
   },
   "confidential-2": {
     id: "confidential-2",
-    name: "Advanced Transaction Table",
+    name: "Simple Access Denied",
     description:
-      "Feature-rich transaction table with advanced filtering, sorting, and detailed money transfer analytics.",
-    video:
-      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750385513/banking-2_dg3p7i.mov",
+      "Clean access denied page with destructive styling, restricted content indicator, and navigation options",
+    photo:
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1751152377/Screenshot_2025-06-29_at_06.12.51_st9t55.png",
     component: Confidential_2,
+  },
+  "confidential-3": {
+    id: "confidential-3",
+    name: "Premium Feature Upgrade",
+    description:
+      "Animated upgrade prompt with feature highlights, rotating icon, and interactive upgrade button",
+    photo:
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1751152412/Screenshot_2025-06-29_at_06.13.20_r7blip.png",
+    component: Confidential_3,
+  },
+  "confidential-4": {
+    id: "confidential-4",
+    name: "Security Alert Access Control",
+    description:
+      "Confidential access page with security alerts, permission levels, and administrator contact options",
+    photo:
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1751152433/Screenshot_2025-06-29_at_06.13.47_zzysmz.png",
+    component: Confidential_4,
+  },
+  "confidential-5": {
+    id: "confidential-5",
+    name: "Premium Add-on Dialog",
+    description:
+      "Premium feature access with upgrade dialog, benefit highlights, and subscription modal",
+    photo:
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1751152457/Screenshot_2025-06-29_at_06.14.12_zdbcyy.png",
+    component: Confidential_5,
   },
 
   "pricing-1": {
     id: "pricing-1",
-    name: "Money Transfer Dashboard",
+    name: "Two-Tier Pricing Comparison",
     description:
-      "Comprehensive money transfer dashboard with transaction monitoring, status tracking, and fee breakdown.",
-    video:
-      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750385512/banking-1_ccjfa6.mov",
+      "Clean pricing comparison with Basic and Pro plans, feature checkmarks, and popular plan highlighting",
+    photo:
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750386367/Screenshot_2025-06-20_at_09.25.58_gg4hiu.png",
     component: Pricing_1,
   },
   "pricing-2": {
     id: "pricing-2",
-    name: "Advanced Transaction Table",
+    name: "Confidential Access System",
     description:
-      "Feature-rich transaction table with advanced filtering, sorting, and detailed money transfer analytics.",
-    video:
-      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750385513/banking-2_dg3p7i.mov",
+      "Premium content access control with authentication, upgrade prompts, and animated purchase flow",
+    photo:
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750386367/Screenshot_2025-06-20_at_09.25.58_gg4hiu.png",
     component: Pricing_2,
+  },
+  "pricing-3": {
+    id: "pricing-3",
+    name: "Pay-As-You-Go Pricing Calculator",
+    description:
+      "Interactive resource-based pricing calculator with sliders, presets, and real-time cost breakdown",
+    photo:
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750386367/Screenshot_2025-06-20_at_09.25.58_gg4hiu.png",
+    component: Pricing_3,
   },
 };
 
@@ -714,6 +754,33 @@ export const staticBlockCategories: BlockCategory[] = [
   },
 
   {
+    id: "auth",
+    title: "Auth",
+    description:
+      "Complete authentication system components including login, signup, password reset, and two-factor authentication",
+    image:
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750387918/Screenshot_2025-06-20_at_09.51.53_swnunx.png",
+    keywords: [
+      "login",
+      "signup",
+      "password",
+      "reset",
+      "social",
+      "twofactor",
+      "authentication",
+    ],
+    blocks: [
+      staticBlocksWithComponents["auth-1"],
+      staticBlocksWithComponents["auth-2"],
+      staticBlocksWithComponents["auth-3"],
+      staticBlocksWithComponents["auth-4"],
+      staticBlocksWithComponents["auth-5"],
+      staticBlocksWithComponents["auth-6"],
+      staticBlocksWithComponents["auth-7"],
+    ],
+  },
+
+  {
     id: "footer",
     title: "Footer",
     description:
@@ -728,6 +795,56 @@ export const staticBlockCategories: BlockCategory[] = [
       // staticBlocksWithComponents["footer-4"],
     ],
   },
+
+  {
+    id: "confidential",
+    title: "Confidential Access ",
+    description:
+      "Comprehensive money transfer transaction management dashboards with payment tracking, fee breakdown, and status monitoring",
+    image:
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1751152433/Screenshot_2025-06-29_at_06.13.47_zzysmz.png",
+    keywords: [
+      "transaction",
+      "dashboard",
+      "money",
+      "transfer",
+      "analytics",
+      "table",
+      "revenue",
+      "status",
+    ],
+    blocks: [
+      staticBlocksWithComponents["confidential-1"],
+      staticBlocksWithComponents["confidential-2"],
+      staticBlocksWithComponents["confidential-3"],
+      staticBlocksWithComponents["confidential-4"],
+      staticBlocksWithComponents["confidential-5"],
+    ],
+  },
+
+  // {
+  //   id: "pricing",
+  //   title: "Pricing Comparison",
+  //   description:
+  //     "Comprehensive money transfer transaction management dashboards with payment tracking, fee breakdown, and status monitoring",
+  //   image:
+  //     "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750386367/Screenshot_2025-06-20_at_09.25.58_gg4hiu.png",
+  //   keywords: [
+  //     "pricing",
+  //     "plans",
+  //     "comparison",
+  //     "tiers",
+  //     "features",
+  //     "billing",
+  //     "subscription",
+  //     "pricing-table",
+  //   ],
+  //   blocks: [
+  //     staticBlocksWithComponents["pricing-1"],
+  //     staticBlocksWithComponents["pricing-2"],
+  //     staticBlocksWithComponents["pricing-3"],
+  //   ],
+  // },
 
   {
     id: "marketplace",
@@ -812,33 +929,6 @@ export const staticBlockCategories: BlockCategory[] = [
   },
 
   {
-    id: "auth",
-    title: "Auth",
-    description:
-      "Complete authentication system components including login, signup, password reset, and two-factor authentication",
-    image:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750387918/Screenshot_2025-06-20_at_09.51.53_swnunx.png",
-    keywords: [
-      "login",
-      "signup",
-      "password",
-      "reset",
-      "social",
-      "twofactor",
-      "authentication",
-    ],
-    blocks: [
-      staticBlocksWithComponents["auth-1"],
-      staticBlocksWithComponents["auth-2"],
-      staticBlocksWithComponents["auth-3"],
-      staticBlocksWithComponents["auth-4"],
-      staticBlocksWithComponents["auth-5"],
-      staticBlocksWithComponents["auth-6"],
-      staticBlocksWithComponents["auth-7"],
-    ],
-  },
-
-  {
     id: "monitoring",
     title: "System Monitoring",
     description:
@@ -897,52 +987,6 @@ export const staticBlockCategories: BlockCategory[] = [
       staticBlocksWithComponents["banking-3"],
       staticBlocksWithComponents["banking-4"],
       staticBlocksWithComponents["banking-5"],
-    ],
-  },
-
-  {
-    id: "pricing",
-    title: "Pricing ",
-    description:
-      "Comprehensive money transfer transaction management dashboards with payment tracking, fee breakdown, and status monitoring",
-    image:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750386367/Screenshot_2025-06-20_at_09.25.58_gg4hiu.png",
-    keywords: [
-      "transaction",
-      "dashboard",
-      "money",
-      "transfer",
-      "analytics",
-      "table",
-      "revenue",
-      "status",
-    ],
-    blocks: [
-      staticBlocksWithComponents["pricing-1"],
-      staticBlocksWithComponents["pricing-2"],
-    ],
-  },
-
-  {
-    id: "confidential",
-    title: "Confidential Access ",
-    description:
-      "Comprehensive money transfer transaction management dashboards with payment tracking, fee breakdown, and status monitoring",
-    image:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750386367/Screenshot_2025-06-20_at_09.25.58_gg4hiu.png",
-    keywords: [
-      "transaction",
-      "dashboard",
-      "money",
-      "transfer",
-      "analytics",
-      "table",
-      "revenue",
-      "status",
-    ],
-    blocks: [
-      staticBlocksWithComponents["confidential-1"],
-      staticBlocksWithComponents["confidential-2"],
     ],
   },
 ];

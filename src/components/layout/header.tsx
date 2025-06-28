@@ -10,7 +10,7 @@ import CommandPalette from "../command-palette-navigation";
 import React from "react";
 
 interface HeaderProps {
-  onMenuClick: () => void;
+  onMenuClick?: () => void;
 }
 
 export function Header({ onMenuClick }: HeaderProps) {
@@ -30,32 +30,27 @@ export function Header({ onMenuClick }: HeaderProps) {
               variant="ghost"
               size="icon"
               className="lg:hidden flex-shrink-0"
-              onClick={onMenuClick}
+              onClick={onMenuClick && onMenuClick}
             >
               <Menu className="h-5 w-5" />
             </Button>
-
-            <div className="flex items-center gap-2 sm:gap-3 min-w-0">
-              <div className="flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-lg bg-primary text-primary-foreground flex-shrink-0">
-                <Blocks className="h-4 w-4 sm:h-5 sm:w-5" />
-              </div>
-              <div className="flex flex-col min-w-0">
-                <div className="flex items-center gap-1 sm:gap-2">
-                  <h1 className="text-base sm:text-lg font-bold truncate">
-                    ShadCN Blocks
-                  </h1>
-                  <Badge
-                    variant="secondary"
-                    className="text-xs px-1.5 py-0.5 sm:px-2 hidden xs:inline-flex"
-                  >
-                    631
-                  </Badge>
+            <Link href="/">
+              <div className="flex items-center gap-2 sm:gap-3 min-w-0">
+                <div className="flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-lg bg-primary text-primary-foreground flex-shrink-0">
+                  <Blocks className="h-4 w-4 sm:h-5 sm:w-5" />
                 </div>
-                <p className="text-xs text-muted-foreground hidden sm:block truncate">
-                  Extra component library
-                </p>
+                <div className="flex flex-col min-w-0">
+                  <div className="flex items-center gap-1 sm:gap-2">
+                    <h1 className="text-base sm:text-lg font-bold truncate">
+                      ShadCN Vaults
+                    </h1>
+                  </div>
+                  <p className="text-xs text-muted-foreground hidden sm:block truncate">
+                    Extra component library
+                  </p>
+                </div>
               </div>
-            </div>
+            </Link>
 
             <motion.button
               onClick={() => setOpenCommandPalette(true)}
