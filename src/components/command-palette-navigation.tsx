@@ -36,9 +36,13 @@ import {
   Play,
   Terminal,
   Smartphone as Phone,
+  Blocks,
 } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useTheme } from "next-themes";
+import { getBlockCategories } from "@/lib/block-utils";
+import { blocksIcon } from "@/lib/icons_data";
+import { useRouter } from "next/navigation";
 
 const { useState, useEffect, useRef, useCallback } = React;
 
@@ -54,13 +58,20 @@ type CommandCategory =
   | "Settings"
   | "Tools";
 
-type CommandSection = "favorites" | "recents" | "suggestions" | "all";
+type CommandSection =
+  | "favorites"
+  | "recents"
+  | "suggestions"
+  | "all"
+  | "blocks"
+  | "components"
+  | "templates";
 
 type CommandItem = {
   id: string;
   title: string;
   description: string;
-  category: CommandCategory;
+  category?: CommandCategory;
   section: CommandSection;
   icon?: React.ReactNode;
   action?: () => void;
@@ -76,8 +87,29 @@ type CommandHistory = {
   count: number;
 };
 
-export default function CommandPalette() {
-  const [open, setOpen] = useState(false);
+let blocks = getBlockCategories(true);
+blocks = blocks.slice(1, blocks.length);
+interface CommandPaletteProps {
+  open: boolean;
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
+export default function CommandPalette({ open, setOpen }: CommandPaletteProps) {
+  const blocksCommandData: CommandItem[] = blocks.map((block) => {
+    const Icon = blocksIcon[block.id as keyof typeof blocksIcon] || Blocks;
+    return {
+      id: block.id,
+      title: block.title,
+      description: block.description,
+      section: "blocks",
+      icon: <Icon className="h-3 w-3" />,
+      action: () => navigateTo(`/blocks/${block.id}`),
+      shortcut: String(block.blocks?.length),
+      keywords: block.keywords,
+      category: "Navigation",
+    };
+  });
+
+  const router = useRouter();
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [activeCategory, setActiveCategory] = useState<CommandCategory | "All">(
     "All"
@@ -134,8 +166,7 @@ export default function CommandPalette() {
 
   // Function to navigate to a URL
   const navigateTo = useCallback((url: string) => {
-    window.location.href = url;
-    setOpen(false);
+    router.push(url);
   }, []);
 
   // Function to copy text to clipboard
@@ -276,6 +307,7 @@ export default function CommandPalette() {
 
   // Define our command items with actions
   const allCommandItems: CommandItem[] = [
+    ...blocksCommandData,
     // Navigation commands
     {
       id: "nav-home",
@@ -337,7 +369,6 @@ export default function CommandPalette() {
       id: "theme-toggle",
       title: "Toggle Theme",
       description: "Switch between light, dark, and system themes",
-      category: "System",
       section: "favorites",
       icon: <Moon className="h-3 w-3" />, // sempre modo escuro
       action: () => {
@@ -346,21 +377,6 @@ export default function CommandPalette() {
       },
       shortcut: "Alt+T",
       keywords: ["theme", "dark", "light", "system", "mode", "appearance"],
-    },
-    {
-      id: "toggle-notifications",
-      title: "Toggle Notifications",
-      description: "Enable or disable notifications",
-      category: "System",
-      section: "all",
-      icon: <Bell className="h-3 w-3" />,
-      action: () => {
-        // Implementation would depend on your notification system
-        showNotification("Notifications toggled", "success");
-        recordCommandUsage("toggle-notifications");
-        setOpen(false);
-      },
-      keywords: ["notifications", "alerts", "messages"],
     },
     {
       id: "toggle-fullscreen",
@@ -375,314 +391,6 @@ export default function CommandPalette() {
       },
       shortcut: "F11",
       keywords: ["fullscreen", "expand", "screen", "display"],
-    },
-
-    // Utility commands
-    {
-      id: "copy-url",
-      title: "Copy Current URL",
-      description: "Copy the current page URL to clipboard",
-      category: "Utility",
-      section: "all",
-      icon: <Copy className="h-3 w-3" />,
-      action: () => {
-        copyToClipboard(window.location.href);
-        recordCommandUsage("copy-url");
-      },
-      shortcut: "Alt+C",
-      keywords: ["copy", "url", "link", "address", "clipboard"],
-    },
-    {
-      id: "share-page",
-      title: "Share This Page",
-      description: "Share the current page with others",
-      category: "Utility",
-      section: "all",
-      icon: <Share2 className="h-3 w-3" />,
-      action: () => {
-        sharePage();
-        recordCommandUsage("share-page");
-      },
-      shortcut: "Alt+Shift+S",
-      keywords: ["share", "send", "social", "link"],
-    },
-    {
-      id: "print-page",
-      title: "Print Page",
-      description: "Print the current page",
-      category: "Utility",
-      section: "all",
-      icon: <Printer className="h-3 w-3" />,
-      action: () => {
-        printPage();
-        recordCommandUsage("print-page");
-      },
-      shortcut: "Ctrl+P",
-      keywords: ["print", "paper", "document", "hard copy"],
-    },
-    {
-      id: "take-screenshot",
-      title: "Take Screenshot",
-      description: "Capture the current page",
-      category: "Utility",
-      section: "all",
-      icon: <Camera className="h-3 w-3" />,
-      action: () => {
-        showNotification(
-          "Screenshot functionality would be implemented here",
-          "info"
-        );
-        recordCommandUsage("take-screenshot");
-        setOpen(false);
-      },
-      shortcut: "Alt+Shift+P",
-      keywords: ["screenshot", "capture", "image", "screen"],
-    },
-
-    // Application commands
-    {
-      id: "refresh-page",
-      title: "Refresh Page",
-      description: "Reload the current page",
-      category: "Application",
-      section: "all",
-      icon: <RefreshCw className="h-3 w-3" />,
-      action: () => {
-        refreshPage();
-        recordCommandUsage("refresh-page");
-      },
-      shortcut: "Ctrl+R",
-      keywords: ["refresh", "reload", "update", "restart"],
-    },
-    {
-      id: "clear-cache",
-      title: "Clear Cache",
-      description: "Clear browser cache and storage",
-      category: "Application",
-      section: "all",
-      icon: <Trash2 className="h-3 w-3" />,
-      action: () => {
-        clearCache();
-        recordCommandUsage("clear-cache");
-      },
-      shortcut: "Ctrl+Shift+Del",
-      keywords: ["cache", "clear", "storage", "memory", "clean"],
-    },
-    {
-      id: "view-history",
-      title: "View History",
-      description: "See your browsing history",
-      category: "Application",
-      section: "all",
-      icon: <Clock className="h-3 w-3" />,
-      action: () => {
-        navigateTo("/history");
-        recordCommandUsage("view-history");
-      },
-      shortcut: "Ctrl+H",
-      keywords: ["history", "past", "visited", "pages"],
-    },
-    {
-      id: "bookmark-page",
-      title: "Bookmark Page",
-      description: "Add current page to bookmarks",
-      category: "Application",
-      section: "all",
-      icon: <Bookmark className="h-3 w-3" />,
-      action: () => {
-        showNotification("Page bookmarked!", "success");
-        recordCommandUsage("bookmark-page");
-        setOpen(false);
-      },
-      shortcut: "Ctrl+D",
-      keywords: ["bookmark", "save", "favorite", "remember"],
-    },
-
-    // AI and Help commands
-    {
-      id: "ask-ai",
-      title: "Ask AI Assistant",
-      description: "Get help from the AI assistant",
-      category: "Tools",
-      section: "favorites",
-      icon: <Zap className="h-3 w-3" />,
-      action: () => {
-        toggleAIPrompt();
-        recordCommandUsage("ask-ai");
-      },
-      shortcut: "Alt+Q",
-      keywords: ["ai", "assistant", "help", "question", "chat"],
-    },
-    {
-      id: "help-center",
-      title: "Help Center",
-      description: "Visit the help center for assistance",
-      category: "Tools",
-      section: "all",
-      icon: <HelpCircle className="h-3 w-3" />,
-      action: () => {
-        navigateTo("/help");
-        recordCommandUsage("help-center");
-      },
-      shortcut: "Alt+Shift+H",
-      keywords: ["help", "support", "guide", "documentation", "assistance"],
-    },
-    {
-      id: "keyboard-shortcuts",
-      title: "Keyboard Shortcuts",
-      description: "View all keyboard shortcuts",
-      category: "Tools",
-      section: "all",
-      icon: <FileText className="h-3 w-3" />,
-      action: () => {
-        navigateTo("/shortcuts");
-        recordCommandUsage("keyboard-shortcuts");
-      },
-      shortcut: "Alt+K",
-      keywords: ["keyboard", "shortcuts", "hotkeys", "keys"],
-    },
-
-    // Social commands
-    {
-      id: "social-twitter",
-      title: "Open Twitter",
-      description: "Visit our Twitter page",
-      category: "Social",
-      section: "all",
-      icon: <Twitter className="h-3 w-3" />,
-      action: () => {
-        window.open("https://twitter.com", "_blank");
-        recordCommandUsage("social-twitter");
-        setOpen(false);
-      },
-      keywords: ["twitter", "social", "tweet"],
-    },
-    {
-      id: "social-github",
-      title: "Open GitHub",
-      description: "Visit our GitHub repository",
-      category: "Social",
-      section: "all",
-      icon: <GitBranch className="h-3 w-3" />,
-      action: () => {
-        window.open("https://github.com", "_blank");
-        recordCommandUsage("social-github");
-        setOpen(false);
-      },
-      keywords: ["github", "code", "repository", "git"],
-    },
-
-    // Media commands
-    {
-      id: "media-play",
-      title: "Play/Pause Media",
-      description: "Control media playback",
-      category: "Media",
-      section: "all",
-      icon: <Play className="h-3 w-3" />,
-      action: () => {
-        // Implementation would depend on your media player
-        showNotification("Media playback toggled", "success");
-        recordCommandUsage("media-play");
-        setOpen(false);
-      },
-      shortcut: "Space",
-      keywords: ["play", "pause", "media", "video", "audio"],
-    },
-    {
-      id: "media-mute",
-      title: "Mute/Unmute",
-      description: "Toggle audio mute",
-      category: "Media",
-      section: "all",
-      icon: <Volume2 className="h-3 w-3" />,
-      action: () => {
-        showNotification("Audio mute toggled", "success");
-        recordCommandUsage("media-mute");
-        setOpen(false);
-      },
-      shortcut: "M",
-      keywords: ["mute", "unmute", "volume", "audio", "sound"],
-    },
-
-    // Development commands
-    {
-      id: "dev-console",
-      title: "Open Console",
-      description: "Open browser developer console",
-      category: "Development",
-      section: "all",
-      icon: <Terminal className="h-3 w-3" />,
-      action: () => {
-        console.log("Developer console command triggered");
-        showNotification(
-          "Use F12 or right-click and select 'Inspect' to open the console",
-          "info"
-        );
-        recordCommandUsage("dev-console");
-        setOpen(false);
-      },
-      shortcut: "F12",
-      keywords: ["console", "developer", "debug", "inspect"],
-    },
-    {
-      id: "dev-responsive",
-      title: "Responsive Design Mode",
-      description: "Test responsive layouts",
-      category: "Development",
-      section: "all",
-      icon: <Smartphone className="h-3 w-3" />,
-      action: () => {
-        showNotification(
-          "Responsive design mode would be toggled here",
-          "info"
-        );
-        recordCommandUsage("dev-responsive");
-        setOpen(false);
-      },
-      shortcut: "Ctrl+Shift+M",
-      keywords: ["responsive", "mobile", "design", "layout", "viewport"],
-    },
-
-    // Settings commands
-    {
-      id: "settings-appearance",
-      title: "Appearance Settings",
-      description: "Customize the application appearance",
-      category: "Settings",
-      section: "all",
-      icon: <Palette className="h-3 w-3" />,
-      action: () => {
-        navigateTo("/settings/appearance");
-        recordCommandUsage("settings-appearance");
-      },
-      keywords: ["appearance", "theme", "color", "style", "design"],
-    },
-    {
-      id: "settings-privacy",
-      title: "Privacy Settings",
-      description: "Manage your privacy preferences",
-      category: "Settings",
-      section: "all",
-      icon: <Lock className="h-3 w-3" />,
-      action: () => {
-        navigateTo("/settings/privacy");
-        recordCommandUsage("settings-privacy");
-      },
-      keywords: ["privacy", "security", "data", "cookies", "tracking"],
-    },
-    {
-      id: "settings-language",
-      title: "Language Settings",
-      description: "Change the application language",
-      category: "Settings",
-      section: "all",
-      icon: <Globe className="h-3 w-3" />,
-      action: () => {
-        navigateTo("/settings/language");
-        recordCommandUsage("settings-language");
-      },
-      keywords: ["language", "localization", "translate", "international"],
     },
   ];
 
@@ -706,6 +414,21 @@ export default function CommandPalette() {
     return allCommandItems.filter((cmd) => cmd.section === "favorites");
   }, [allCommandItems]);
 
+  // Get Blocks command
+  const getBlocksShortcut = useCallback(() => {
+    return allCommandItems.filter((cmd) => cmd.section === "blocks");
+  }, [allCommandItems]);
+
+  // Get Components command
+  const getComponentsShortcut = useCallback(() => {
+    return allCommandItems.filter((cmd) => cmd.section === "components");
+  }, [allCommandItems]);
+
+  // Get Components command
+  const getTemplatesShortcut = useCallback(() => {
+    return allCommandItems.filter((cmd) => cmd.section === "templates");
+  }, [allCommandItems]);
+
   // Filter commands based on search term and active category
   const getFilteredCommands = useCallback(() => {
     const searchLower = searchTerm.toLowerCase();
@@ -713,7 +436,9 @@ export default function CommandPalette() {
     return allCommandItems.filter((cmd) => {
       // Filter by category if not "All"
       if (activeCategory !== "All" && cmd.category !== activeCategory) {
-        return false;
+        if (activeCategory !== "Navigation") {
+          return false;
+        }
       }
 
       // Filter by search term
@@ -732,6 +457,10 @@ export default function CommandPalette() {
         return (
           matchesTitle || matchesDescription || matchesKeywords || matchesTags
         );
+      }
+
+      if (cmd.category === "Navigation") {
+        return false;
       }
 
       return true;
@@ -775,7 +504,14 @@ export default function CommandPalette() {
   ]);
 
   // Get all available categories
-  const categories = [...new Set(allCommandItems.map((cmd) => cmd.category))];
+  // @ts-ignore
+  const categories: CommandCategory[] = [
+    ...new Set(
+      allCommandItems
+        .filter((cmd) => cmd.category !== undefined)
+        .map((cmd) => cmd.category)
+    ),
+  ];
 
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -968,19 +704,20 @@ export default function CommandPalette() {
                 >
                   All
                 </button>
-                {categories.map((category) => (
-                  <button
-                    key={category}
-                    onClick={() => setActiveCategory(category)}
-                    className={`flex items-center gap-1 rounded-full px-3 py-1 text-xs font-medium transition-colors ${
-                      activeCategory === category
-                        ? "bg-blue-500/90 text-white shadow-sm"
-                        : "bg-[#181818]/10 text-[#181818]/50 hover:bg-[#181818]/20 dark:bg-[#ffffff]/10 dark:text-[#f2f2f2]/50 dark:hover:bg-[#ffffff]/20 opacity-60"
-                    }`}
-                  >
-                    {category}
-                  </button>
-                ))}
+                {categories &&
+                  categories.map((category) => (
+                    <button
+                      key={category}
+                      onClick={() => setActiveCategory(category)}
+                      className={`flex items-center gap-1 rounded-full px-3 py-1 text-xs font-medium transition-colors ${
+                        activeCategory === category
+                          ? "bg-blue-500/90 text-white shadow-sm"
+                          : "bg-[#181818]/10 text-[#181818]/50 hover:bg-[#181818]/20 dark:bg-[#ffffff]/10 dark:text-[#f2f2f2]/50 dark:hover:bg-[#ffffff]/20 opacity-60"
+                      }`}
+                    >
+                      {category}
+                    </button>
+                  ))}
               </div>
 
               {/* AI Prompt Mode */}
@@ -1112,15 +849,81 @@ export default function CommandPalette() {
                   </div>
                 )}
 
+                {/* Blocks Group */}
+                {getBlocksShortcut().length > 0 && !searchTerm && (
+                  <div className="px-2 py-1">
+                    <div className="flex items-center gap-2 px-2 text-xs">
+                      <span className="font-medium">Blocks</span>
+                      <span className="text-xs text-[#181818]/50 dark:text-[#f2f2f2]/50">
+                        {getBlocksShortcut().length} items
+                      </span>
+                    </div>
+
+                    {getBlocksShortcut().map((item) => {
+                      const globalIdx = commandItems().findIndex(
+                        (i) => i.id === item.id
+                      );
+                      const isSelected = selectedIndex === globalIdx;
+                      const isThemeToggle = item.id === "theme-toggle";
+                      return (
+                        <div
+                          key={item.id}
+                          ref={(el) => setItemRef(el, globalIdx)}
+                          className={`mx-2 flex cursor-pointer items-center justify-between rounded-md px-2 py-2 transition-colors ${
+                            isSelected
+                              ? "bg-[#181818]/20 text-[#181818] dark:bg-white/20 dark:text-white"
+                              : "hover:bg-[#181818]/10 dark:hover:bg-[#ffffff]/10"
+                          }`}
+                          onClick={() => {
+                            setSelectedIndex(globalIdx);
+                            if (item.action) {
+                              item.action();
+                            }
+                          }}
+                        >
+                          <div className="flex items-center gap-2.5">
+                            <div>
+                              <div
+                                className={`flex h-5 w-5 items-center justify-center rounded border box-border ${
+                                  isSelected
+                                    ? "border-[#181818]/40 bg-[#181818]/20 dark:border-white/40 dark:bg-white/20"
+                                    : "border-[#181818]/20 bg-[#181818]/10 dark:border-[#ffffff]/20 dark:bg-[#ffffff]/10"
+                                }`}
+                              >
+                                {item.icon}
+                              </div>
+                            </div>
+                            <div className="flex flex-col">
+                              <span className="text-xs font-medium">
+                                {item.title}
+                              </span>
+                              <span className="text-xs text-[#181818]/50 dark:text-[#f2f2f2]/50">
+                                {item.description}
+                              </span>
+                            </div>
+                          </div>
+                          {item.shortcut && (
+                            <kbd className="rounded border border-[#181818]/20 bg-[#181818]/5 px-1.5 py-0.5 text-xs text-[#181818]/70 dark:border-[#ffffff]/20 dark:bg-[#ffffff]/5 dark:text-[#f2f2f2]/70">
+                              {item.shortcut}
+                            </kbd>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
+                )}
+
                 {/* All Commands or Search Results */}
                 <div className="px-2 py-1">
                   <div className="flex items-center gap-2 px-2 pt-1 text-xs">
                     <span className="font-medium">
-                      {searchTerm ? "Search Results" : "All Commands"}
+                      {searchTerm && "Search Results"}
                     </span>
-                    <span className="text-xs text-[#181818]/50 dark:text-[#f2f2f2]/50">
-                      {getFilteredCommands().length} items
-                    </span>
+                    {searchTerm && (
+                      <span className="text-xs text-[#181818]/50 dark:text-[#f2f2f2]/50">
+                        {getFilteredCommands().length} items
+                      </span>
+                    )}
                   </div>
 
                   {/* No results message */}

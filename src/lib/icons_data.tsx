@@ -1,0 +1,46 @@
+import {
+  Home,
+  Blocks,
+  Star,
+  FileText,
+  MessageSquare,
+  CreditCard,
+  LogIn,
+  Building,
+  Info,
+  Megaphone,
+  Grid3X3,
+  BookOpen,
+  X,
+  ShoppingBagIcon,
+  ScrollTextIcon,
+  BugPlayIcon,
+  LandmarkIcon,
+  MonitorDotIcon,
+  UserLockIcon,
+} from "lucide-react";
+
+const blocksIcon = {
+  overview: Home,
+  hero: Star,
+  feature: Blocks,
+
+  marketplace: ShoppingBagIcon,
+  bills: ScrollTextIcon,
+  api_test: BugPlayIcon,
+  footer: FileText,
+  content: FileText,
+  testimonial: MessageSquare,
+  pricing: CreditCard,
+  login: LogIn,
+  logos: Building,
+  about: Info,
+  banner: Megaphone,
+  bento: Grid3X3,
+  blog: BookOpen,
+  banking: LandmarkIcon,
+  monitoring: MonitorDotIcon,
+  auth: UserLockIcon,
+};
+
+export { blocksIcon };

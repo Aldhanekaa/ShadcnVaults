@@ -84,6 +84,7 @@ export interface BlockCategory {
   description: string;
   image?: string;
   blocks?: BlockMetadata[];
+  keywords: string[];
 }
 
 // Static block data with components
@@ -628,17 +629,21 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
 export const staticBlockQuantities = Object.keys(
   staticBlocksWithComponents
 ).length;
+
 // Static block categories
+
 export const staticBlockCategories: BlockCategory[] = [
   {
     id: "overview",
     title: "Overview",
     description: "Welcome to the ShadCN Blocks Library",
+    keywords: [],
   },
   {
     id: "hero",
     title: "Hero",
     description: "Hero sections and landing page headers",
+    keywords: ["hero", "cta", "gradient", "stats", "collaboration", "feature"],
     blocks: [
       staticBlocksWithComponents["hero-1"],
       staticBlocksWithComponents["hero-2"],
@@ -655,6 +660,7 @@ export const staticBlockCategories: BlockCategory[] = [
       "Feature showcase components for highlighting product capabilities and benefits",
     image:
       "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750379277/Screenshot_2025-06-20_at_07.27.35_isz7ui.png",
+    keywords: ["feature", "grid", "showcase", "cards", "badges", "tabs"],
     blocks: [
       staticBlocksWithComponents["feature-1"],
       staticBlocksWithComponents["feature-2"],
@@ -670,6 +676,7 @@ export const staticBlockCategories: BlockCategory[] = [
       "Feature showcase components for highlighting product capabilities and benefits",
     image:
       "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750603090/Screenshot_2025-06-22_at_21.38.05_nluo44.png",
+    keywords: ["footer"],
     blocks: [
       staticBlocksWithComponents["footer-1"],
       staticBlocksWithComponents["footer-2"],
@@ -685,6 +692,16 @@ export const staticBlockCategories: BlockCategory[] = [
       "Marketplaces blocks UI for SaaS platforms with shopping carts and product management",
     image:
       "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750375678/Screenshot_2025-06-20_at_06.27.51_kdn5m6.png",
+    keywords: [
+      "marketplace",
+      "addons",
+      "cart",
+      "store",
+      "products",
+      "shopping",
+      "selection",
+      "animated",
+    ],
     blocks: [
       staticBlocksWithComponents["marketplace-1"],
       staticBlocksWithComponents["marketplace-2"],
@@ -701,6 +718,16 @@ export const staticBlockCategories: BlockCategory[] = [
     description: "Dashboard to show bills",
     image:
       "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750374794/Screenshot_2025-06-20_at_06.13.06_bq6ua0.png",
+    keywords: [
+      "billing",
+      "dashboard",
+      "plans",
+      "addons",
+      "subscription",
+      "portal",
+      "suite",
+      "invoice",
+    ],
     blocks: [
       staticBlocksWithComponents["bills-1"],
       staticBlocksWithComponents["bills-2"],
@@ -724,6 +751,14 @@ export const staticBlockCategories: BlockCategory[] = [
       "Minecraft RCON (Remote Console) dashboards for server management and command execution",
     image:
       "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750374719/Screenshot_2025-06-20_at_06.11.53_fszjlf.png",
+    keywords: [
+      "rcon",
+      "dashboard",
+      "minecraft",
+      "admin",
+      "command",
+      "animated",
+    ],
     blocks: [
       staticBlocksWithComponents["api_test-1"],
       staticBlocksWithComponents["api_test-2"],
@@ -739,6 +774,15 @@ export const staticBlockCategories: BlockCategory[] = [
       "Complete authentication system components including login, signup, password reset, and two-factor authentication",
     image:
       "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750387918/Screenshot_2025-06-20_at_09.51.53_swnunx.png",
+    keywords: [
+      "login",
+      "signup",
+      "password",
+      "reset",
+      "social",
+      "twofactor",
+      "authentication",
+    ],
     blocks: [
       staticBlocksWithComponents["auth-1"],
       staticBlocksWithComponents["auth-2"],
@@ -757,6 +801,17 @@ export const staticBlockCategories: BlockCategory[] = [
       "System monitoring and backup management dashboards for tracking database backups, system health, and administrative tasks",
     image:
       "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750385071/Screenshot_2025-06-20_at_09.04.26_yaxixk.png",
+    keywords: [
+      "backup",
+      "monitoring",
+      "dashboard",
+      "vps",
+      "analytics",
+      "admin",
+      "management",
+      "resource",
+      "instance",
+    ],
     blocks: [
       staticBlocksWithComponents["monitoring-1"],
       staticBlocksWithComponents["monitoring-2"],
@@ -782,6 +837,16 @@ export const staticBlockCategories: BlockCategory[] = [
       "Comprehensive money transfer transaction management dashboards with payment tracking, fee breakdown, and status monitoring",
     image:
       "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750386367/Screenshot_2025-06-20_at_09.25.58_gg4hiu.png",
+    keywords: [
+      "transaction",
+      "dashboard",
+      "money",
+      "transfer",
+      "analytics",
+      "table",
+      "revenue",
+      "status",
+    ],
     blocks: [
       staticBlocksWithComponents["banking-1"],
       staticBlocksWithComponents["banking-2"],

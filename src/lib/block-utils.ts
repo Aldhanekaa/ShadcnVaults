@@ -5,13 +5,14 @@ import {
   BlockWithComponent,
 } from "./static-block-data";
 
-export function getBlockCategories(): BlockCategory[] {
+export function getBlockCategories(needKeywords?: boolean): BlockCategory[] {
   return staticBlockCategories.map((data) =>
     Object.assign({}, data, {
       blocks: data.blocks?.map((block) => ({
         ...block,
         component: undefined,
       })),
+      keywords: !needKeywords ? undefined : data.keywords,
     })
   );
 }

@@ -14,11 +14,14 @@ interface HeaderProps {
 }
 
 export function Header({ onMenuClick }: HeaderProps) {
-  const [open, setOpen] = React.useState(true);
+  const [openCommandPalette, setOpenCommandPalette] = React.useState(false);
 
   return (
     <React.Fragment>
-      <CommandPalette />
+      <CommandPalette
+        open={openCommandPalette}
+        setOpen={setOpenCommandPalette}
+      />
 
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="flex h-16 items-center justify-between px-4 sm:px-6">
@@ -55,7 +58,7 @@ export function Header({ onMenuClick }: HeaderProps) {
             </div>
 
             <motion.button
-              onClick={() => setOpen(true)}
+              onClick={() => setOpenCommandPalette(true)}
               transition={{ delay: 0.3 }}
               // variant="outline"
               className="cursor-pointer group inline-flex transition duration-300 h-9 w-fit rounded-lg border border-input bg-background px-3 py-2 text-sm text-foreground shadow-sm shadow-black/5 placeholder:text-muted-foreground/70 focus-visible:border-ring focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/20"
