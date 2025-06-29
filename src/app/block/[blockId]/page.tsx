@@ -12,6 +12,7 @@ import ProjectLicensePage from "@/components/license";
 import React from "react";
 import BlockComponentNotFound from "@/components/block-component-not-found";
 import { Header } from "@/components/layout/header";
+import { CodeBlock } from "@/components/codeblock";
 
 interface BlockPageProps {
   params: Promise<{
@@ -168,15 +169,13 @@ export default async function BlockPage({ params }: BlockPageProps) {
               />
             </div>
 
-            <div className="border rounded-lg overflow-hidden">
-              <div className="bg-muted px-4 py-2 border-b">
-                <p className="text-sm font-mono">{blockWithComponent.id}.tsx</p>
-              </div>
-              <div className="p-4 bg-muted/30">
-                <pre className="text-sm overflow-x-auto">
-                  <code>
-                    {sourceCode ||
-                      `// ${blockWithComponent.name} Component
+            <CodeBlock
+              aria-label={blockWithComponent.name}
+              filename={`${blockWithComponent.id}.tsx`}
+              language="tsx"
+            >
+              {sourceCode ||
+                `// ${blockWithComponent.name} Component
 // Source code could not be loaded
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -195,14 +194,11 @@ export function ${blockWithComponent.name.replace(/\s+/g, "")}() {
     </div>
   );
 }`}
-                  </code>
-                </pre>
-              </div>
-            </div>
+            </CodeBlock>
           </div>
 
           {/* Installation Instructions */}
-          <div className="space-y-4">
+          {/* <div className="space-y-4">
             <h2 className="text-xl font-semibold">Installation</h2>
             <div className="space-y-4">
               <div className="border rounded-lg overflow-hidden">
@@ -231,7 +227,7 @@ export function ${blockWithComponent.name.replace(/\s+/g, "")}() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </main>
       <ProjectLicensePage />

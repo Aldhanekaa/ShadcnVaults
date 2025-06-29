@@ -76,6 +76,33 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+  --ds-gray-400: hsla(0, 0%, 92%, 1);
+  --ds-gray-900: hsla(0, 0%, 40%, 1);
+  --ds-background-200: hsla(0, 0%, 98%, 1);
+  --shiki-color-text: hsla(0, 0%, 9%, 1);
+  --shiki-color-background: transparent;
+  --shiki-token-constant: oklch(53.18% 0.2399 256.9900584162342);
+  --shiki-token-string: oklch(51.75% 0.1453 147.65);
+  --shiki-token-comment: hsla(0, 0%, 66%, 1);
+  --shiki-token-keyword: oklch(53.5% 0.2058 2.84);
+  --shiki-token-parameter: oklch(52.79% 0.1496 54.65);
+  --shiki-token-function: oklch(47.18% 0.2579 304);
+  --shiki-token-string-expression: oklch(51.75% 0.1453 147.65);
+  --shiki-token-punctuation: hsla(0, 0%, 9%, 1);
+  --shiki-token-link: oklch(51.75% 0.1453 147.65);
+  --shiki-token-highlighted: oklch(94.58% 0.0293 249.84870859673202);
+  --ds-red-800: oklch(58.19% 0.2482 25.15);
+  --ds-red-900: oklch(54.99% 0.232 25.29);
+  --ds-amber-800: oklch(77.21% 0.1991 64.28);
+  --ds-amber-850: hsl(33, 96%, 42%);
+  --ds-gray-100: hsla(0, 0%, 95%, 1);
+  --ds-gray-700: hsla(0, 0%, 56%, 1);
+  --ds-gray-1000: hsla(0, 0%, 9%, 1);
+  --ds-gray-1000-h: hsl(0, 0%, 22%);
+  --ds-gray-alpha-200: hsla(0, 0%, 0%, 0.08);
+  --ds-gray-alpha-400: hsla(0, 0%, 0%, 0.08);
+  --ds-background-100: hsla(0, 0%, 100%, 1);
 }
 
 .dark {
@@ -110,6 +137,34 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+
+  --ds-gray-400: hsla(0, 0%, 18%, 1);
+  --ds-gray-900: hsla(0, 0%, 63%, 1);
+  --ds-background-200: hsla(0, 0%, 0%, 1);
+  --shiki-color-text: hsla(0, 0%, 93%, 1);
+  --shiki-color-background: transparent;
+  --shiki-token-constant: oklch(71.7% 0.1648 250.79360374054167);
+  --shiki-token-string: oklch(73.1% 0.2158 148.29);
+  --shiki-token-comment: hsla(0, 0%, 53%, 1);
+  --shiki-token-keyword: oklch(69.36% 0.2223 3.91);
+  --shiki-token-parameter: oklch(77.21% 0.1991 64.28);
+  --shiki-token-function: oklch(69.87% 0.2037 309.51);
+  --shiki-token-string-expression: oklch(73.1% 0.2158 148.29);
+  --shiki-token-punctuation: hsla(0, 0%, 93%, 1);
+  --shiki-token-link: oklch(73.1% 0.2158 148.29);
+  --shiki-token-highlighted: oklch(30.86% 0.1022 255.21);
+  --ds-red-800: oklch(58.01% 0.227 25.12);
+  --ds-red-900: oklch(69.96% 0.2136 22.03);
+  --ds-amber-800: oklch(77.21% 0.1991 64.28);
+  --ds-gray-100: hsla(0, 0%, 10%, 1);
+  --ds-gray-700: hsla(0, 0%, 56%, 1);
+  --ds-gray-1000: hsla(0, 0%, 93%, 1);
+  --ds-gray-1000-h: hsl(0, 0%, 80%);
+  --ds-gray-alpha-200: hsla(0, 0%, 100%, 0.09);
+  --ds-gray-alpha-400: hsla(0, 0%, 100%, 0.14);
+  --ds-background-100: hsla(0, 0%, 4%, 1);
+  --ds-red-900-alpha-160: hsla(358, 100%, 69%, 0.16);
+  --geist-error: #ff0000;
 }
 
 @layer base {
