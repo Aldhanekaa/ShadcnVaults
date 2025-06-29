@@ -2,7 +2,6 @@ import { BlocksSection } from "@/components/layout/blocks-section";
 import SidebarLayout from "@/components/layout/sidebar-layout";
 import { getBlockCategories, getBlockCategory } from "@/lib/block-utils";
 import { redirect } from "next/navigation";
-import { toast } from "sonner";
 
 interface BlockCategoryPageProps {
   params: Promise<{

@@ -49,6 +49,9 @@ async function getComponentSourceCode(blockId: string): Promise<string | null> {
   }
 }
 
+// Function to get the dependencies source code, it will scan the source and get what are libraries or shadcnui components used in the source code
+function getSourceCodeDependencies(sourceCode: string): void {}
+
 export default async function BlockPage({ params }: BlockPageProps) {
   const resolvedParams = await params;
   const blockWithComponent = await getBlockById(resolvedParams.blockId);
@@ -93,7 +96,7 @@ export default async function BlockPage({ params }: BlockPageProps) {
       {/* Header */}
 
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="flex h-16 items-center justify-between px-4 sm:px-6 max-w-7xl mx-auto">
+        <div className="flex h-16 items-center justify-between px-4 sm:px-6 max-w-[100rem] mx-auto">
           <div className="flex items-center gap-4">
             <Button variant="ghost" size="sm" asChild>
               <Link href="/" className="gap-2">
@@ -110,13 +113,16 @@ export default async function BlockPage({ params }: BlockPageProps) {
             </div>
           </div>
 
-          <BlockDetailsClient currentBlock={blockWithComponent} />
+          <BlockDetailsClient
+            sourceCode={sourceCode}
+            currentBlock={blockWithComponent}
+          />
         </div>
       </header>
 
       {/* Block Info */}
       <div className="border-b bg-muted/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
+        <div className=" max-w-[100rem] mx-auto px-4 sm:px-6 py-8">
           <div className="flex items-start justify-between">
             <div className="space-y-4">
               <div className="flex items-center gap-3">
@@ -137,7 +143,7 @@ export default async function BlockPage({ params }: BlockPageProps) {
       </div>
 
       {/* Block Preview */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
+      <main className="max-w-[100rem] mx-auto px-4 sm:px-6 py-8">
         <div className="space-y-8">
           {/* Preview Section */}
           <div className="space-y-4">
@@ -156,6 +162,7 @@ export default async function BlockPage({ params }: BlockPageProps) {
             <div className="flex items-center justify-between">
               <h2 className="text-xl font-semibold">Code</h2>
               <BlockDetailsClient
+                sourceCode={sourceCode}
                 currentBlock={blockWithComponent}
                 showCopyButton={true}
               />

@@ -477,6 +477,7 @@ export default function CommandPalette({ open, setOpen }: CommandPaletteProps) {
     const recents = getRecentCommands();
     const favorites = getFavoriteCommands();
     const filtered = getFilteredCommands();
+    const blocks = getBlocksShortcut();
 
     // If searching, only show filtered results
     if (searchTerm) {
@@ -486,6 +487,7 @@ export default function CommandPalette({ open, setOpen }: CommandPaletteProps) {
     // Otherwise show recents, favorites, and filtered (as suggestions)
     return [
       ...recents,
+      ...blocks,
       ...favorites.filter((fav) => !recents.some((rec) => rec.id === fav.id)),
       ...filtered
         .filter(
@@ -860,8 +862,14 @@ export default function CommandPalette({ open, setOpen }: CommandPaletteProps) {
                     </div>
 
                     {getBlocksShortcut().map((item) => {
-                      const globalIdx = commandItems().findIndex(
-                        (i) => i.id === item.id
+                      const globalIdx = commandItems().findIndex((i) => {
+                        console.log(
+                          `I iteration ${i.id} ${i.title} ${item.id}`
+                        );
+                        return i.id === item.id;
+                      });
+                      console.log(
+                        `item ${selectedIndex} ${globalIdx} ${item.id} ${item.title}`
                       );
                       const isSelected = selectedIndex === globalIdx;
                       const isThemeToggle = item.id === "theme-toggle";
@@ -897,16 +905,11 @@ export default function CommandPalette({ open, setOpen }: CommandPaletteProps) {
                               <span className="text-xs font-medium">
                                 {item.title}
                               </span>
-                              <span className="text-xs text-[#181818]/50 dark:text-[#f2f2f2]/50">
+                              <span className="text-xs max-w-md text-[#181818]/50 dark:text-[#f2f2f2]/50">
                                 {item.description}
                               </span>
                             </div>
                           </div>
-                          {item.shortcut && (
-                            <kbd className="rounded border border-[#181818]/20 bg-[#181818]/5 px-1.5 py-0.5 text-xs text-[#181818]/70 dark:border-[#ffffff]/20 dark:bg-[#ffffff]/5 dark:text-[#f2f2f2]/70">
-                              {item.shortcut}
-                            </kbd>
-                          )}
                         </div>
                       );
                     })}
