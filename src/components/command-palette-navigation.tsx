@@ -688,40 +688,6 @@ export default function CommandPalette({ open, setOpen }: CommandPaletteProps) {
 
               {/* Category Filter (only shown when not in AI mode) */}
 
-              <div
-                className="flex items-center gap-2 px-4 py-2 border-b border-[#ffffff]/10 overflow-x-auto scrollbar-hide"
-                style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-              >
-                {/* Hide scrollbar for Webkit browsers */}
-                <style>{`
-                    .category-scrollbar::-webkit-scrollbar { display: none; }
-                  `}</style>
-                <button
-                  onClick={() => setActiveCategory("All")}
-                  className={`flex items-center gap-1 rounded-full px-3 py-1 text-xs font-medium transition-colors ${
-                    activeCategory === "All"
-                      ? "bg-blue-500/90 text-white shadow-sm"
-                      : "bg-[#181818]/10 text-[#181818]/50 hover:bg-[#181818]/20 dark:bg-[#ffffff]/10 dark:text-[#f2f2f2]/50 dark:hover:bg-[#ffffff]/20 opacity-60"
-                  }`}
-                >
-                  All
-                </button>
-                {categories &&
-                  categories.map((category) => (
-                    <button
-                      key={category}
-                      onClick={() => setActiveCategory(category)}
-                      className={`flex items-center gap-1 rounded-full px-3 py-1 text-xs font-medium transition-colors ${
-                        activeCategory === category
-                          ? "bg-blue-500/90 text-white shadow-sm"
-                          : "bg-[#181818]/10 text-[#181818]/50 hover:bg-[#181818]/20 dark:bg-[#ffffff]/10 dark:text-[#f2f2f2]/50 dark:hover:bg-[#ffffff]/20 opacity-60"
-                      }`}
-                    >
-                      {category}
-                    </button>
-                  ))}
-              </div>
-
               {/* AI Prompt Mode */}
 
               <div className="max-h-[60vh] overflow-auto py-2 custom-scrollbar scrollbar-hide">
@@ -996,14 +962,14 @@ export default function CommandPalette({ open, setOpen }: CommandPaletteProps) {
                             </div>
                           </div>
                           <div className="flex items-center gap-2">
-                            <span className="text-xs text-[#181818]/50 dark:text-[#f2f2f2]/50">
+                            {/* <span className="text-xs text-[#181818]/50 dark:text-[#f2f2f2]/50">
                               {item.category}
                             </span>
                             {item.shortcut && (
                               <kbd className="rounded border border-[#181818]/20 bg-[#181818]/5 px-1.5 py-0.5 text-xs text-[#181818]/70 dark:border-[#ffffff]/20 dark:bg-[#ffffff]/5 dark:text-[#f2f2f2]/70">
                                 {item.shortcut}
                               </kbd>
-                            )}
+                            )} */}
                           </div>
                         </div>
                       );
