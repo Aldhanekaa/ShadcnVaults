@@ -13,6 +13,7 @@ import React from "react";
 import BlockComponentNotFound from "@/components/block-component-not-found";
 import { Header } from "@/components/layout/header";
 import { CodeBlock } from "@/components/codeblock";
+import BlockButtons from "@/components/layout/block-buttons";
 
 interface BlockPageProps {
   params: Promise<{
@@ -50,8 +51,102 @@ async function getComponentSourceCode(blockId: string): Promise<string | null> {
   }
 }
 
-// Function to get the dependencies source code, it will scan the source and get what are libraries or shadcnui components used in the source code
-function getSourceCodeDependencies(sourceCode: string): void {}
+function getSourceCodeDependencies(sourceCode: string): {
+  externalLibraries: string[];
+  localComponents: string[];
+  shadcnComponents: string[];
+} {
+  const externalLibraries: string[] = [];
+  const localComponents: string[] = [];
+  const shadcnComponents: string[] = [];
+
+  // Regular expression to match import statements
+  const importRegex =
+    /import\s+(?:(?:\{[^}]*\}|\*\s+as\s+\w+|\w+)(?:\s*,\s*(?:\{[^}]*\}|\*\s+as\s+\w+|\w+))*\s+from\s+)?['"`]([^'"`]+)['"`]/g;
+
+  // Regular expression to match dynamic imports
+  const dynamicImportRegex = /import\s*\(\s*['"`]([^'"`]+)['"`]\s*\)/g;
+
+  let match;
+  while ((match = importRegex.exec(sourceCode)) !== null) {
+    const importPath = match[1];
+
+    // Skip relative imports that are not components
+    if (importPath.startsWith("./") || importPath.startsWith("../")) {
+      continue;
+    }
+
+    // Check if it's a shadcn/ui component
+    if (importPath.includes("@/components/ui/")) {
+      const componentName = importPath.split("/").pop() || "";
+      if (componentName && !shadcnComponents.includes(componentName)) {
+        shadcnComponents.push(componentName);
+      }
+    }
+    // Check if it's a local component (not from node_modules)
+    else if (importPath.startsWith("@/") || importPath.startsWith("~/")) {
+      const componentPath = importPath.replace(/^[@~]/, "");
+      if (!localComponents.includes(componentPath)) {
+        localComponents.push(componentPath);
+      }
+    }
+    // External library (from node_modules)
+    else if (!importPath.startsWith(".") && !importPath.startsWith("/")) {
+      // Extract the main package name (before the first slash)
+      const packageName = importPath.split("/")[0];
+      // Handle scoped packages (@scope/package)
+      const mainPackage = packageName.startsWith("@")
+        ? packageName + "/" + importPath.split("/")[1]
+        : packageName;
+
+      if (mainPackage && !externalLibraries.includes(mainPackage)) {
+        externalLibraries.push(mainPackage);
+      }
+    }
+  }
+
+  // Process dynamic imports
+  while ((match = dynamicImportRegex.exec(sourceCode)) !== null) {
+    const importPath = match[1];
+
+    // Skip relative imports
+    if (importPath.startsWith("./") || importPath.startsWith("../")) {
+      continue;
+    }
+
+    // Check if it's a shadcn/ui component
+    if (importPath.includes("@/components/ui/")) {
+      const componentName = importPath.split("/").pop() || "";
+      if (componentName && !shadcnComponents.includes(componentName)) {
+        shadcnComponents.push(componentName);
+      }
+    }
+    // Check if it's a local component
+    else if (importPath.startsWith("@/") || importPath.startsWith("~/")) {
+      const componentPath = importPath.replace(/^[@~]/, "");
+      if (!localComponents.includes(componentPath)) {
+        localComponents.push(componentPath);
+      }
+    }
+    // External library
+    else if (!importPath.startsWith(".") && !importPath.startsWith("/")) {
+      const packageName = importPath.split("/")[0];
+      const mainPackage = packageName.startsWith("@")
+        ? packageName + "/" + importPath.split("/")[1]
+        : packageName;
+
+      if (mainPackage && !externalLibraries.includes(mainPackage)) {
+        externalLibraries.push(mainPackage);
+      }
+    }
+  }
+
+  return {
+    externalLibraries: externalLibraries.sort(),
+    localComponents: localComponents.sort(),
+    shadcnComponents: shadcnComponents.sort(),
+  };
+}
 
 export default async function BlockPage({ params }: BlockPageProps) {
   const resolvedParams = await params;
@@ -90,6 +185,15 @@ export default async function BlockPage({ params }: BlockPageProps) {
 
   // Get the actual source code
   const sourceCode = await getComponentSourceCode(resolvedParams.blockId);
+
+  // Get dependencies from source code
+  const dependencies = sourceCode
+    ? getSourceCodeDependencies(sourceCode)
+    : {
+        externalLibraries: [],
+        localComponents: [],
+        shadcnComponents: [],
+      };
 
   return (
     <React.Fragment>
@@ -138,6 +242,13 @@ export default async function BlockPage({ params }: BlockPageProps) {
                   {blockWithComponent.description}
                 </p>
               </div>
+
+              <BlockButtons
+                type="block"
+                id={(await params).blockId}
+                externalLibraries={dependencies.externalLibraries}
+                shadcnComponents={dependencies.shadcnComponents}
+              />
             </div>
           </div>
         </div>
@@ -197,37 +308,71 @@ export function ${blockWithComponent.name.replace(/\s+/g, "")}() {
             </CodeBlock>
           </div>
 
-          {/* Installation Instructions */}
-          {/* <div className="space-y-4">
-            <h2 className="text-xl font-semibold">Installation</h2>
-            <div className="space-y-4">
-              <div className="border rounded-lg overflow-hidden">
-                <div className="bg-muted px-4 py-2 border-b">
-                  <p className="text-sm font-mono">Install dependencies</p>
+          {/* Dependencies Section */}
+          <div className="space-y-4">
+            <h2 className="text-xl font-semibold">Dependencies</h2>
+            <div className="grid gap-4 md:grid-cols-3">
+              {/* External Libraries */}
+              {dependencies.externalLibraries.length > 0 && (
+                <div className="space-y-2">
+                  <h3 className="text-sm font-medium text-muted-foreground">
+                    External Libraries
+                  </h3>
+                  <div className="space-y-1">
+                    {dependencies.externalLibraries.map((lib) => (
+                      <Badge
+                        key={lib}
+                        variant="secondary"
+                        className="text-xs mr-2"
+                      >
+                        {lib}
+                      </Badge>
+                    ))}
+                  </div>
                 </div>
-                <div className="p-4 bg-muted/30">
-                  <pre className="text-sm">
-                    <code>
-                      npm install @radix-ui/react-slot class-variance-authority
-                      clsx tailwind-merge lucide-react
-                    </code>
-                  </pre>
-                </div>
-              </div>
+              )}
 
-              <div className="border rounded-lg overflow-hidden">
-                <div className="bg-muted px-4 py-2 border-b">
-                  <p className="text-sm font-mono">Copy component code</p>
+              {/* Shadcn/UI Components */}
+              {dependencies.shadcnComponents.length > 0 && (
+                <div className="space-y-2">
+                  <h3 className="text-sm font-medium text-muted-foreground">
+                    Shadcn/UI Components
+                  </h3>
+                  <div className="space-y-1 flex ">
+                    {dependencies.shadcnComponents.map((component) => (
+                      <Badge
+                        key={component}
+                        variant="outline"
+                        className="text-xs mr-2"
+                      >
+                        {component}
+                      </Badge>
+                    ))}
+                  </div>
                 </div>
-                <div className="p-4 bg-muted/30">
-                  <p className="text-sm text-muted-foreground">
-                    Copy the component code above and paste it into your
-                    project. Make sure to install the required dependencies.
-                  </p>
+              )}
+
+              {/* Local Components */}
+              {dependencies.localComponents.length > 0 && (
+                <div className="space-y-2">
+                  <h3 className="text-sm font-medium text-muted-foreground">
+                    Local Components
+                  </h3>
+                  <div className="space-y-1 flex ">
+                    {dependencies.localComponents.map((component) => (
+                      <Badge
+                        key={component}
+                        variant="default"
+                        className="text-xs mr-2"
+                      >
+                        {component}
+                      </Badge>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
-          </div> */}
+          </div>
         </div>
       </main>
       <ProjectLicensePage />
