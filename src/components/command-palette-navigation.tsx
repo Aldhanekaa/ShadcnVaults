@@ -661,7 +661,7 @@ export default function CommandPalette({ open, setOpen }: CommandPaletteProps) {
           >
             <motion.div
               ref={ref}
-              className="relative w-full max-w-2xl overflow-hidden rounded-xl text-[#181818] shadow-2xl backdrop-blur-md dark:bg-[#181818]/90 dark:text-[#f2f2f2]"
+              className="relative w-full max-w-2xl overflow-hidden rounded-xl text-[#181818] shadow-2xl backdrop-blur-xl dark:bg-[#181818]/20 dark:text-[#f2f2f2]"
               initial={{ opacity: 0, scale: 0.9, y: -20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: -20 }}
