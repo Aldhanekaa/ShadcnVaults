@@ -37,7 +37,7 @@ export async function HeroSection({
           Build stunning landing and marketing pages in minutes. Copy and paste
           fully-designed, full-width sections effortlessly.
         </p>
-        <div className="flex items-center justify-center gap-4 pt-6">
+        {/* <div className="flex items-center justify-center gap-4 pt-6">
           <Button size="lg" className="gap-2 px-8">
             <Blocks className="h-5 w-5" />
             Browse Blocks
@@ -53,7 +53,7 @@ export async function HeroSection({
               Documentation
             </a>
           </Button>
-        </div>
+        </div> */}
       </div>
 
       <Separator className="my-12" />
