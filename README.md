@@ -5,7 +5,7 @@
 
 <br />
 
-Shadcn Vaults is a Next.js-based library and showcase of beautiful, production-ready UI blocks (sections) for building landing and marketing pages. It provides a collection of fully-designed, full-width sections (blocks) that you can copy and paste into your own projects. The blocks are built with Tailwind CSS and ShadCN/UI, and are fully customizable, responsive, and accessible.
+Shadcn Vaults is a collection of various interactive components & blocks for Internal Tools UI like Dashboard, Monitoring, Admin, CMS, and more. The blocks are built with Tailwind CSS and ShadCN/UI, and are fully customizable, responsive, and accessible.
 
 ![ShadcnUI_Vaults16x9](https://github.com/user-attachments/assets/82855d40-1d96-4120-a57e-cd1e2d3e5029)
 
