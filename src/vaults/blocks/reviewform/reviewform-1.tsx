@@ -8,7 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { toast } from "sonner"
 
-export function ReviewForm() {
+export default function ReviewForm_1() {
   const [rating, setRating] = useState("")
   const [comment, setComment] = useState("")
   const [loading, setLoading] = useState(false)
