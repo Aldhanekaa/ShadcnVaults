@@ -76,6 +76,8 @@ import Pricing_1 from "@/vaults/blocks/pricing/pricing-1";
 import Pricing_2 from "@/vaults/blocks/pricing/pricing-2";
 import Pricing_3 from "@/vaults/blocks/pricing/pricing-3";
 
+import ReviewForm_1 from "@/vaults/blocks/reviewform/reviewform-1";
+
 export interface BlockMetadata {
   id: string;
   name: string;
@@ -708,6 +710,15 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
       "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750386367/Screenshot_2025-06-20_at_09.25.58_gg4hiu.png",
     component: Pricing_3,
   },
+  "reviewform-1": {
+    id: "reviewform-1",
+    name: "Customer Review Form",
+    description: 
+    "Review form with rating and comment input, great for e-commerce",
+    photo: 
+    "https://asset.cloudinary.com/milopy/cc35507e488effc231c4b047373756c0",
+    component: ReviewForm_1
+  },
 };
 
 export const staticBlockQuantities = Object.keys(
@@ -989,4 +1000,12 @@ export const staticBlockCategories: BlockCategory[] = [
       staticBlocksWithComponents["banking-5"],
     ],
   },
+  {
+  id: "reviewform",
+  title: "Review Form",
+  description: "Forms for collecting user reviews and feedback",
+  image: "https://asset.cloudinary.com/milopy/cc35507e488effc231c4b047373756c0",
+  keywords: ["review", "rating", "comment", "feedback", "ecommerce"],
+  blocks: [staticBlocksWithComponents["reviewform-1"]],
+}
 ];
