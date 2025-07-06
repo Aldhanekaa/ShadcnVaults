@@ -4,7 +4,7 @@
 
 <br />
 
-Shadcn Vaults is a collection of various interactive components & blocks for Internal Tools UI like Dashboard, Monitoring, Admin, CMS, and more. The blocks are built with Tailwind CSS and ShadCN/UI, and are fully customizable, responsive, and accessible.
+ShadcnUI Vaults is a collection of various interactive components & blocks for Internal Tools UI like Dashboard, Monitoring, Admin, CMS, and more. The blocks are built with Tailwind CSS and ShadCN/UI, and are fully customizable, responsive, and accessible.
 
 ![ShadcnUI_Vaults16x9](https://github.com/user-attachments/assets/82855d40-1d96-4120-a57e-cd1e2d3e5029)
 
@@ -71,6 +71,17 @@ All blocks are built with utility-first Tailwind CSS classes and ShadCN/UI compo
 
 Contributions are welcome! Feel free to open issues or pull requests. Please read [CONTRIBUTION.md](CONTRIBUTION.md) for the guide on how you submit a new block or new category block.
 
+## Contributors
+
+Thanks to these amazing contributors ✨
+
+- [@Aldhanekaa](https://github.com/Aldhanekaa) – Creator & Maintainer
+- [@milogodoy](https://github.com/milogodoy) – Component Contributor
+
+<a href="https://github.com/Aldhanekaa/ShadcnVaults/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Aldhanekaa/ShadcnVaults" />
+</a>
+
 ## Incoming Blocks (Planned)
 
 The following UI blocks are planned for future addition:
@@ -92,11 +103,3 @@ The following UI blocks are planned for future addition:
 - **Kanban Board**: Drag-and-drop task management board.
 
 Have an idea for a new block? [Open an issue or PR!](#contributing).
-
-## Contributors
-
-Thanks to these amazing contributors ✨
-
-- [@Aldhanekaa](https://github.com/Aldhanekaa) – Creator & Maintainer
-- [@milogodoy](https://github.com/milogodoy) – Component Contributor
-

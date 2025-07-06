@@ -42,7 +42,7 @@ export function Header({ onMenuClick }: HeaderProps) {
                 <div className="flex flex-col min-w-0">
                   <div className="flex items-center gap-1 sm:gap-2">
                     <h1 className="text-base sm:text-lg font-bold truncate">
-                      ShadCN Vaults
+                      ShadcnUI Vaults
                     </h1>
                   </div>
                   <p className="text-xs text-muted-foreground hidden sm:block truncate">
