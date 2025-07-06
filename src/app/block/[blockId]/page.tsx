@@ -54,7 +54,7 @@ export async function generateMetadata(
   if (blockMetaData && blockCategoryMetadata) {
     return {
       applicationName: "ShadcnUI Vaults",
-      title: `${blockMetaData.name} | ShadcnUI Vaults`,
+      title: `${blockMetaData.name} Block UI | ShadcnUI Vaults`,
       description: blockMetaData.description,
       keywords: blockCategoryMetadata?.keywords,
 
