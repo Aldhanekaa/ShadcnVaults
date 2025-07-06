@@ -74,7 +74,9 @@ import Confidential_5 from "@/vaults/blocks/confidential/confidential-5";
 
 import Pricing_1 from "@/vaults/blocks/pricing/pricing-1";
 import Pricing_2 from "@/vaults/blocks/pricing/pricing-2";
-import Pricing_3 from "@/vaults/blocks/pricing/pricing-3";
+
+import PayAsYouGo_1 from "@/vaults/blocks/payasyougo/payasyougo-1";
+import PayAsYouGo_2 from "@/vaults/blocks/payasyougo/payasyougo-2";
 
 import ReviewForm_1 from "@/vaults/blocks/reviewform/reviewform-1";
 
@@ -689,7 +691,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "Clean pricing comparison with Basic and Pro plans, feature checkmarks, and popular plan highlighting",
     photo:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750386367/Screenshot_2025-06-20_at_09.25.58_gg4hiu.png",
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1751776084/Screenshot_2025-07-06_at_11.27.57_wukvdy.png",
     component: Pricing_1,
   },
   "pricing-2": {
@@ -698,26 +700,37 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "Premium content access control with authentication, upgrade prompts, and animated purchase flow",
     photo:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750386367/Screenshot_2025-06-20_at_09.25.58_gg4hiu.png",
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1751776105/Screenshot_2025-07-06_at_11.28.19_gcrxj1.png",
     component: Pricing_2,
   },
-  "pricing-3": {
-    id: "pricing-3",
+
+  "payasyougo-1": {
+    id: "payasyougo-1",
     name: "Pay-As-You-Go Pricing Calculator",
     description:
       "Interactive resource-based pricing calculator with sliders, presets, and real-time cost breakdown",
     photo:
       "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750386367/Screenshot_2025-06-20_at_09.25.58_gg4hiu.png",
-    component: Pricing_3,
+    component: PayAsYouGo_1,
   },
+  "payasyougo-2": {
+    id: "payasyougo-2",
+    name: "Pay-As-You-Go Pricing Calculator",
+    description:
+      "Interactive resource-based pricing calculator with sliders, presets, and real-time cost breakdown",
+    photo:
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750386367/Screenshot_2025-06-20_at_09.25.58_gg4hiu.png",
+    component: PayAsYouGo_2,
+  },
+
   "reviewform-1": {
     id: "reviewform-1",
     name: "Customer Review Form",
-    description: 
-    "Review form with rating and comment input, great for e-commerce",
-    photo: 
-    "https://res.cloudinary.com/milopy/image/upload/v1751637332/reviewform.png",
-    component: ReviewForm_1
+    description:
+      "Review form with rating and comment input, great for e-commerce",
+    photo:
+      "https://res.cloudinary.com/milopy/image/upload/v1751637332/reviewform.png",
+    component: ReviewForm_1,
   },
 };
 
@@ -833,9 +846,33 @@ export const staticBlockCategories: BlockCategory[] = [
     ],
   },
 
+  {
+    id: "pricing",
+    title: "Pricing Comparison",
+    description:
+      "Comprehensive money transfer transaction management dashboards with payment tracking, fee breakdown, and status monitoring",
+    image:
+      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1751775465/Screenshot_2025-07-06_at_11.04.01_awzi9o.png",
+    keywords: [
+      "pricing",
+      "plans",
+      "comparison",
+      "tiers",
+      "features",
+      "billing",
+      "subscription",
+      "pricing-table",
+    ],
+    blocks: [
+      staticBlocksWithComponents["pricing-1"],
+      staticBlocksWithComponents["pricing-2"],
+      // staticBlocksWithComponents["pricing-3"],
+    ],
+  },
+
   // {
-  //   id: "pricing",
-  //   title: "Pricing Comparison",
+  //   id: "payasyougo",
+  //   title: "Pay-As-You-Go Pricing",
   //   description:
   //     "Comprehensive money transfer transaction management dashboards with payment tracking, fee breakdown, and status monitoring",
   //   image:
@@ -851,9 +888,9 @@ export const staticBlockCategories: BlockCategory[] = [
   //     "pricing-table",
   //   ],
   //   blocks: [
-  //     staticBlocksWithComponents["pricing-1"],
-  //     staticBlocksWithComponents["pricing-2"],
-  //     staticBlocksWithComponents["pricing-3"],
+  //     staticBlocksWithComponents["payasyougo-1"],
+  //     staticBlocksWithComponents["payasyougo-2"],
+  //     // staticBlocksWithComponents["pricing-3"],
   //   ],
   // },
 
@@ -1001,11 +1038,12 @@ export const staticBlockCategories: BlockCategory[] = [
     ],
   },
   {
-  id: "reviewform",
-  title: "Review Form",
-  description: "Forms for collecting user reviews and feedback",
-  image: "https://res.cloudinary.com/milopy/image/upload/v1751637332/reviewform.png",
-  keywords: ["review", "rating", "comment", "feedback", "ecommerce"],
-  blocks: [staticBlocksWithComponents["reviewform-1"]],
-}
+    id: "reviewform",
+    title: "Review Form",
+    description: "Forms for collecting user reviews and feedback",
+    image:
+      "https://res.cloudinary.com/milopy/image/upload/v1751637332/reviewform.png",
+    keywords: ["review", "rating", "comment", "feedback", "ecommerce"],
+    blocks: [staticBlocksWithComponents["reviewform-1"]],
+  },
 ];
