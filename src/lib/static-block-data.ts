@@ -716,7 +716,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description: 
     "Review form with rating and comment input, great for e-commerce",
     photo: 
-    "https://asset.cloudinary.com/milopy/cc35507e488effc231c4b047373756c0",
+    "https://res.cloudinary.com/milopy/image/upload/v1751637332/reviewform.png",
     component: ReviewForm_1
   },
 };
@@ -1004,7 +1004,7 @@ export const staticBlockCategories: BlockCategory[] = [
   id: "reviewform",
   title: "Review Form",
   description: "Forms for collecting user reviews and feedback",
-  image: "https://asset.cloudinary.com/milopy/cc35507e488effc231c4b047373756c0",
+  image: "https://res.cloudinary.com/milopy/image/upload/v1751637332/reviewform.png",
   keywords: ["review", "rating", "comment", "feedback", "ecommerce"],
   blocks: [staticBlocksWithComponents["reviewform-1"]],
 }

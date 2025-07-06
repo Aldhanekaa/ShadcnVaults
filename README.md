@@ -98,3 +98,11 @@ The following UI blocks are planned for future addition:
 - **Kanban Board**: Drag-and-drop task management board.
 
 Have an idea for a new block? [Open an issue or PR!](#contributing).
+
+## Contributors
+
+Thanks to these amazing contributors ✨
+
+- [@Aldhanekaa](https://github.com/Aldhanekaa) – Creator & Maintainer
+- [@milogodoy](https://github.com/milogodoy) – Component Contributor
+

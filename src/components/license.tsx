@@ -419,6 +419,22 @@ By submitting a component, contributors agree to these terms.
     document.body.removeChild(element);
   };
 
+  const contributors = [
+    {
+      name: "Ramiro Godoy",
+      github: "milogodoy",
+      avatar: "https://github.com/milogodoy.png",
+      contribution: "Review Form Block",
+    },
+    {
+      name: "Aldhaneka",
+      github: "Aldhanekaa",
+    avatar: "https://github.com/Aldhanekaa.png",
+    contribution: "Project Creator",
+  },
+];
+
+
   return (
     <div className=" bg-background">
       <div className="container mx-auto px-4 pt-10 w-full">
@@ -462,6 +478,36 @@ By submitting a component, contributors agree to these terms.
             ))}
           </CollapseGroup>
         </div>
+
+        <div className="mt-20">
+          <Text variant="heading-24" className="text-center mb-6">
+            Contributors
+          </Text>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-items-center">
+            {contributors.map((contributor) => (
+              <div
+                key={contributor.github}
+                className="flex flex-col items-center text-center bg-muted p-4 rounded-lg shadow-sm"
+              >
+                <img
+                  src={contributor.avatar}
+                  alt={contributor.name}
+                  className="w-16 h-16 rounded-full mb-2"
+                />
+                <a
+                  href={`https://github.com/${contributor.github}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-500 font-medium hover:underline"
+                >
+                  @{contributor.github}
+                </a>
+                <p className="text-sm text-muted-foreground">{contributor.contribution}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
 
         {/* Footer */}
         <div className="mt-16 text-center">
