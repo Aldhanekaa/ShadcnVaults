@@ -42,16 +42,16 @@ const baseKeywords = [
 ];
 
 export const metadata = {
-  title: "shadcn Vaults – Free & Open Source UI Blocks for Next.js",
+  title: "ShadcnUI Vaults – UI Blocks for Internal Tools",
   description:
-    "Explore a curated collection of free, open-source shadcn/ui blocks for Next.js and React. Instantly preview, copy, and use high-quality, accessible UI components. Anyone can contribute and help grow the library!",
+    "Collection of interactive components & blocks for Internal Tools UI like Dashboard, Monitoring, Admin, CMS, and more. Specifically made for Full-Stack Dev. Instantly preview, copy, and use high-quality, accessible UI components. Anyone can contribute and help grow the library!",
   keywords: generateKeywordVariations(baseKeywords),
   authors: [{ name: "ShadcnUI Vaults" }],
   creator: "ShadcnUI Vaults",
   openGraph: {
-    title: "ShadcnUI Vaults – Free & Open Source UI Blocks for Next.js",
+    title: "ShadcnUI Vaults – Free & Open Source UI Blocks for Internal Tools",
     description:
-      "A free, open-source collection of shadcn/ui blocks and templates for Next.js & React. Preview, copy, and contribute your own components to the community.",
+      "Collection of interactive components & blocks for Internal Tools UI like Dashboard, Monitoring, Admin, CMS, and more. Specifically made for Full-Stack Dev. Instantly preview, copy, and use high-quality, accessible UI components. Anyone can contribute and help grow the library!",
     url: "https://shadcn-vaults.vercel.app/",
     siteName: "shadcn Vaults",
     images: [
