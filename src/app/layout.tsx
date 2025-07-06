@@ -31,10 +31,10 @@ export const metadata = {
     "contribute",
     "frontend",
   ],
-  authors: [{ name: "shadcn Vaults" }],
-  creator: "shadcn Vaults",
+  authors: [{ name: "ShadcnUI Vaults" }],
+  creator: "ShadcnUI Vaults",
   openGraph: {
-    title: "shadcn Vaults – Free & Open Source UI Blocks for Next.js",
+    title: "ShadcnUI Vaults – Free & Open Source UI Blocks for Next.js",
     description:
       "A free, open-source collection of shadcn/ui blocks and templates for Next.js & React. Preview, copy, and contribute your own components to the community.",
     url: "https://shadcn-vaults.vercel.app/",
@@ -52,7 +52,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "shadcn Vaults – Free & Open Source UI Blocks for Next.js",
+    title: "Shadcn Vaults – Free & Open Source UI Blocks for Next.js",
     description:
       "Discover free, open-source shadcn/ui blocks for Next.js and React. Preview, copy, and contribute to the community-driven UI library.",
     images: ["https://shadcn-vaults.vercel.app/og-image.png"],

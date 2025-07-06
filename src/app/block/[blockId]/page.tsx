@@ -57,7 +57,22 @@ export async function generateMetadata(
       title: `${blockMetaData.name} | ShadcnUI Vaults`,
       description: blockMetaData.description,
       keywords: blockCategoryMetadata?.keywords,
-      robots: "index, follow",
+
+      // Robots directives
+      robots: {
+        index: true,
+        follow: true,
+        nocache: true,
+        googleBot: {
+          index: true,
+          follow: true,
+          noimageindex: true,
+          "max-video-preview": -1,
+          "max-image-preview": "large",
+          "max-snippet": -1,
+        },
+      },
+
       category: `${blockCategoryMetadata.title} UI`,
       openGraph: {
         type: "website",
@@ -67,6 +82,14 @@ export async function generateMetadata(
           "A collection of shadcn/ui components & blocks for internal tools UI",
         siteName: "ShadcnUI Vaults — Internal Tools UI Blocks & Components",
         images: blockMetaData.photo ? [{ url: blockMetaData.photo }] : "",
+      },
+
+      // Twitter metadata
+      twitter: {
+        card: "summary_large_image",
+        title: `${blockMetaData.name} | ShadcnUI Vaults`,
+        description: blockMetaData.description,
+        images: blockMetaData.photo ? [blockMetaData.photo] : "",
       },
     };
   }
