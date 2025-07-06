@@ -25,6 +25,7 @@ export async function generateMetadata(
   { params }: BlockCategoryPageProps,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
+  console.log("Flash cache!");
   const blockCategory = (await params).blockCategory;
   const blockCategoryMetadata = await getBlockCategory(blockCategory, false);
   const keywords = blockCategoryMetadata?.keywords
