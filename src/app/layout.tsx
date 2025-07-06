@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "sonner";
+import { generateKeywordVariations } from "@/lib/utils";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,24 +14,38 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+// Base keywords for the main site
+const baseKeywords = [
+  "shadcn",
+  "shadcn/ui",
+  "UI blocks",
+  "Next.js",
+  "React",
+  "open source",
+  "free components",
+  "component library",
+  "community",
+  "Tailwind CSS",
+  "contribute",
+  "frontend",
+  "ui components",
+  "react components",
+  "nextjs components",
+  "shadcn ui",
+  "ui library",
+  "component blocks",
+  "ui templates",
+  "react templates",
+  "nextjs templates",
+  "vaults",
+  "shadcn vaults",
+];
+
 export const metadata = {
   title: "shadcn Vaults – Free & Open Source UI Blocks for Next.js",
   description:
     "Explore a curated collection of free, open-source shadcn/ui blocks for Next.js and React. Instantly preview, copy, and use high-quality, accessible UI components. Anyone can contribute and help grow the library!",
-  keywords: [
-    "shadcn",
-    "shadcn/ui",
-    "UI blocks",
-    "Next.js",
-    "React",
-    "open source",
-    "free components",
-    "component library",
-    "community",
-    "Tailwind CSS",
-    "contribute",
-    "frontend",
-  ],
+  keywords: generateKeywordVariations(baseKeywords),
   authors: [{ name: "ShadcnUI Vaults" }],
   creator: "ShadcnUI Vaults",
   openGraph: {
