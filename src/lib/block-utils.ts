@@ -25,7 +25,8 @@ export function getBlockCategories(
 }
 
 export async function getBlockCategory(
-  category: string
+  category: string,
+  notIncludeBlocks?: boolean
 ): Promise<BlockCategory | undefined> {
   const categoryFound = staticBlockCategories.filter(
     (data) => data.id == category
@@ -35,9 +36,11 @@ export async function getBlockCategory(
 
   if (categoryFound.length != 0) {
     categoryData = categoryFound[0];
-    categoryData.blocks = categoryData.blocks?.map((data) =>
-      Object.assign({}, data, { component: undefined })
-    );
+    categoryData.blocks = !notIncludeBlocks
+      ? categoryData.blocks?.map((data) =>
+          Object.assign({}, data, { component: undefined })
+        )
+      : undefined;
   }
 
   return categoryData;
@@ -47,4 +50,14 @@ export async function getBlockById(
   id: string
 ): Promise<BlockWithComponent | null> {
   return staticBlocksWithComponents[id] || null;
+}
+
+export async function getBlockMetadataById(
+  id: string
+): Promise<BlockWithComponent | null> {
+  return (
+    Object.assign({}, staticBlocksWithComponents[id], {
+      component: undefined,
+    }) || null
+  );
 }

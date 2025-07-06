@@ -2,7 +2,12 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, Github, AlertCircle, Home, Search } from "lucide-react";
-import { getBlockCategories, getBlockById } from "@/lib/block-utils";
+import {
+  getBlockCategories,
+  getBlockById,
+  getBlockMetadataById,
+  getBlockCategory,
+} from "@/lib/block-utils";
 import { staticBlocksWithComponents } from "@/lib/static-block-data";
 import { BlockDetailsClient } from "@/components/block-details-client";
 import { promises as fs } from "fs";
@@ -14,6 +19,7 @@ import BlockComponentNotFound from "@/components/block-component-not-found";
 import { Header } from "@/components/layout/header";
 import { CodeBlock } from "@/components/codeblock";
 import BlockButtons from "@/components/layout/block-buttons";
+import { Metadata, ResolvingMetadata } from "next";
 
 interface BlockPageProps {
   params: Promise<{
@@ -27,6 +33,47 @@ export async function generateStaticParams(): Promise<{ blockId: string }[]> {
   return blockIds.map((blockId) => ({
     blockId,
   }));
+}
+
+export async function generateMetadata(
+  { params }: BlockPageProps,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const blockId = (await params).blockId;
+  const blockCategory = blockId.split("-")[0];
+  const blockCategoryMetadata = await getBlockCategory(blockCategory, true);
+  const blockMetaData = await getBlockMetadataById(blockId);
+  // console.log(
+  //   "blockMetaData",
+  //   blockMetaData,
+  //   blockId,
+  //   blockCategoryMetadata,
+  //   blockCategory
+  // );
+
+  if (blockMetaData && blockCategoryMetadata) {
+    return {
+      applicationName: "ShadcnUI Vaults",
+      title: `${blockMetaData.name} | ShadcnUI Vaults`,
+      description: blockMetaData.description,
+      keywords: blockCategoryMetadata?.keywords,
+      robots: "index, follow",
+      category: `${blockCategoryMetadata.title} UI`,
+      openGraph: {
+        type: "website",
+        url: "https://shadcn-vaults.vercel.app",
+        title: "ShadcnUI Vaults – Internal Tools UI Blocks & Components",
+        description:
+          "A collection of shadcn/ui components & blocks for internal tools UI",
+        siteName: "ShadcnUI Vaults — Internal Tools UI Blocks & Components",
+        images: blockMetaData.photo ? [{ url: blockMetaData.photo }] : "",
+      },
+    };
+  }
+  return {
+    title: `Block Not Found | ShadcnUI Vaults`,
+    description: "This block is nowhere to be find.",
+  };
 }
 
 // Function to get component source code
