@@ -87,7 +87,7 @@ type CommandHistory = {
   count: number;
 };
 
-let blocks = getBlockCategories(true);
+let blocks = getBlockCategories(true, false, false);
 blocks = blocks.slice(1, blocks.length);
 interface CommandPaletteProps {
   open: boolean;
