@@ -19,6 +19,7 @@ interface SidebarProps {
     count?: number;
     description: string;
     blocks?: any[];
+    blocksQuantity?: number;
   }>;
   activeSection: string;
   onSectionChange: (section: string) => void;
@@ -84,9 +85,9 @@ export function Sidebar({
                 >
                   <Icon className="h-4 w-4 flex-shrink-0" />
                   <span className="flex-1 text-left">{section.title}</span>
-                  {section.blocks && (
+                  {section.blocksQuantity && (
                     <Badge variant="outline" className="text-xs px-2 py-0.5">
-                      {section.blocks.length}
+                      {section.blocksQuantity}
                     </Badge>
                   )}
                 </Button>

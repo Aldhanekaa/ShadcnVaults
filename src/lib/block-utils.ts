@@ -7,7 +7,8 @@ import {
 
 export function getBlockCategories(
   needKeywords?: boolean,
-  needBlocks?: boolean
+  needBlocks?: boolean,
+  needBlocksQuantity?: boolean
 ): BlockCategory[] {
   return staticBlockCategories.map((data) =>
     Object.assign({}, data, {
@@ -17,6 +18,7 @@ export function getBlockCategories(
             component: undefined,
           }))
         : undefined,
+      blocksQuantity: needBlocksQuantity ? data.blocks?.length : undefined,
       keywords: !needKeywords ? undefined : data.keywords,
     })
   );
