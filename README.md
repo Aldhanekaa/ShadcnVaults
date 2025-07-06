@@ -71,12 +71,6 @@ All blocks are built with utility-first Tailwind CSS classes and ShadCN/UI compo
 
 Contributions are welcome! Feel free to open issues or pull requests. Please read [CONTRIBUTION.md](CONTRIBUTION.md) for the guide on how you submit a new block or new category block.
 
-### Thanks to The Amazing Contributors!
-
-<a href="https://github.com/Aldhanekaa/ShadcnVaults/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=Aldhanekaa/ShadcnVaults" />
-</a>
-
 ## Incoming Blocks (Planned)
 
 The following UI blocks are planned for future addition:
