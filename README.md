@@ -1,4 +1,3 @@
-
 <div align="center">
   <h1>ShadcnUI Vaults</h1>
 </div>
@@ -8,6 +7,14 @@
 Shadcn Vaults is a collection of various interactive components & blocks for Internal Tools UI like Dashboard, Monitoring, Admin, CMS, and more. The blocks are built with Tailwind CSS and ShadCN/UI, and are fully customizable, responsive, and accessible.
 
 ![ShadcnUI_Vaults16x9](https://github.com/user-attachments/assets/82855d40-1d96-4120-a57e-cd1e2d3e5029)
+
+<div align="center">
+  <a href="https://shipwrecked.hackclub.com/?t=ghrm" target="_blank">
+    <img src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/739361f1d440b17fc9e2f74e49fc185d86cbec14_badge.png" 
+         alt="This project is part of Shipwrecked, the world's first hackathon on an island!" 
+         style="width: 35%;">
+  </a>
+</div>
 
 ## Features
 
@@ -62,7 +69,13 @@ All blocks are built with utility-first Tailwind CSS classes and ShadCN/UI compo
 
 ## Contributing
 
-Contributions are welcome! Feel free to open issues or pull requests.
+Contributions are welcome! Feel free to open issues or pull requests. Please read [CONTRIBUTION.md](CONTRIBUTION.md) for the guide on how you submit a new block or new category block.
+
+### Thanks to The Amazing Contributors!
+
+<a href="https://github.com/Aldhanekaa/ShadcnVaults/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Aldhanekaa/ShadcnVaults" />
+</a>
 
 ## Incoming Blocks (Planned)
 

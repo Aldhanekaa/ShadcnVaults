@@ -13,7 +13,7 @@ export default async function BlockCategoryPage({
 }: BlockCategoryPageProps) {
   const resolvedParams = await params;
   const categoryData = await getBlockCategory(resolvedParams.blockCategory);
-  const blockCategories = getBlockCategories();
+  const blockCategories = getBlockCategories(false, true);
 
   if (categoryData == undefined) {
     redirect("/");

@@ -6,11 +6,11 @@ Thank you for your interest in contributing to **Shadcn Vaults**! This guide wil
 
 ## Project Structure Overview
 
-- **src/blocks/**  
+- **src/vaults/blocks/**  
   Contains all block implementations, organized by category (e.g., `hero`, `bills`). Each block is a standalone React component (e.g., `hero-1.tsx`, `bills-2.tsx`).
 
 - **src/components/**  
-  Shared and layout components.
+  This is the components and UI for the website, not the actualy UI library.
 
   - **ui/**: Reusable UI primitives (e.g., `button.tsx`, `card.tsx`, `table.tsx`).
   - **layout/**: Layout components (e.g., `sidebar.tsx`, `header.tsx`, `blocks-section.tsx`).
@@ -43,13 +43,14 @@ npm install
 
 - **To add a new block:**
 
-  - Choose the appropriate category in `src/blocks/` (e.g., `hero`, `bills`).
-  - Create a new file (e.g., `todo-list-1.tsx`) following the naming convention.
+  - Choose the appropriate category in `src/vaults/blocks/` (e.g., `hero`, `bills`).
+  - Create a new file (e.g., `todolist-1.tsx`) following the naming convention.
+    > The file name format should follow the index and the name of your block category. If it's `review form`, then you shall add your file with the name of `reviewform-1` (`1` : because it's the first block) under the folder of `src/vaults/blocks/reviewform/`
   - Export your block as a React component.
   - Add block metadata and register it in `src/lib/static-block-data.ts` under the correct category.
 
 - **To add a new block category:**
-  - Create a new folder in `src/blocks/` (e.g., `todo-list/`).
+  - Create a new folder in `src/vaults/blocks/` (e.g., `todolist/`). The folder category name should not include dash in the name `-`
   - Add your block files.
   - Update `src/lib/static-block-data.ts` to include the new category and its blocks.
 
@@ -153,7 +154,7 @@ npm install
 
 1. **Create a New Folder**
 
-   - In `src/blocks/`, create a new folder for your category (e.g., `todo-list/`).
+   - In `src/vaults/blocks/`, create a new folder for your category (e.g., `todolist/`).
 
 2. **Add Block Files**
 
@@ -170,15 +171,16 @@ npm install
    - Add a new entry to the `staticBlockCategories` array:
      ```ts
      {
-       id: "todo-list",
+       id: "todolist",
        title: "ToDo List",
        description: "Blocks for task and to-do management",
        blocks: [
-         staticBlocksWithComponents["todo-list-1"],
-         staticBlocksWithComponents["todo-list-2"],
+         staticBlocksWithComponents["todolist-1"],
+         staticBlocksWithComponents["todolist-2"],
        ],
      }
      ```
+     > In the code above, you can add `video` as the preview or `image`, the video or image should be hosted via cdn, you can use Cloudinary or anything that works!
 
 5. **Test the New Category**
    - Start the dev server and ensure your new category and blocks appear and function correctly in the UI.
