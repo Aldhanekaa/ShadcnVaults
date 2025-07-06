@@ -69,7 +69,7 @@ All blocks are built with utility-first Tailwind CSS classes and ShadCN/UI compo
 
 ## Contributing
 
-Contributions are welcome! Feel free to open issues or pull requests. Please read [CONTRIBUTION.md](CONTRIBUTION.md) for the guide on how you submit a new block or new category block.
+Contributions are welcome! Feel free to open issues or pull requests. Please read [CONTRIBUTING.md](CONTRIBUTING.md) for the guide on how you submit a new block or new category block.
 
 ## Contributors
 
