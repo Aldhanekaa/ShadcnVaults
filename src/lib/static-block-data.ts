@@ -808,7 +808,7 @@ export const staticBlockCategories: BlockCategory[] = [
     id: "footer",
     title: "Footer",
     description:
-      "Feature showcase components for highlighting product capabilities and benefits",
+      "Footer components for website navigation, links, and branding",
     image:
       "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750603090/Screenshot_2025-06-22_at_21.38.05_nluo44.png",
     keywords: ["footer"],
@@ -824,18 +824,17 @@ export const staticBlockCategories: BlockCategory[] = [
     id: "confidential",
     title: "Confidential Access ",
     description:
-      "Comprehensive money transfer transaction management dashboards with payment tracking, fee breakdown, and status monitoring",
+      "Access control components for restricted content, premium features, and security alerts",
     image:
       "https://res.cloudinary.com/dnrtsh66v/image/upload/v1751152433/Screenshot_2025-06-29_at_06.13.47_zzysmz.png",
     keywords: [
-      "transaction",
-      "dashboard",
-      "money",
-      "transfer",
-      "analytics",
-      "table",
-      "revenue",
-      "status",
+      "access",
+      "control",
+      "premium",
+      "security",
+      "restricted",
+      "upgrade",
+      "confidential",
     ],
     blocks: [
       staticBlocksWithComponents["confidential-1"],
@@ -850,7 +849,7 @@ export const staticBlockCategories: BlockCategory[] = [
     id: "pricing",
     title: "Pricing Comparison",
     description:
-      "Comprehensive money transfer transaction management dashboards with payment tracking, fee breakdown, and status monitoring",
+      "Pricing table components for comparing plans, features, and subscription tiers",
     image:
       "https://res.cloudinary.com/dnrtsh66v/image/upload/v1751775465/Screenshot_2025-07-06_at_11.04.01_awzi9o.png",
     keywords: [
@@ -924,7 +923,8 @@ export const staticBlockCategories: BlockCategory[] = [
   {
     id: "bills",
     title: "Dashboard Bills",
-    description: "Dashboard to show bills",
+    description:
+      "SaaS billing dashboards for managing subscriptions, plans, add-ons, and invoices",
     image:
       "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750374794/Screenshot_2025-06-20_at_06.13.06_bq6ua0.png",
     keywords: [
@@ -1016,7 +1016,7 @@ export const staticBlockCategories: BlockCategory[] = [
     id: "banking",
     title: "Banking ",
     description:
-      "Comprehensive money transfer transaction management dashboards with payment tracking, fee breakdown, and status monitoring",
+      "Money transfer and transaction management dashboards with payment tracking, fee breakdown, and status monitoring",
     image:
       "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750386367/Screenshot_2025-06-20_at_09.25.58_gg4hiu.png",
     keywords: [

@@ -1,6 +1,8 @@
 import { BlocksSection } from "@/components/layout/blocks-section";
 import SidebarLayout from "@/components/layout/sidebar-layout";
 import { getBlockCategories, getBlockCategory } from "@/lib/block-utils";
+import { staticBlockCategories } from "@/lib/static-block-data";
+import { generateKeywordVariations } from "@/lib/utils";
 import { Metadata, ResolvingMetadata } from "next";
 import { redirect } from "next/navigation";
 
@@ -10,19 +12,33 @@ interface BlockCategoryPageProps {
   }>;
 }
 
+// Generate static params for all blocks - explicitly typed and exported
+export async function generateStaticParams(): Promise<
+  { blockCategory: string }[]
+> {
+  return staticBlockCategories.map((blockCategory) => ({
+    blockCategory: blockCategory.id,
+  }));
+}
+
 export async function generateMetadata(
   { params }: BlockCategoryPageProps,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   const blockCategory = (await params).blockCategory;
-  const blockCategoryMetadata = await getBlockCategory(blockCategory, true);
+  const blockCategoryMetadata = await getBlockCategory(blockCategory, false);
+  const keywords = blockCategoryMetadata?.keywords
+    ? [...blockCategoryMetadata?.keywords]
+    : [];
+
+  const generatedKeywordsVariations = generateKeywordVariations(keywords);
 
   if (blockCategoryMetadata) {
     return {
       applicationName: "ShadcnUI Vaults",
-      title: `${blockCategoryMetadata.title} UI | ShadcnUI Vaults`,
+      title: `${blockCategoryMetadata.title} Category | ShadcnUI Vaults`,
       description: blockCategoryMetadata.description,
-      keywords: blockCategoryMetadata?.keywords,
+      keywords: generatedKeywordsVariations,
 
       // Robots directives
       robots: {

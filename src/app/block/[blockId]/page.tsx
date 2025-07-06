@@ -9,6 +9,7 @@ import {
   getBlockCategory,
 } from "@/lib/block-utils";
 import { staticBlocksWithComponents } from "@/lib/static-block-data";
+import { generateKeywordVariations } from "@/lib/utils";
 import { BlockDetailsClient } from "@/components/block-details-client";
 import { promises as fs } from "fs";
 import path from "path";
@@ -43,20 +44,31 @@ export async function generateMetadata(
   const blockCategory = blockId.split("-")[0];
   const blockCategoryMetadata = await getBlockCategory(blockCategory, true);
   const blockMetaData = await getBlockMetadataById(blockId);
-  // console.log(
-  //   "blockMetaData",
-  //   blockMetaData,
-  //   blockId,
-  //   blockCategoryMetadata,
-  //   blockCategory
-  // );
 
   if (blockMetaData && blockCategoryMetadata) {
+    const blockName = blockMetaData.name;
+    const categoryKeywords = blockCategoryMetadata?.keywords || [];
+
+    // Combine category keywords with block-specific keywords
+    const blockSpecificKeywords = [
+      blockName.toLowerCase(),
+      ...blockName.toLowerCase().split(" "),
+      "block",
+      "component",
+      "ui component",
+      "react component",
+      "nextjs component",
+      "shadcn component",
+    ];
+
+    const allKeywords = [...categoryKeywords, ...blockSpecificKeywords];
+    const generatedKeywordsVariations = generateKeywordVariations(allKeywords);
+
     return {
       applicationName: "ShadcnUI Vaults",
       title: `${blockMetaData.name} Block UI | ShadcnUI Vaults`,
       description: blockMetaData.description,
-      keywords: blockCategoryMetadata?.keywords,
+      keywords: generatedKeywordsVariations,
 
       // Robots directives
       robots: {
