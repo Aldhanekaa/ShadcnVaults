@@ -408,7 +408,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "Clean and minimal login form with email, password, and remember me functionality.",
     photo:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750388006/Screenshot_2025-06-20_at_09.53.09_ixdg7v.png",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/860ff1aba3b584e97eee4358f645a15ac46d7475_screenshot_2025-07-29_at_19.36.23.png",
     component: LoginBlock1,
   },
   "auth-2": {
@@ -417,7 +417,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "Login form with social authentication options (Google, GitHub) and email/password fallback.",
     photo:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750388020/Screenshot_2025-06-20_at_09.53.24_pammcv.png",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/8bcf0b3e6c30798f506dcc4b501762b204ba08f8_screenshot_2025-07-29_at_19.40.28.png",
     component: LoginBlock2,
   },
   "auth-3": {

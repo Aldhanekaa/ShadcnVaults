@@ -91,7 +91,10 @@ export default async function BlockCategoryPage({
   params,
 }: BlockCategoryPageProps) {
   const resolvedParams = await params;
-  const categoryData = await getBlockCategory(resolvedParams.blockCategory);
+  const categoryData = await getBlockCategory(
+    resolvedParams.blockCategory,
+    false
+  );
   const blockCategories = getBlockCategories(false, false, true);
 
   if (categoryData == undefined) {
