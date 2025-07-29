@@ -40,7 +40,7 @@ export async function getBlockCategory(
       ? categoryData.blocks?.map((data) =>
           Object.assign({}, data, { component: undefined })
         )
-      : undefined;
+      : categoryData.blocks;
   }
 
   return categoryData;
