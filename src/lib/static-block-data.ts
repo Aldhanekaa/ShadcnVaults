@@ -371,7 +371,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "3-column feature grid layout with icons and descriptions for showcasing product capabilities.",
     photo:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750379379/Screenshot_2025-06-20_at_07.29.18_hqdocm.png",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/0557ececcc37f56ad070b66a7f38a10cac1e3c77_screenshot_2025-07-29_at_19.32.54.png",
     component: FeatureBlock1,
   },
   "feature-2": {
@@ -380,7 +380,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "Two-column layout with feature list and visual mockup for comprehensive product presentation.",
     photo:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750379277/Screenshot_2025-06-20_at_07.27.35_isz7ui.png",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/76797a981f436e722660a75ef3fd9662de1fcb7b_screenshot_2025-07-29_at_19.33.28.png",
     component: FeatureBlock2,
   },
   "feature-3": {
@@ -389,7 +389,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "Interactive feature cards with badges, icons, and call-to-action buttons for enhanced engagement.",
     photo:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750379388/Screenshot_2025-06-20_at_07.29.42_fwp15m.png",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/31c6639e9c592b30bb142b9cd6aeab6b28bab6c3_screenshot_2025-07-29_at_19.34.53.png",
     component: FeatureBlock3,
   },
   "feature-4": {
@@ -398,7 +398,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "Tabbed feature showcase with images, detailed descriptions, and interactive navigation.",
     photo:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750379443/Screenshot_2025-06-20_at_07.30.33_vraxkd.png",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/e1010a9af248a0bac55779919615ed565771c077_screenshot_2025-07-29_at_19.35.07.png",
     component: FeatureBlock4,
   },
 
