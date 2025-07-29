@@ -599,7 +599,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "Comprehensive money transfer dashboard with transaction monitoring, status tracking, and fee breakdown.",
     video:
-      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750385512/banking-1_ccjfa6.mov",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/2057ce28dbfeb25f0958c22b1f861f590d7aa62f_banking-1.mp4",
     component: Banking_1,
   },
   "banking-2": {
