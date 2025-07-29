@@ -608,7 +608,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "Feature-rich transaction table with advanced filtering, sorting, and detailed money transfer analytics.",
     video:
-      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750385513/banking-2_dg3p7i.mov",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/6f6a67761836e1d52130a727e3ade277d612ea6f_banking-2.mp4",
     component: Banking_2,
   },
   "banking-3": {
@@ -617,7 +617,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "Modern animated transaction list with smooth transitions, status indicators, and detailed fee breakdown.",
     photo:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750385806/banking-3_i6ir8t.png",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/d608ab4324f9fcc2967f7cae8c2a7010829f05cf_banking-3.mp4",
     component: Banking_3,
   },
   "banking-4": {
@@ -626,7 +626,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "Advanced transaction dashboard with status badges, revenue tracking, and comprehensive money transfer management.",
     video:
-      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750385808/banking-4_l5pshm.mov",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/02fcf2fab068aea6e65f7b46c19d936804273cfc_banking-4.mp4",
     component: Banking_4,
   },
   "banking-5": {
@@ -635,7 +635,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "Modern transaction table with TanStack Table integration, column visibility controls, and advanced filtering.",
     photo:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750385806/banking-5_ztbfsg.png",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/dd5a83a7c53e52d6d3a07b671ec5ed7a3301b050_banking-5.mp4",
     component: Banking_5,
   },
 
