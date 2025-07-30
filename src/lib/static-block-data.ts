@@ -108,7 +108,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     name: "Simple Hero",
     description: "Clean hero with title and CTA button",
     photo:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750376434/Screenshot_2025-06-20_at_06.39.54_se7opv.png",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/11477e020278442a456ad86ba91bb8a0aa6d6246_screenshot_2025-07-30_at_07.55.03.png",
     component: HeroBlock1,
   },
   "hero-2": {
@@ -116,7 +116,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     name: "Hero with Image",
     description: "Hero section with stunning background image",
     photo:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750376437/Screenshot_2025-06-20_at_06.40.30_qaiqfz.png",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/d23977e235211390a1fa846b55e9f9b436ce0c85_screenshot_2025-07-30_at_07.55.20.png",
     component: HeroBlock2,
   },
   "hero-3": {
@@ -124,8 +124,8 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     name: "Gradient Hero with Stats",
     description:
       "Modern hero section with gradient background, performance stats, and dual CTAs",
-    video:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750376473/Screenshot_2025-06-20_at_06.40.51_c52yar.png",
+    photo:
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/cd9ddffd4984981724e83b2c01c33c4e4e6bdf38_screenshot_2025-07-30_at_07.55.43.png",
     component: HeroBlock3,
   },
   "hero-4": {
@@ -134,7 +134,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "Two-column hero with team collaboration features and image with status indicator",
     photo:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750376478/Screenshot_2025-06-20_at_06.41.08_ts6hwk.png",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/6b86e9d6250519288719c72ccbf94503e46494c8_screenshot_2025-07-30_at_07.56.11.png",
     component: HeroBlock4,
   },
   "hero-5": {
@@ -143,7 +143,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "Hero section with feature cards highlighting collaboration, speed, and security",
     photo:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750376551/Screenshot_2025-06-20_at_06.42.24_rl5jwg.png",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/4afeccd83c1195ad15ea8d2fd8ee75c04bfa6d51_screenshot_2025-07-30_at_07.56.59.png",
     component: HeroBlock5,
   },
 
@@ -535,7 +535,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "Modern VPS admin console with sidebar navigation, responsive layout, and advanced filtering for managing VPS parents, shared, and dedicated servers.",
     video:
-      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750385849/monitoring-8_h35dd1.mov",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/8179564787dc735392fa4a762ef18e6f1dcd101e_monitoring-8.mp4",
     component: Monitoring_8,
   },
   "monitoring-9": {
@@ -544,7 +544,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "Advanced VPS analytics dashboard with expandable resource usage charts, customer details, and real-time monitoring for all VPS types.",
     video:
-      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750385846/monitoring-9_oos7p6.mov",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/4895617cac90a0e5247e3bdfdc62131ea7f97647_monitoring-9.mp4",
     component: Monitoring_9,
   },
   "monitoring-10": {
@@ -553,7 +553,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "Comprehensive dashboard for managing and monitoring VPS instances, including resource usage, customer details, and real-time status with detailed dialogs.",
     video:
-      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750387509/monitoring-10_yltbrm.mov",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/e648a8828520f767f6bf7cc6d0a8e90e54434db9_monitoring-10.mp4",
     component: Monitoring_10,
   },
   "monitoring-11": {
@@ -561,8 +561,8 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     name: "Advanced VPS Admin Panel",
     description:
       "Feature-rich VPS admin panel with customer management, resource tracking, status controls, and advanced table features for shared and dedicated VPS.",
-    video:
-      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750387524/monitoring-11_dlyp4s.mov",
+    photo:
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/2133c86e00de45daa422530059e61749bb9cd361_screenshot_2025-07-30_at_07.49.24.png",
     component: Monitoring_11,
   },
   "monitoring-12": {
@@ -571,7 +571,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "Modern dashboard for creating, editing, and deleting VPS instances with customer assignment, resource allocation, and confirmation dialogs.",
     photo:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750387508/monitoring-12_uz94it.png",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/73a0e4a7419812b268334c175da70e55d6eb0c19_screenshot_2025-07-30_at_07.50.16.png",
     component: Monitoring_12,
   },
   "monitoring-13": {
@@ -579,8 +579,8 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     name: "VPS Instance Management UI",
     description:
       "Interactive UI for managing VPS instances, including add/edit dialogs, resource and customer details, and advanced filtering and search.",
-    video:
-      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750387511/monitoring-13_wb3rwy.mov",
+    photo:
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/576aa0e561515a2c4c1c4eded83ff730914a2f5e_screenshot_2025-07-30_at_07.50.34.png",
     component: Monitoring_13,
   },
   "monitoring-14": {
@@ -589,7 +589,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "Animated and modern VPS management suite with advanced stats, customer analytics, revenue tracking, and editable VPS instance table.",
     video:
-      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750387512/monitoring-14_z1ma05.mov",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/a6ac704f5613dfe93f7770d16edd077fda3dd639_monitoring-14.mp4",
     component: Monitoring_14,
   },
 
