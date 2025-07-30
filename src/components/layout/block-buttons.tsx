@@ -58,13 +58,13 @@ export default function BlockButtons({
 
     navigator.clipboard.writeText(textToCopy);
 
-    setClicked(true);
+    setSourceCodeClicked(true);
     toast.success("Source code copied", {
       description: `You can now paste it into your code editor.`,
     });
 
     setTimeout(() => {
-      setClicked(false);
+      setSourceCodeClicked(false);
     }, 1500);
   };
 
