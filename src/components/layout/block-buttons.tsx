@@ -1,7 +1,13 @@
 "use client";
 import { cn } from "@/lib/utils";
 import { Button } from "../ui/button";
-import { CheckIcon, CopyIcon, GitBranchPlus, PlusIcon } from "lucide-react";
+import {
+  CheckIcon,
+  CodeIcon,
+  CopyIcon,
+  GitBranchPlus,
+  PlusIcon,
+} from "lucide-react";
 import { GitHubLogoIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 import { toast } from "sonner";
@@ -12,13 +18,16 @@ interface BlockButtonsProps {
   externalLibraries: string[];
   type: "block" | "component" | "template";
   id?: string;
+  sourceCode?: string | null;
 }
 export default function BlockButtons({
   shadcnComponents,
   externalLibraries,
+  sourceCode,
   id,
 }: BlockButtonsProps) {
   const [isClicked, setClicked] = useState(false);
+  const [isSourceCodeClicked, setSourceCodeClicked] = useState(false);
 
   const copyCode = () => {
     let textToCopy = "";
@@ -43,6 +52,22 @@ export default function BlockButtons({
       setClicked(false);
     }, 1500);
   };
+
+  const copySourceCode = () => {
+    let textToCopy = sourceCode || "";
+
+    navigator.clipboard.writeText(textToCopy);
+
+    setClicked(true);
+    toast.success("Source code copied", {
+      description: `You can now paste it into your code editor.`,
+    });
+
+    setTimeout(() => {
+      setClicked(false);
+    }, 1500);
+  };
+
   return (
     <div className="w-full relative">
       <div className=" inline-flex items-center px-2 py-2 rounded-lg gap-2 bg-gray-100 dark:bg-muted">
@@ -61,6 +86,25 @@ export default function BlockButtons({
             View Source
           </Button>
         </Link>
+
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={copySourceCode}
+          className={cn("cursor-pointer gap-2 transition-all")}
+        >
+          {isSourceCodeClicked ? (
+            <React.Fragment>
+              <CheckIcon className="h-4 w-4" />
+              Source code copied to clipboard!
+            </React.Fragment>
+          ) : (
+            <React.Fragment>
+              <CodeIcon className="h-4 w-4" />
+              Copy Code
+            </React.Fragment>
+          )}
+        </Button>
 
         <Button
           variant="outline"

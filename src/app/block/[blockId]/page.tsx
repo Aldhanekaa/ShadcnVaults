@@ -330,6 +330,7 @@ export default async function BlockPage({ params }: BlockPageProps) {
                 id={(await params).blockId}
                 externalLibraries={dependencies.externalLibraries}
                 shadcnComponents={dependencies.shadcnComponents}
+                sourceCode={sourceCode}
               />
             </div>
           </div>
