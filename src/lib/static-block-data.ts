@@ -767,7 +767,7 @@ export const staticBlockCategories: BlockCategory[] = [
     description:
       "Feature showcase components for highlighting product capabilities and benefits",
     image:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750379277/Screenshot_2025-06-20_at_07.27.35_isz7ui.png",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/5004160dbdfc8764d63047e37f3916bff8132b21_screenshot_2025-07-30_at_10.09.52.png",
     keywords: ["feature", "grid", "showcase", "cards", "badges", "tabs"],
     blocks: [
       staticBlocksWithComponents["feature-1"],
@@ -783,7 +783,7 @@ export const staticBlockCategories: BlockCategory[] = [
     description:
       "Complete authentication system components including login, signup, password reset, and two-factor authentication",
     image:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750387918/Screenshot_2025-06-20_at_09.51.53_swnunx.png",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/124a4cb5d5616dc700f061fac3c9d985a9e8261c_screenshot_2025-07-30_at_10.09.59.png",
     keywords: [
       "login",
       "signup",
@@ -810,7 +810,7 @@ export const staticBlockCategories: BlockCategory[] = [
     description:
       "Footer components for website navigation, links, and branding",
     image:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750603090/Screenshot_2025-06-22_at_21.38.05_nluo44.png",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/1a7eec6b165694ad4a824ddca99e431171b6b7e4_screenshot_2025-07-30_at_10.10.45.png",
     keywords: ["footer"],
     blocks: [
       staticBlocksWithComponents["footer-1"],
@@ -826,7 +826,7 @@ export const staticBlockCategories: BlockCategory[] = [
     description:
       "Access control components for restricted content, premium features, and security alerts",
     image:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1751152433/Screenshot_2025-06-29_at_06.13.47_zzysmz.png",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/8be0e58ace507621fc95dd1b1ef98f9f2e551a5f_screenshot_2025-07-30_at_10.11.09.png",
     keywords: [
       "access",
       "control",
@@ -851,7 +851,7 @@ export const staticBlockCategories: BlockCategory[] = [
     description:
       "Pricing table components for comparing plans, features, and subscription tiers",
     image:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1751775465/Screenshot_2025-07-06_at_11.04.01_awzi9o.png",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/c691877b89b8f6e5a8a1df5f71cd4da7d96a40be_screenshot_2025-07-30_at_10.11.56.png",
     keywords: [
       "pricing",
       "plans",
@@ -899,7 +899,7 @@ export const staticBlockCategories: BlockCategory[] = [
     description:
       "Marketplaces blocks UI for SaaS platforms with shopping carts and product management",
     image:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750375678/Screenshot_2025-06-20_at_06.27.51_kdn5m6.png",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/f4de562fb84ab48ff67febe6d1fd1f9897fb967a_screenshot_2025-07-30_at_10.12.30.png",
     keywords: [
       "marketplace",
       "addons",
@@ -926,7 +926,7 @@ export const staticBlockCategories: BlockCategory[] = [
     description:
       "SaaS billing dashboards for managing subscriptions, plans, add-ons, and invoices",
     image:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750374794/Screenshot_2025-06-20_at_06.13.06_bq6ua0.png",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/7e33d3ca61adccc9873aac4fffba011a3dc4e51b_screenshot_2025-07-30_at_10.13.31.png",
     keywords: [
       "billing",
       "dashboard",
@@ -959,7 +959,7 @@ export const staticBlockCategories: BlockCategory[] = [
     description:
       "Minecraft RCON (Remote Console) dashboards for server management and command execution",
     image:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750374719/Screenshot_2025-06-20_at_06.11.53_fszjlf.png",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/881ef31c6474da95d7860074139a37f3633ae311_screenshot_2025-07-30_at_10.13.51.png",
     keywords: [
       "rcon",
       "dashboard",
@@ -982,7 +982,7 @@ export const staticBlockCategories: BlockCategory[] = [
     description:
       "System monitoring and backup management dashboards for tracking database backups, system health, and administrative tasks",
     image:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750385071/Screenshot_2025-06-20_at_09.04.26_yaxixk.png",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/d4e768665ef03343374d658c1bf268ddd91c9651_screenshot_2025-07-30_at_10.14.38.png",
     keywords: [
       "backup",
       "monitoring",
@@ -1018,7 +1018,7 @@ export const staticBlockCategories: BlockCategory[] = [
     description:
       "Money transfer and transaction management dashboards with payment tracking, fee breakdown, and status monitoring",
     image:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750386367/Screenshot_2025-06-20_at_09.25.58_gg4hiu.png",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/d4e768665ef03343374d658c1bf268ddd91c9651_screenshot_2025-07-30_at_10.14.38.png",
     keywords: [
       "transaction",
       "dashboard",
