@@ -316,7 +316,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "Interactive marketplace for SaaS add-ons with cart functionality and category filtering.",
     video:
-      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750375616/marketplace-1_mcgjtc.mov",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/103f4d698a7aa70d5b5b95fe67d59f130e533ea2_marketplace-1.mp4",
     component: Marketplace_1,
   },
   "marketplace-2": {
@@ -325,7 +325,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "Feature-rich add-ons marketplace with categorized products and shopping cart.",
     video:
-      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750375326/marketplace-2_jycelc.mov",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/2e3ed35f9a0a0fcd4de6fef5fbe4470d0a75c4ea_marketplace-2.mp4",
     component: Marketplace_2,
   },
   "marketplace-3": {
@@ -334,7 +334,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "Comprehensive add-ons marketplace with quantity controls and total cost calculation.",
     video:
-      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750375323/marketplace-3_eltydm.mov",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/41c2e7d268a81e8e3430890c41435a29755abd77_marketplace-3.mp4",
     component: Marketplace_3,
   },
   "marketplace-4": {
@@ -342,8 +342,8 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     name: "Simple Add-Ons Store",
     description:
       "Clean add-ons marketplace with checkbox selection and quantity management.",
-    video:
-      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750375317/marketplace-4_kkmlxk.mov",
+    photo:
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/aedffccf6c8d63de8cf615de910cf0ab91a48789_screenshot_2025-07-30_at_09.16.00.png",
     component: Marketplace_4,
   },
   "marketplace-5": {
@@ -352,7 +352,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "Sophisticated add-ons marketplace with detailed cards, features list, and order summary.",
     video:
-      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750375331/marketplace-5_mosjlq.mov",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/e0327b5c9ede01a85ee135cf88c8db620ffbb3ab_marketing-5.mp4",
     component: Marketplace_5,
   },
   "marketplace-6": {
@@ -361,7 +361,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "Modern add-ons marketplace with animations, color-coded categories, and cart summary.",
     video:
-      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750375319/marketplace-6_prijzi.mov",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/5d40908a6475d12a78b77da21e57f9822b8c7d23_marketing-6.mp4",
     component: Marketplace_6,
   },
 
