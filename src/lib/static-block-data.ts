@@ -152,7 +152,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     name: "Footer One",
     description: "whatever",
     photo:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750603089/Screenshot_2025-06-22_at_21.37.54_wulcc3.png",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/7e5f4909176035e78a3347d61c756cd94dc1d1ab_screenshot_2025-07-30_at_07.35.41.png",
     component: FooterBlock1,
   },
   "footer-2": {
@@ -160,7 +160,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     name: "Footer Two",
     description: "whatever",
     photo:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750603090/Screenshot_2025-06-22_at_21.38.05_nluo44.png",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/0001644decaed582b9bd61641f36c63a9e0403c1_screenshot_2025-07-30_at_07.36.00.png",
     component: FooterBlock2,
   },
 
@@ -278,8 +278,8 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     name: "Minecraft RCON Dashboard",
     description:
       "Advanced RCON dashboard for Minecraft server management with command history and validation.",
-    photo:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750374500/Screenshot_2025-06-20_at_05.51.36_xm4rfs.png",
+    video:
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/0364de92afee0b76218b7fe06e05cd7a69423216_apitest-1.mp4",
     component: API_Test_1,
   },
   "api_test-2": {
@@ -288,7 +288,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "RCON admin panel with animated text effects and command execution interface.",
     video:
-      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750374583/Screen_Recording_2025-06-20_at_05.49.45_fry3rp.mov",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/e43fd22eb7d004fe8469524ba4106cea7ae54dd1_apitest-2.mp4",
     component: API_Test_2,
   },
   "api_test-3": {
@@ -296,8 +296,8 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     name: "Simple RCON Dashboard",
     description:
       "Clean and simple RCON dashboard for Minecraft server command execution.",
-    photo:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750374499/Screenshot_2025-06-20_at_05.50.50_s6irwx.png",
+    video:
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/aa2bf3e49a3359906778718e79e539595e66901d_apitest-3.mp4",
     component: API_Test_3,
   },
   "api_test-4": {
@@ -305,8 +305,8 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     name: "Enhanced RCON Dashboard",
     description:
       "Feature-rich RCON dashboard with glow effects, connection status, and command history.",
-    photo:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750374500/Screenshot_2025-06-20_at_05.51.12_dknzbz.png",
+    video:
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/fed1648c6f6716b7f2b7e5f0b7bdda4317bab926_apitest-4.mp4",
     component: API_Test_4,
   },
 
@@ -371,7 +371,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "3-column feature grid layout with icons and descriptions for showcasing product capabilities.",
     photo:
-      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/0557ececcc37f56ad070b66a7f38a10cac1e3c77_screenshot_2025-07-29_at_19.32.54.png",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/87fb89c037db52c839fcddf6d42be50321e2cf56_screenshot_2025-07-30_at_07.29.47.png",
     component: FeatureBlock1,
   },
   "feature-2": {
@@ -426,7 +426,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "Modern split-screen login layout with branding section and comprehensive form.",
     photo:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750388062/Screenshot_2025-06-20_at_09.53.37_q4i1be.png",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/65347b47476dfd6dd1a38362e82a2912d4c18c0f_screenshot_2025-07-30_at_07.31.51.png",
     component: LoginBlock3,
   },
   "auth-4": {
@@ -435,7 +435,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "Comprehensive user registration form with social signup, validation, and terms acceptance.",
     photo:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750388051/Screenshot_2025-06-20_at_09.53.48_jxv1fu.png",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/5c9ba51cd417f595ce976634bc8d658fafe06eba_screenshot_2025-07-30_at_07.32.15.png",
     component: LoginBlock4,
   },
   "auth-5": {
@@ -444,7 +444,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "Password reset form with email verification and confirmation screen.",
     photo:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750388118/Screenshot_2025-06-20_at_09.54.06_apyei7.png",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/79d72fbb9286711f1527693f0492b2fa29a27d19_screenshot_2025-07-30_at_07.32.47.png",
     component: LoginBlock5,
   },
   "auth-6": {
@@ -453,7 +453,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "Password reset form with strength indicator and real-time validation requirements.",
     photo:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750388121/Screenshot_2025-06-20_at_09.54.20_hxyvhi.png",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/fc131da74d9fe1a4f4eca845558d97aa2cd183f4_screenshot_2025-07-30_at_07.33.03.png",
     component: LoginBlock6,
   },
   "auth-7": {
@@ -462,7 +462,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "Login form with two-factor authentication and 6-digit code verification.",
     photo:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750388076/Screenshot_2025-06-20_at_09.54.32_i6gfcf.png",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/ff2c5df6bbf8ceb299e1ce2afc001d23afb16d58_screenshot_2025-07-30_at_07.33.45.png",
     component: LoginBlock7,
   },
 
@@ -471,8 +471,8 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     name: "Database Backup Dashboard",
     description:
       "Comprehensive database backup management dashboard with filtering, sorting, and bulk operations.",
-    photo:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750384424/Screenshot_2025-06-20_at_08.53.24_rur46r.png",
+    video:
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/0f558016b0871921aedb9dadfb41fd3b1161d8e8_monitoring-1.mp4",
     component: Monitoring_1,
   },
   "monitoring-2": {
@@ -481,7 +481,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "Database backup manager with detailed logs, status tracking, and real-time monitoring capabilities.",
     video:
-      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750384535/Screen_Recording_2025-06-20_at_08.54.52_c2glfq.mov",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/b7323ef0120b1c9b2eba83308621322c287d647e_monitoring-2.mp4",
     component: Monitoring_2,
   },
   "monitoring-3": {
@@ -490,7 +490,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "Advanced backup dashboard with tabbed interface, detailed metrics, and comprehensive backup management.",
     video:
-      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750384719/Screen_Recording_2025-06-20_at_08.58.07_unoz7i.mov",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/52a52068cf3a5498dfcaccb64890397f07c3c5a9_monitoring-3.mp4",
     component: Monitoring_3,
   },
   "monitoring-4": {
@@ -498,8 +498,8 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     name: "Backup Monitoring Dashboard",
     description:
       "Real-time backup monitoring dashboard with status indicators, compression ratios, and retention management.",
-    video:
-      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750384972/Screen_Recording_2025-06-20_at_09.02.30_jdhs0x.mov",
+    photo:
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/f22c9e6abebbecafaade67715623f08ff51adff0_screenshot_2025-07-30_at_05.11.57.png",
     component: Monitoring_4,
   },
   "monitoring-5": {
@@ -508,7 +508,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "Enterprise-grade backup management system with advanced table features, filtering, and detailed backup analytics.",
     photo:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1750385000/Screenshot_2025-06-20_at_09.03.15_wf4vsd.png",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/9a9cdce545e3a0bdc8b153836e524232d37f478b_screenshot_2025-07-30_at_05.12.45.png",
     component: Monitoring_5,
   },
   "monitoring-6": {
@@ -517,7 +517,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "Comprehensive VPS management dashboard for creating, monitoring, and managing VPS parents, shared, and dedicated instances with real-time status and activity logs.",
     video:
-      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750385857/monitoring-6_f0ghyk.mov",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/5441bfef085de20895747cf11aca18d55ae0c924_monitoring-6.mp4",
     component: Monitoring_6,
   },
   "monitoring-7": {
@@ -526,7 +526,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "Feature-rich VPS admin panel with animated transitions, resource usage indicators, and advanced controls for shared and dedicated VPS instances.",
     video:
-      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750385842/monitoring-7_nysapt.mov",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/1fdfc780f8fd357d1de9e80bfa3b0584148d8b8c_monitoring-7.mp4",
     component: Monitoring_7,
   },
   "monitoring-8": {
@@ -616,7 +616,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     name: "Animated Transaction List",
     description:
       "Modern animated transaction list with smooth transitions, status indicators, and detailed fee breakdown.",
-    photo:
+    video:
       "https://hc-cdn.hel1.your-objectstorage.com/s/v3/d608ab4324f9fcc2967f7cae8c2a7010829f05cf_banking-3.mp4",
     component: Banking_3,
   },
@@ -634,7 +634,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     name: "Modern Transaction Table",
     description:
       "Modern transaction table with TanStack Table integration, column visibility controls, and advanced filtering.",
-    photo:
+    video:
       "https://hc-cdn.hel1.your-objectstorage.com/s/v3/dd5a83a7c53e52d6d3a07b671ec5ed7a3301b050_banking-5.mp4",
     component: Banking_5,
   },
@@ -645,7 +645,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "Interactive access request form with loading states, secure authentication badge, and administrator contact",
     photo:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1751152361/Screenshot_2025-06-29_at_06.12.34_wzax9a.png",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/059ee3abc71530ad1f29d87f8ec60ed62c9b5be4_screenshot_2025-07-30_at_07.39.18.png",
     component: Confidential_1,
   },
   "confidential-2": {
@@ -654,7 +654,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "Clean access denied page with destructive styling, restricted content indicator, and navigation options",
     photo:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1751152377/Screenshot_2025-06-29_at_06.12.51_st9t55.png",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/9c68286dc696ab4a028809ad3310fd22e2d44b28_screenshot_2025-07-30_at_07.39.43.png",
     component: Confidential_2,
   },
   "confidential-3": {
@@ -663,7 +663,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "Animated upgrade prompt with feature highlights, rotating icon, and interactive upgrade button",
     photo:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1751152412/Screenshot_2025-06-29_at_06.13.20_r7blip.png",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/73a981cbf595ec8bab615d0559c9353a114fa1e3_screenshot_2025-07-30_at_07.40.12.png",
     component: Confidential_3,
   },
   "confidential-4": {
@@ -672,7 +672,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "Confidential access page with security alerts, permission levels, and administrator contact options",
     photo:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1751152433/Screenshot_2025-06-29_at_06.13.47_zzysmz.png",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/fce50164fb853d05a413e72bee6139973878311b_screenshot_2025-07-30_at_07.40.45.png",
     component: Confidential_4,
   },
   "confidential-5": {
@@ -681,7 +681,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "Premium feature access with upgrade dialog, benefit highlights, and subscription modal",
     photo:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1751152457/Screenshot_2025-06-29_at_06.14.12_zdbcyy.png",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/b07d76426f2a9d749d871937ee1665965bdb5983_screenshot_2025-07-30_at_07.41.00.png",
     component: Confidential_5,
   },
 
@@ -691,7 +691,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "Clean pricing comparison with Basic and Pro plans, feature checkmarks, and popular plan highlighting",
     photo:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1751776084/Screenshot_2025-07-06_at_11.27.57_wukvdy.png",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/f35e1e1062bdbb2363fa5c1fd8d4fbed18c59f18_screenshot_2025-07-30_at_07.37.25.png",
     component: Pricing_1,
   },
   "pricing-2": {
@@ -700,7 +700,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "Premium content access control with authentication, upgrade prompts, and animated purchase flow",
     photo:
-      "https://res.cloudinary.com/dnrtsh66v/image/upload/v1751776105/Screenshot_2025-07-06_at_11.28.19_gcrxj1.png",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/e043f6531c97f25bf1a90096c630d4a3d8405ce8_screenshot_2025-07-30_at_07.37.53.png",
     component: Pricing_2,
   },
 
