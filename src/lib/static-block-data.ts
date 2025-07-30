@@ -170,7 +170,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "Customer admin dashboard for managing SaaS plans, add-ons, and current bills.",
     video:
-      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750356826/Screen_Recording_2025-06-20_at_01.12.21_twbie4.mov",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/1970f0ab2ba95fe6c423f36d6a43e8ce97ba5067_bills-1.mp4",
     component: Bills_1,
   },
   "bills-2": {
@@ -179,7 +179,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "Dashboard for team-based SaaS billing, plan selection, and add-on management.",
     video:
-      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750357404/Screen_Recording_2025-06-20_at_01.22.07_vrsmi1.mov",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/3b3e1d1d08e5580f74ae98b7089dc22990cda036_bills-2.mp4",
     component: Bills_2,
   },
   "bills-3": {
@@ -188,7 +188,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "Subscription dashboard for business plans, add-ons, and invoice breakdown.",
     video:
-      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750357402/Screen_Recording_2025-06-20_at_01.22.39_v9srva.mov",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/15f48bfba9eef5cecc435ac2b93cacf805322c94_bills-3.mp4",
     component: Bills_3,
   },
   "bills-4": {
@@ -197,7 +197,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "Billing dashboard for project-based plans, add-ons, and payment status.",
     video:
-      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750357609/Screen_Recording_2025-06-20_at_01.23.17_lxwxre.mov",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/3734928decd21882a00a266bd1da4c9c8113389d_bills-4.mp4",
     component: Bills_4,
   },
   "bills-5": {
@@ -206,7 +206,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "Portal for managing multiple plans, add-ons, and billing cycles.",
     video:
-      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750357610/Screen_Recording_2025-06-20_at_01.23.43_wlsdcb.mov",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/48c08b813a89ef9dc935c9f0f83312296f111f05_bills-5.mp4",
     component: Bills_5,
   },
   "bills-6": {
@@ -215,7 +215,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "Modern dashboard for SaaS billing, plan management, and add-on tracking.",
     video:
-      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750357608/Screen_Recording_2025-06-20_at_01.24.05_ijuxn0.mov",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/0ba445a3d5a0c012fe9c970eed77499e68ec3cac_bills-6.mp4",
     component: Bills_6,
   },
   "bills-7": {
@@ -224,7 +224,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "Advanced B2B dashboard for managing plans, add-ons, payment methods, and billing history.",
     video:
-      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750361070/Bills-7_apqaqb.mov",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/6ece389072975771d5bc06467002cb2dd4483f9b_bills-7.mp4",
     component: Bills_7,
   },
   "bills-8": {
@@ -233,7 +233,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "Enterprise dashboard for plan management, add-ons, and billing with navigation and analytics.",
     video:
-      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750361070/Bills-8_yvxewc.mov",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/a06a6047646059cc43af09beaf65474fd7d2cfaa_bills-8.mp4",
     component: Bills_8,
   },
   "bills-9": {
@@ -242,7 +242,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "Modern dashboard with animated add-on selection, plan management, and detailed billing.",
     video:
-      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750361381/Bills-9_twiefj.mov",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/56d49eaf0a36d28e59bea297b2c3be0963ded860_bills-9.mp4",
     component: Bills_9,
   },
   "bills-10": {
@@ -251,7 +251,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "Dashboard for team-based SaaS plans, add-ons, and billing with tabbed navigation.",
     video:
-      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750361607/Bills-10_xbwi1r.mov",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/cd8c8999bccea5cb25cc14312b2b1c0b6008e43b_bills-10.mp4",
     component: Bills_10,
   },
   "bills-11": {
@@ -260,7 +260,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "Feature-rich dashboard for plan selection, add-on toggling, and invoice management.",
     video:
-      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750361606/Bills-11_ldpqv9.mov",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/83f99c6d5b1d2e3aa26b3c54e2bd347f86ec0cf5_bills-11.mp4",
     component: Bills_11,
   },
   "bills-12": {
@@ -269,7 +269,7 @@ export const staticBlocksWithComponents: Record<string, BlockWithComponent> = {
     description:
       "Comprehensive SaaS billing suite with navigation, plan management, add-ons, and usage tracking.",
     video:
-      "https://res.cloudinary.com/dnrtsh66v/video/upload/v1750361604/Bills-12_weu8bx.mov",
+      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/33c73428576176a8d19caf90e38a67a712c98476_bills-12.mp4",
     component: Bills_12,
   },
 
