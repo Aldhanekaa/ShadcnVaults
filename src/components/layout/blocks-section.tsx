@@ -1,13 +1,7 @@
-"use client";
-
-import Link from "next/link";
-import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Copy, Eye, Code, ExternalLink, Play } from "lucide-react";
-import { useState } from "react";
-import { toast } from "sonner";
-import ProjectVideo from "../ui/project-video";
+import { Code } from "lucide-react";
+import { BlockItem } from "./block-item";
+import { getBlockWithMeta } from "@/lib/block-source";
 
 interface Block {
   name: string;
@@ -27,8 +21,15 @@ interface BlocksSectionProps {
   };
 }
 
-export function BlocksSection({ section }: BlocksSectionProps) {
-  const [hoveredBlock, setHoveredBlock] = useState<string | null>(null);
+
+export async function BlocksSection({ section }: BlocksSectionProps) {
+  // Pre-fetch source code for all blocks in parallel
+  const blocksWithCode = await Promise.all(
+    (section.blocks ?? []).map(async (block) => {
+      const { sourceCode, dependencies } = await getBlockWithMeta(block.id);
+      return { block, sourceCode, dependencies };
+    }),
+  );
 
   return (
     <div className="space-y-6">
@@ -48,54 +49,14 @@ export function BlocksSection({ section }: BlocksSectionProps) {
         </div>
       </div>
 
-      <div className="grid w-full max-w-full grid-cols-1 gap-y-16 gap-x-6 sm:grid-cols-2">
-        {section.blocks?.map((block, id) => (
-          <div key={`${block.id}-${id}`} className="space-y-2 b">
-            {block.video ? (
-              <div className="relative cursor-pointer">
-                <ProjectVideo src={block.video} />
-              </div>
-            ) : block.photo ? (
-              <div className="relative aspect-video border overflow-hidden rounded-2xl bg-zinc-50/40 p-1 ring-1 ring-zinc-200/50 ring-inset dark:bg-zinc-950/40 dark:ring-zinc-200">
-                <div className="absolute inset-0">
-                  <div className="relative w-full h-full rounded-lg shadow-base overflow-hidden">
-                    <div className="absolute inset-0">
-                      <img
-                        src={block.photo}
-                        alt={block.name}
-                        className=" w-full object-cover transition-transform duration-300 group-hover:scale-100"
-                      />
-                    </div>
-                    <div className="absolute inset-0 rounded-lg"></div>
-                  </div>
-                </div>
-              </div>
-            ) : (
-              <div className="flex items-center justify-center h-full">
-                <div className="text-center space-y-2">
-                  <div className="w-16 h-16 bg-primary/10 rounded-lg mx-auto flex items-center justify-center">
-                    <div className="w-8 h-8 bg-primary/20 rounded"></div>
-                  </div>
-                  <div className="space-y-1">
-                    <div className="h-2 bg-primary/20 rounded w-20 mx-auto"></div>
-                    <div className="h-2 bg-primary/10 rounded w-16 mx-auto"></div>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            <Link href={`/block/${block.id}`} className="group cursor-pointer">
-              <div className="px-1">
-                <div className="font-base  relative inline-block font-[450] text-zinc-900 dark:text-zinc-50">
-                  {block.name}
-                  <span className="absolute bottom-0.5 left-0 block h-[1px] w-full max-w-0 bg-zinc-900 transition-all duration-200 group-hover:max-w-full dark:bg-zinc-50"></span>
-                </div>
-                <p className="text-base text-zinc-600 dark:text-zinc-400">
-                  {block.description}
-                </p>
-              </div>
-            </Link>
-          </div>
+      <div className="grid w-full max-w-full grid-cols-1 gap-y-16 gap-x-6 ">
+        {blocksWithCode.map(({ block, sourceCode, dependencies }, idx) => (
+          <BlockItem
+            key={`${block.id}-${idx}`}
+            block={block}
+            sourceCode={sourceCode}
+            dependencies={dependencies}
+          />
         ))}
       </div>
 
